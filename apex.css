@@ -1,0 +1,338 @@
+
+.apex-hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 18, 28, 0.88),
+            rgba(8, 18, 28, 0.55),
+            rgba(8, 18, 28, 0.25)
+        ),
+        url("https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2000&q=85")
+        center center / cover no-repeat;
+}
+.apex-solutions {
+    background: #f5f6f7;
+}
+.apex-solutions .industry-heading {
+    max-width: 800px;
+}
+.apex-solutions .industry-heading h2 {
+    margin-top: 20px;
+}
+.apex-solutions .industry-grid {
+    margin-top: 60px;
+}
+.apex-ecosystem {
+    padding: 120px 0;
+    background: #101820;
+    color: #ffffff;
+}
+.ecosystem-content {
+    max-width: 950px;
+}
+.ecosystem-content .section-label {
+    color: #f36b3b;
+}
+.ecosystem-content h2 {
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(42px, 5vw, 70px);
+    line-height: 1.05;
+    margin: 20px 0 30px;
+    font-weight: 700;
+}
+.ecosystem-content h2 em {
+    color: #f36b3b;
+    font-style: normal;
+}
+.ecosystem-content > p {
+    max-width: 800px;
+    color: #b8c0c8;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ECOSYSTEM POINTS */
+.ecosystem-points {
+    margin-top: 55px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+.ecosystem-points > div {
+    min-height: 180px;
+    padding: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.025);
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease;
+}
+.ecosystem-points > div:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(243, 107, 59, 0.55);
+}
+.ecosystem-points strong {
+    display: block;
+    margin-bottom: 14px;
+    color: #ffffff;
+    font-family: "Manrope", sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+}
+.ecosystem-points span {
+    display: block;
+    color: #aeb7c0;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* INDIA LOCALIZATION */
+
+.apex-localization {
+    padding: 120px 0;
+    background: #ffffff;
+}
+.localization-heading {
+    max-width: 760px;
+    margin-bottom: 60px;
+}
+.localization-heading h2 {
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(42px, 5vw, 70px);
+    line-height: 1.05;
+    margin: 20px 0 25px;
+    font-weight: 700;
+}
+.localization-heading h2 em {
+    color: #f36b3b;
+    font-style: normal;
+}
+.localization-heading p {
+    max-width: 700px;
+    color: #68717b;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* LOCALIZATION CARDS */
+
+.localization-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+.localization-grid > div {
+    position: relative;
+    min-height: 230px;
+    padding: 30px 22px;
+    background: #f5f6f7;
+    border-top: 3px solid #f36b3b;
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+.localization-grid > div:hover {
+    transform: translateY(-8px);
+    background: #ffffff;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.09);
+}
+.localization-grid span {
+    display: inline-block;
+    color: #f36b3b;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+.localization-grid h3 {
+    margin: 18px 0 12px;
+    color: #101820;
+    font-family: "Manrope", sans-serif;
+    font-size: 21px;
+    line-height: 1.25;
+}
+.localization-grid p {
+    margin: 0;
+    color: #68717b;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/*  APEX CTA */
+.apex-cta {
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 20, 28, 0.88),
+            rgba(10, 20, 28, 0.55),
+            rgba(10, 20, 28, 0.25)
+        ),
+        url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=2000&q=85")
+        center center / cover no-repeat;
+}
+/* APEX CTA CONTENT */
+.apex-cta .ebs-cta-content {
+    position: relative;
+    z-index: 2;
+}
+.apex-cta .ebs-cta-content h2 em {
+    color: #f36b3b;
+    font-style: normal;
+}
+/*  NAVIGATION */
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.desktop-nav a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.desktop-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 2px;
+    background: #f36b3b;
+    transition: width 0.3s ease;
+}
+.desktop-nav a:hover {
+    color: #f36b3b;
+}
+.desktop-nav a:hover::after,
+.desktop-nav a.active::after {
+    width: 100%;
+}
+.desktop-nav a.active {
+    color: #f36b3b;
+}
+
+/*  TABLET */
+
+@media (max-width: 1100px) {
+    .desktop-nav {
+        gap: 20px;
+    }
+    .desktop-nav a {
+        font-size: 13px;
+    }
+    .ecosystem-points {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .localization-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+/* TABLET / SMALL LAPTOP */
+
+@media (max-width: 900px) {
+    .desktop-nav {
+        gap: 15px;
+    }
+    .desktop-nav a {
+        font-size: 12px;
+    }
+    .apex-ecosystem {
+        padding: 90px 0;
+    }
+    .apex-localization {
+        padding: 90px 0;
+    }
+    .ecosystem-points {
+        grid-template-columns: 1fr;
+    }
+    .localization-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* MOBILE  */
+
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+    .apex-ecosystem {
+        padding: 75px 0;
+    }
+    .apex-localization {
+        padding: 75px 0;
+    }
+    .ecosystem-content h2 {
+        font-size: 42px;
+    }
+    .ecosystem-content > p {
+      font-size: 16px;
+    }
+    .ecosystem-points {
+        margin-top: 40px;
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+    .ecosystem-points > div {
+        min-height: auto;
+    }
+    .localization-heading {
+        margin-bottom: 40px;
+    }
+    .localization-heading h2 {
+        font-size: 42px;
+    }
+    .localization-heading p {
+        font-size: 16px;
+    }
+    .localization-grid {
+        grid-template-columns: 1fr;
+    }
+    .localization-grid > div {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .apex-ecosystem {
+        padding: 60px 0;
+    }
+    .apex-localization {
+        padding: 60px 0;
+    }
+    .ecosystem-content h2,
+    .localization-heading h2 {
+        font-size: 36px;
+    }
+    .ecosystem-content > p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+    .ecosystem-points > div {
+        padding: 22px;
+    }
+    .localization-grid > div {
+        padding: 25px 20px;
+    }
+
+}

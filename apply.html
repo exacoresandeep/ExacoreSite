@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Career Opportunity | EXACORE</title>
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Inter, sans-serif;
+            color: #171717;
+            background: #fff;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HEADER */
+
+        header {
+            height: 75px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .navbar {
+            max-width: 1380px;
+            height: 100%;
+            margin: auto;
+            padding: 0 50px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            color: #ed302c;
+            font-weight: 700;
+            font-size: 22px;
+        }
+        .logo small {
+            display: block;
+            color: #222;
+            text-align: center;
+            font-size: 7px;
+        }
+        .nav {
+            display: flex;
+            gap: 25px;
+            font-size: 10px;
+        }
+        .menu {
+            width: 22px;
+        }
+        .menu span {
+            display: block;
+            height: 1px;
+            background: #222;
+            margin: 5px 0;
+        }
+        /* APPLICATION */
+        .application {
+            max-width: 1200px;
+            margin: auto;
+            padding: 65px 40px 90px;
+
+            display: grid;
+            grid-template-columns: 42% 58%;
+            gap: 55px;
+        }
+        .role h1 {
+            color: #ed302c;
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        .experience {
+            font-size: 10px;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        .role h3 {
+            font-size: 14px;
+            margin: 25px 0 10px;
+            font-weight: 500;
+        }
+
+        .role p,
+        .role li {
+            font-size: 10px;
+            color: #555;
+            line-height: 1.8;
+        }
+        .role ul {
+            padding-left: 18px;
+        }
+        .role-contact {
+            margin-top: 25px;
+        }
+        .role-contact p {
+            margin-bottom: 5px;
+        }
+        /* FORM */
+        .application-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        .field {
+            display: flex;
+            flex-direction: column;
+        }
+        .field label {
+            font-size: 9px;
+            margin-bottom: 7px;
+        }
+        .field label span {
+            color: #ed302c;
+        }
+        input,
+        select {
+            height: 38px;
+            border: 1px solid #eee;
+            background: #fafafa;
+            padding: 0 12px;
+            font-size: 10px;
+            outline: none;
+        }
+        input:focus,
+        select:focus {
+            border-color: #ed302c;
+            background: white;
+        }
+        .full {
+            grid-column: 1 / -1;
+        }
+        .phone {
+            display: flex;
+            gap: 7px;
+        }
+        .phone select {
+            width: 100px;
+        }
+        .upload {
+            border: 1px dashed #ccc;
+            padding: 14px;
+            font-size: 9px;
+            color: #777;
+        }
+        .checkbox {
+            grid-column: 1 / -1;
+            font-size: 8px;
+            color: #777;
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+        }
+        .checkbox input {
+            width: auto;
+            height: auto;
+        }
+        .apply-button {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: flex-end;
+        }
+        button {
+            padding: 11px 20px;
+            border: 1px solid #ed302c;
+            background: white;
+            color: #ed302c;
+            font-size: 10px;
+            cursor: pointer;
+            transition: .3s;
+        }
+        button:hover {
+            background: #ed302c;
+            color: white;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: linear-gradient(
+                135deg,
+                #190402,
+                #3a0804,
+                #0b0201
+            );
+
+            color: white;
+            padding: 50px;
+        }
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 40px;
+        }
+        footer h3 {
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+        footer p,
+        footer a {
+            display: block;
+            color: #bbb;
+            font-size: 8px;
+            margin-bottom: 8px;
+        }
+        .copyright {
+            max-width: 1200px;
+            margin: 30px auto 0;
+            padding-top: 15px;
+            border-top: 1px solid #48201c;
+            font-size: 8px;
+            color: #aaa;
+        }
+
+        @media(max-width: 800px) {
+            .nav {
+                display: none;
+            }
+            .application {
+                grid-template-columns: 1fr;
+                padding: 50px 25px;
+            }
+            .application-form {
+                grid-template-columns: 1fr;
+            }
+            .full,
+            .checkbox,
+            .apply-button {
+                grid-column: auto;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width: 500px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            footer {
+                padding: 40px 25px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header>
+    <nav class="navbar">
+        <a class="logo" href="careers.html">
+            EXACORE
+            <small>IT SOLUTIONS</small>
+        </a>
+        <div class="nav">
+            <a href="index.html">About Us</a>
+            <a href="ebs.html">EBS</a>
+            <a href="apex.html">Oracle Apex</a>
+            <a href="fusion.html">Oracle Fusion</a>
+            <a href="#">Blog</a>
+            <a href="careers.html">Careers</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+
+<!-- APPLICATION -->
+
+<section class="application">
+    <!-- JOB INFORMATION -->
+    <div class="role">
+        <h1 id="roleTitle">
+            PHP Laravel Developer
+        </h1>
+        <p class="experience">
+            2+ years of experience | Full-time | Thiruvananthapuram
+        </p>
+        <h3>
+            About the role
+        </h3>
+        <p>
+            We are seeking a skilled and motivated PHP Laravel Developer
+            to join our development team. The ideal candidate will have
+            strong backend development experience and be comfortable
+            working with modern web technologies.
+        </p>
+        <h3>
+            Key Responsibilities
+        </h3>
+        <ul>
+            <li>
+                Develop and maintain web applications using Laravel.
+            </li>
+            <li>
+                Collaborate with front-end developers and designers.
+            </li>
+            <li>
+                Optimize application performance and scalability.
+            </li>
+            <li>
+                Write clean, maintainable and reusable code.
+            </li>
+            <li>
+                Integrate APIs and third-party services.
+            </li>
+            <li>
+                Participate in code reviews and architectural discussions.
+            </li>
+        </ul>
+        <h3>
+            Requirements
+        </h3>
+        <ul>
+            <li>
+                Bachelor's degree in Computer Science or related field.
+            </li>
+            <li>
+                Minimum 2+ years experience in PHP and Laravel.
+            </li>
+            <li>
+                Experience with MySQL and REST APIs.
+            </li>
+            <li>
+                Strong problem solving skills.
+            </li>
+            <li>
+                Good communication skills.
+            </li>
+        </ul>
+        <div class="role-contact">
+            <p>
+                +91 8590589630
+            </p>
+            <p>
+                careers@exacoreitsolutions.com
+            </p>
+        </div>
+    </div>
+
+
+    <!-- APPLICATION FORM -->
+    <form class="application-form"
+          onsubmit="applyJob(event)">
+        <div class="field">
+            <label>
+                First name <span>*</span>
+            </label>
+            <input type="text"
+                   placeholder="Enter first name"
+                   required>
+        </div>
+        <div class="field">
+            <label>
+                Last name <span>*</span>
+            </label>
+            <input type="text"
+                   placeholder="Enter last name"
+                   required>
+        </div>
+        <div class="field">
+            <label>
+                Primary Email <span>*</span>
+            </label>
+            <input type="email"
+                   placeholder="Enter primary email"
+                   required>
+        </div>
+        <div class="field">
+            <label>
+                Phone <span>*</span>
+            </label>
+            <div class="phone">
+                <select>
+                    <option>🇮🇳 +91</option>
+                    <option>🇺🇸 +1</option>
+                    <option>🇬🇧 +44</option>
+                </select>
+                <input type="tel"
+                       placeholder="Phone number"
+                       required>
+            </div>
+        </div>
+        <div class="field">
+            <label>
+                Country <span>*</span>
+            </label>
+            <input type="text"
+                   placeholder="Enter country"
+                   required>
+        </div>
+        <div class="field">
+            <label>
+                State <span>*</span>
+            </label>
+            <input type="text"
+                   placeholder="Enter state"
+                   required>
+        </div>
+        <div class="field">
+            <label>
+                Place <span>*</span>
+            </label>
+            <input type="text"
+                   placeholder="Enter place"
+                   required>
+        </div>
+        <div class="field">
+            <label>
+                Applying for <span>*</span>
+            </label>
+            <input id="applyingFor"
+                   type="text"
+                   value="PHP Laravel Developer"
+                   readonly>
+        </div>
+        <div class="field">
+            <label>
+                Experience <span>*</span>
+            </label>
+            <select required>
+                <option value="">
+                    Select experience
+                </option>
+                <option>
+                    0-1 Years
+                </option>
+                <option>
+                    1-2 Years
+                </option>
+                <option>
+                    2-4 Years
+                </option>
+                <option>
+                    4-6 Years
+                </option>
+                <option>
+                    6+ Years
+                </option>
+            </select>
+        </div>
+        <div class="field">
+            <label>
+                Upload CV <span>*</span>
+            </label>
+            <input type="file"
+                   accept=".pdf,.doc,.docx"
+                   required>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox"
+                   required>
+            <span>
+                I have read the privacy policy and consent to the
+                processing of my data for the purpose of handling
+                my enquiry.
+            </span>
+        </div>
+        <div class="apply-button">
+            <button type="submit">
+                Apply Now →
+            </button>
+        </div>
+    </form>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h3>Company</h3>
+            <a href="#">About us</a>
+            <a href="#">Careers</a>
+            <a href="#">Vision</a>
+            <a href="#">Brands and recognition</a>
+            <a href="#">Employee relations</a>
+            <a href="#">Certifications</a>
+        </div>
+        <div>
+            <h3>NetSuite</h3>
+            <a href="#">E-commerce</a>
+            <a href="#">Suite cloud platform</a>
+            <a href="#">Human capital management</a>
+            <a href="#">Supply chain management</a>
+            <a href="#">Analytics and reporting</a>
+        </div>
+        <div>
+            <h3>EBS</h3>
+            <a href="#">ERP transformation</a>
+            <a href="#">Procurement services</a>
+            <a href="#">Supply chain management</a>
+            <a href="#">ERP support</a>
+            <a href="#">CRM services</a>
+            <a href="#">Project portfolio management</a>
+        </div>
+        <div>
+            <h3>Head office</h3>
+            <p>
+                Infopark, Koratty,
+                Kerala, India
+            </p>
+            <h3>Connect us</h3>
+            <p>
+                Sales: +91 8590589630
+            </p>
+            <p>
+                Careers: +91 8590589630
+            </p>
+            <p>
+                info@exacoreitsolutions.com
+            </p>
+        </div>
+    </div>
+    <div class="copyright">
+
+        © Exacore IT Solutions © 2025.
+        All rights reserved.
+
+    </div>
+</footer>
+
+
+<script>
+    /*
+       Get selected role from careers.html
+
+       Example:
+
+       apply.html?role=Flutter%20Developer
+    */
+    const params =
+        new URLSearchParams(window.location.search);
+    const role =
+        params.get("role");
+    if (role) {
+        document.getElementById("roleTitle")
+            .textContent = role;
+        document.getElementById("applyingFor")
+            .value = role;
+
+    }
+    function applyJob(event) {
+        event.preventDefault();
+        alert(
+            "Application submitted successfully!"
+        );
+        event.target.reset();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | EXACORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: #171717;
+            background: #fff;
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font-family: inherit;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            width: 100%;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+
+        .navbar {
+            max-width: 1380px;
+            height: 76px;
+            margin: auto;
+            padding: 0 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: #ed302c;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 8px;
+            color: #222;
+            letter-spacing: 1.5px;
+            text-align: center;
+            margin-top: -3px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            font-size: 11px;
+            color: #222;
+        }
+
+        .nav-links a {
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 0;
+            height: 1px;
+            background: #ed302c;
+            transition: .3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-btn {
+            width: 24px;
+            height: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .menu-btn span {
+            height: 1px;
+            width: 100%;
+            background: #222;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 440px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px 80px;
+        }
+
+        .hero-content {
+            max-width: 760px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 4vw, 52px);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #777;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .red-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+            margin-top: 30px;
+            padding: 12px 20px;
+            border: 1px solid #ed302c;
+            color: #ed302c;
+            background: white;
+            font-size: 11px;
+            transition: .3s;
+        }
+
+        .red-btn:hover {
+            background: #ed302c;
+            color: white;
+        }
+
+        .arrow {
+            font-size: 15px;
+        }
+
+        /* ================= OFFICE IMAGE ================= */
+
+        .office-section {
+            max-width: 1180px;
+            margin: 0 auto 100px;
+            padding: 0 30px;
+        }
+
+        .office-image {
+            height: 390px;
+            object-fit: cover;
+            filter: brightness(.8);
+        }
+
+        /* ================= OPENINGS ================= */
+
+        .openings {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 30px 100px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+            font-size: 11px;
+            color: #777;
+            line-height: 1.8;
+        }
+
+        .jobs {
+            margin-top: 65px;
+        }
+
+        .job {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .job-header {
+            min-height: 65px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            cursor: pointer;
+            padding: 0 5px;
+        }
+
+        .job-title {
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .job-count {
+            font-size: 12px;
+            color: #777;
+        }
+
+        .job-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .job-arrow {
+            font-size: 18px;
+            transition: .3s;
+        }
+
+        .job.open .job-arrow {
+            transform: rotate(180deg);
+        }
+
+        .job-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .5s ease;
+        }
+
+        .job.open .job-content {
+            max-height: 300px;
+        }
+
+        .job-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 18px 5px;
+            border-top: 1px solid #eee;
+
+            font-size: 11px;
+        }
+
+        .job-meta {
+            display: flex;
+            gap: 70px;
+            color: #777;
+        }
+
+        .apply-link {
+            color: #ed302c;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* ================= PEOPLE ================= */
+
+        .people {
+            max-width: 1180px;
+            margin: auto;
+            padding: 0 30px 120px;
+        }
+
+        .people-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .people-heading h2 {
+            font-size: 34px;
+            font-weight: 400;
+        }
+
+        .people-heading p {
+            color: #777;
+            font-size: 11px;
+            max-width: 650px;
+            margin: 15px auto 0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+
+        .gallery img {
+            height: 240px;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+            filter: brightness(.8);
+        }
+
+        .gallery .tall {
+            grid-row: span 2;
+            height: 488px;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 30px;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            gap: 60px;
+        }
+
+        .contact-info h2 {
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 1.1;
+        }
+
+        .contact-info h2 span {
+            display: block;
+        }
+
+        .contact-info h4 {
+            color: #ed302c;
+            font-size: 13px;
+            font-weight: 400;
+            margin: 35px 0 25px;
+        }
+
+        .contact-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .contact-details small {
+            display: block;
+            color: #777;
+            font-size: 9px;
+            margin-bottom: 5px;
+        }
+
+        .contact-details p {
+            font-size: 10px;
+        }
+
+        /* ================= FORM ================= */
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-size: 9px;
+            margin-bottom: 7px;
+        }
+
+        label span {
+            color: #ed302c;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            border: 1px solid #eee;
+            background: #fafafa;
+            padding: 12px;
+            outline: none;
+            font-size: 10px;
+            transition: .3s;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #ed302c;
+            background: #fff;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .phone-box {
+            display: flex;
+            gap: 8px;
+        }
+
+        .phone-box select {
+            width: 100px;
+        }
+
+        .terms {
+            grid-column: 1 / -1;
+            font-size: 8px;
+            color: #777;
+        }
+
+        .submit-row {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: linear-gradient(
+                135deg,
+                #190402,
+                #3b0904,
+                #0c0201
+            );
+            color: #fff;
+            padding: 55px 50px 20px;
+        }
+
+        .footer-container {
+            max-width: 1300px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 45px;
+        }
+
+        .footer-column h3 {
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .footer-column p,
+        .footer-column a {
+            display: block;
+            font-size: 8px;
+            color: #bbb;
+            margin-bottom: 9px;
+        }
+
+        .footer-column a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            max-width: 1300px;
+            margin: 35px auto 0;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,.15);
+            display: flex;
+            justify-content: space-between;
+            font-size: 8px;
+            color: #aaa;
+        }
+
+        .social {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* ================= ANIMATION ================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: 1s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width: 900px) {
+            .navbar {
+                padding: 0 25px;
+            }
+            .nav-links {
+                display: none;
+            }
+            .office-image {
+                height: 300px;
+            }
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery .tall {
+                height: 300px;
+            }
+            .gallery img {
+                height: 220px;
+            }
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 600px) {
+            .hero {
+                padding: 70px 20px;
+            }
+            .hero h1 {
+                font-size: 34px;
+            }
+            .office-section {
+                padding: 0 15px;
+            }
+            .office-image {
+                height: 220px;
+            }
+            .openings,
+            .people,
+            .contact {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .job-header {
+                min-height: 70px;
+            }
+            .job-right {
+                gap: 10px;
+            }
+            .job-meta {
+                flex-direction: column;
+                gap: 5px;
+            }
+            .job-item {
+                align-items: flex-start;
+                gap: 20px;
+            }
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full,
+            .terms,
+            .submit-row {
+                grid-column: auto;
+            }
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+            .gallery img,
+            .gallery .tall {
+                height: 180px;
+            }
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <nav class="navbar">
+        <a href="#" class="logo">
+            EXACORE
+            <span>IT SOLUTIONS</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">About Us</a>
+            <a href="ebs.html">EBS</a>
+            <a href="apex.html">Oracle Apex</a>
+            <a href="fusion.html">Oracle Fusion</a>
+            <a href="#">Blog</a>
+            <a href="careers.html">Careers</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+        <div class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+    <div class="hero-content reveal">
+        <h1>
+            Join Us And Build What's Next
+        </h1>
+        <p>
+            Step into a career where technology, talent, and transformation converge.
+            At Exacore, we push boundaries, solve real problems, and build solutions
+            that create lasting impact.
+        </p>
+        <a href="#openings" class="red-btn">
+            Current openings
+            <span class="arrow">→</span>
+        </a>
+    </div>
+</section>
+<!-- ================= OFFICE IMAGE ================= -->
+<section class="office-section reveal">
+    <!-- Replace this image with your actual office image -->
+    <img
+        src="images/office.png"
+        alt="Exacore Office"
+        class="office-image"
+    >
+</section>
+<!-- ================= CURRENT OPENINGS ================= -->
+<section class="openings" id="openings">
+    <div class="reveal">
+        <h2 class="section-title">
+            Current Openings
+        </h2>
+        <p class="section-description">
+            Explore our current opportunities to be part of a high-performing team
+            working on innovative enterprise solutions. At Exacore, we value
+            curiosity, integrity, and a shared vision for driving digital
+            transformation across industries.
+        </p>
+    </div>
+    <div class="jobs">
+        <!-- UI UX -->
+        <div class="job reveal">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">
+                        UI/UX Designer
+                    </span>
+                    <span class="job-count">(2)</span>
+                </div>
+                <div class="job-right">
+
+                    <span class="job-arrow">
+                        ↓
+                    </span>
+                </div>
+            </div>
+            <div class="job-content">
+                <div class="job-item">
+                    <div>
+                        UI/UX Designer
+                    </div>
+                    <div class="job-meta">
+                        <span>2+ Years of experience</span>
+                    </div>
+                    <a href="apply.html?role=UI%2FUX%20Designer"
+                       class="apply-link">
+                        Apply now →
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- FLUTTER -->
+        <div class="job reveal">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">
+                        Flutter developer
+                    </span>
+                    <span class="job-count">(4)</span>
+                </div>
+                <div class="job-right">
+                    <span class="job-arrow">↓</span>
+                </div>
+            </div>
+            <div class="job-content">
+                <div class="job-item">
+                    <div>
+                        Flutter Developer
+                    </div>
+                    <div class="job-meta">
+                        <span>3+ Years of experience</span>
+                    </div>
+                    <a href="apply.html?role=Flutter%20Developer"
+                       class="apply-link">
+                        Apply now →
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- PHP -->
+        <div class="job reveal">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">
+                        PHP Laravel Developer
+                    </span>
+                </div>
+                <div class="job-right">
+                    <span class="job-arrow">↓</span>
+                </div>
+            </div>
+            <div class="job-content">
+                <div class="job-item">
+                    <div>
+                        PHP Laravel Developer
+                    </div>
+                    <div class="job-meta">
+                        <span>2+ Years of experience</span>
+                    </div>
+                    <a href="apply.html?role=PHP%20Laravel%20Developer"
+                       class="apply-link">
+                        Apply now →
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- SEO -->
+        <div class="job reveal">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">
+                        SEO
+                    </span>
+                    <span class="job-count">(1)</span>
+                </div>
+                <div class="job-right">
+                    <span class="job-arrow">↓</span>
+                </div>
+            </div>
+            <div class="job-content">
+                <div class="job-item">
+                    <div>
+                        SEO Specialist
+                    </div>
+                    <div class="job-meta">
+                        <span>1+ Years of experience</span>
+                    </div>
+                    <a href="apply.html?role=SEO"
+                       class="apply-link">
+                        Apply now →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ================= PEOPLE ================= -->
+<section class="people">
+    <div class="people-heading reveal">
+        <h2>
+            Our People, Our Power
+        </h2>
+        <p>
+            We believe great technology starts with great teams.
+            Meet the people behind our innovation, collaboration and growth.
+        </p>
+    </div>
+    <!-- <div class="gallery"> -->
+        <img src="images/teams.png" >
+        <!-- <img src="images/team2.jpg" alt="Team">
+        <img src="images/team3.jpg" alt="Team">
+        <img src="images/team4.jpg" alt="Team">
+        <img class="tall" src="images/team5.jpg" alt="Team">
+        <img src="images/team6.jpg" alt="Team">
+        <img src="images/team7.jpg" alt="Team">
+        <img src="images/team8.jpg" alt="Team">
+        <img src="images/team9.jpg" alt="Team"> -->
+    <!-- </div> -->
+</section>
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+    <div class="contact-wrapper">
+        <div class="contact-info reveal">
+            <h2>
+                Take The First Step
+                <span>Toward Innovation</span>
+            </h2>
+            <h4>
+                Connect with Our Global Team
+            </h4>
+            <div class="contact-details">
+                <div>
+                    <small>Sales</small>
+                    <p>+91 8590589630</p>
+                </div>
+                <div>
+                    <small>Email</small>
+                    <p>info@exacoreitsolutions.com</p>
+                </div>
+                <div>
+                    <small>HR Enquiry</small>
+                    <p>+91 8590589630</p>
+                </div>
+                <div>
+                    <small>Careers</small>
+                    <p>careers@exacoreitsolutions.com</p>
+                </div>
+            </div>
+        </div>
+        <form class="contact-form reveal"
+              onsubmit="submitContact(event)">
+            <div class="form-group">
+                <label>
+                    First name <span>*</span>
+                </label>
+
+                <input type="text"
+                       placeholder="Enter first name"
+                       required>
+            </div>
+            <div class="form-group">
+                <label>
+                    Last name <span>*</span>
+                </label>
+                <input type="text"
+                       placeholder="Enter last name"
+                       required>
+
+            </div>
+            <div class="form-group">
+                <label>
+                    Primary Email <span>*</span>
+                </label>
+
+                <input type="email"
+                       placeholder="Enter primary email"
+                       required>
+            </div>
+            <div class="form-group">
+                <label>
+                    Phone <span>*</span>
+                </label>
+                <div class="phone-box">
+                    <select>
+                        <option>🇮🇳 +91</option>
+                        <option>🇺🇸 +1</option>
+                        <option>🇬🇧 +44</option>
+                    </select>
+                    <input type="tel"
+                           placeholder="Phone number"
+                           required>
+                </div>
+            </div>
+            <div class="form-group full">
+                <label>
+                    Tell us more <span>*</span>
+                </label>
+                <textarea
+                    placeholder="Tell us about your project"
+                    required></textarea>
+            </div>
+            <div class="terms">
+                By clicking this button, you agree to our
+                Terms & Conditions and acknowledge our
+                Global Privacy Policy.
+            </div>
+            <div class="submit-row">
+                <button type="submit"
+                        class="red-btn">
+                    Send enquiry
+                    <span>→</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>Company</h3>
+            <a href="#">About us</a>
+            <a href="#">Careers</a>
+            <a href="#">Venture</a>
+            <a href="#">Brands and recognition</a>
+            <a href="#">Employee relations</a>
+            <a href="#">Certifications</a>
+        </div>
+        <div class="footer-column">
+            <h3>NetSuite</h3>
+            <a href="#">E-commerce</a>
+            <a href="#">Suite cloud platform</a>
+            <a href="#">Human capital management</a>
+            <a href="#">Supply chain management</a>
+            <a href="#">Professional service automation</a>
+            <a href="#">Analytics and reporting</a>
+            <a href="#">Financial management</a>
+        </div>
+        <div class="footer-column">
+            <h3>EBS</h3>
+            <a href="#">ERP transformation</a>
+            <a href="#">Procurement services</a>
+            <a href="#">Supply chain management services</a>
+            <a href="#">ERP support</a>
+            <a href="#">CRM services</a>
+            <a href="#">Project portfolio management services</a>
+            <a href="#">Human capital management services</a>
+            <a href="#">Governance, risk and compliance services</a>
+        </div>
+        <div class="footer-column">
+            <h3>Head office</h3>
+            <p>
+                Infopark, Koratty,
+                Kerala, India
+            </p>
+            <h3 style="margin-top:20px;">
+                Connect us
+            </h3>
+            <p>
+                Sales: +91 8590589630
+            </p>
+            <p>
+                Careers: +91 8590589630
+            </p>
+            <p>
+                Email: info@exacoreitsolutions.com
+            </p>
+        </div>
+    </div>
+    <div class="footer-bottom"
+        <span>
+            © Exacore IT Solutions © 2025. All rights reserved.
+        </span>
+        <span>
+            Privacy Policy | Terms & Conditions
+        </span>
+        <div class="social">
+            <span>in</span>
+            <span>𝕏</span>
+            <span>f</span>
+            <span>◎</span>
+            <span>▶</span>
+        </div>
+    </div>
+</footer>
+<script>
+
+    /* ================= ACCORDION ================= */
+    const jobs = document.querySelectorAll(".job");
+    jobs.forEach(job => {
+        const header = job.querySelector(".job-header");
+        header.addEventListener("click", () => {
+            jobs.forEach(otherJob => {
+
+                if (otherJob !== job) {
+                    otherJob.classList.remove("open");
+                }
+
+            });
+           job.classList.toggle("open");
+
+        });
+    });
+    /* ================= SCROLL REVEAL ================= */
+    const revealElements =
+        document.querySelectorAll(".reveal");
+    function revealOnScroll() {
+        revealElements.forEach(element => {
+            const windowHeight =
+                window.innerHeight;
+            const elementTop =
+                element.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 80) {
+
+                element.classList.add("active");
+            }
+        });
+    }
+    window.addEventListener(
+        "scroll",
+        revealOnScroll
+    );
+    revealOnScroll();
+    /* ================= CONTACT FORM ================= */
+    function submitContact(event) {
+        event.preventDefault();
+        alert(
+            "Thank you! Your enquiry has been submitted."
+        );
+        event.target.reset();
+    }
+</script>
+</body>
+</html>

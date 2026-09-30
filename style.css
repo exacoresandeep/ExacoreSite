@@ -1357,8 +1357,7 @@ p {
   /* =========================================
    FOOTER - SCREENSHOT DESIGN
 ========================================= */
-
-  .footer {
+  /* .footer {
     position: relative;
     background:
       linear-gradient(105deg,
@@ -1368,40 +1367,55 @@ p {
     color: #fff;
     padding: 0;
     overflow: hidden;
-  }
-
+  } */
+   .footer {
+  padding: 80px 0 0;
+}
 
   /* MAIN FOOTER */
-
-  .footer-grid {
+  /* .footer-grid {
     display: grid;
     grid-template-columns:
       0.8fr 1fr 1.45fr 1.25fr;
     gap: 70px;
     padding-top: 42px;
     padding-bottom: 38px;
-  }
+  } */
 
+  .footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 70px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  /* COLUMN */
+/* All three columns */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
-  .footer-column {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
+.footer-column h4 {
+  margin: 0 0 25px;
+  font-size: 18px;
+  font-weight: 600;
+}
+ /* Footer links */
+.footer-column a {
+  display: block;
+  margin-bottom: 12px;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.5;
+}
 
-
-  .footer-column h4 {
-    margin: 0 0 20px;
-    font-family: "Manrope", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: #fff;
-  }
-
-
-  .footer-column a,
+/* Office column */
+.footer-office {
+  padding-left: 20px;
+}
   .footer-column p {
     margin: 0 0 12px;
     font-family: "Inter", sans-serif;
@@ -1413,33 +1427,26 @@ p {
       color 0.25s ease,
       transform 0.25s ease;
   }
-
-
   .footer-column a:hover {
     color: #fff;
     transform: translateX(3px);
   }
 
-
   /* HEAD OFFICE */
-
   .footer-office {
     padding-left: 5px;
   }
-
   .footer-address {
-    max-width: 230px;
-    margin-bottom: 55px !important;
-    color: rgba(255, 255, 255, 0.8) !important;
-  }
+  margin: 0 0 35px;
+  font-size: 14px;
+  line-height: 1.8;
+}
 
-  .connect-title {
-    margin-top: 0 !important;
-    margin-bottom: 18px !important;
-  }
-
+/* Connect us */
+.connect-title {
+  margin-bottom: 20px !important;
+}
   /* CONTACT ROW */
-
   .footer-contact-row {
     display: grid;
     grid-template-columns: 38px auto;
@@ -1448,31 +1455,22 @@ p {
     margin-bottom: 12px;
     align-items: center;
   }
-
-
   .footer-contact-row span {
     font-size: 9px;
     color: rgba(255, 255, 255, 0.55);
   }
-
-
   .footer-contact-row a {
     margin: 0;
     font-size: 9.5px;
     color: rgba(255, 255, 255, 0.82);
   }
 
-
-  /* =========================================
-   FOOTER BOTTOM
-========================================= */
+  /* FOOTER BOTTOM */
 
   .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.22);
     width: 100%;
   }
-
-
   .footer-bottom-inner {
     min-height: 52px;
     display: grid;
@@ -1480,32 +1478,22 @@ p {
     align-items: center;
     gap: 30px;
   }
-
-
   .copyright,
   .footer-policy {
     font-family: "Inter", sans-serif;
     font-size: 8.5px;
     color: rgba(255, 255, 255, 0.75);
   }
-
-
   .footer-policy {
     text-align: center;
   }
-
-
-  /* =========================================
-   SOCIAL ICONS
-========================================= */
+  /*SOCIAL ICONS */
 
   .footer-social {
     display: flex;
     align-items: center;
     gap: 19px;
   }
-
-
   .footer-social a {
     width: 17px;
     height: 17px;
@@ -1519,14 +1507,10 @@ p {
       transform 0.25s ease,
       opacity 0.25s ease;
   }
-
-
   .footer-social a:hover {
     transform: translateY(-3px);
     opacity: 1;
   }
-
-
   .footer-social svg {
     width: 15px;
     height: 15px;
@@ -1534,25 +1518,18 @@ p {
     stroke: currentColor;
     stroke-width: 1.5;
   }
-
-
   .footer-social a:first-child svg,
   .footer-social a:nth-child(2) svg,
   .footer-social a:nth-child(3) svg {
     fill: currentColor;
     stroke: none;
   }
-
-
   .footer-social a:nth-child(4) svg,
   .footer-social a:nth-child(5) svg {
     stroke: currentColor;
   }
 
-
-  /* =========================================
-   RESPONSIVE
-========================================= */
+  /* RESPONSIVE */
 
   @media (max-width: 1000px) {
 
@@ -1561,21 +1538,17 @@ p {
         repeat(2, 1fr);
       gap: 45px;
     }
-
     .footer-bottom-inner {
       grid-template-columns:
         1fr 1fr;
       padding: 15px 0;
     }
-
     .footer-social {
       grid-column: 1 / -1;
       justify-content: flex-end;
     }
 
   }
-
-
   @media (max-width: 600px) {
 
     .footer-grid {
@@ -1584,12 +1557,9 @@ p {
       padding-top: 40px;
       padding-bottom: 35px;
     }
-
-
     .footer-office {
       padding-left: 0;
     }
-
 
     .footer-bottom-inner {
       display: flex;
@@ -1598,8 +1568,6 @@ p {
       gap: 15px;
       padding: 20px 0;
     }
-
-
     .footer-policy {
       text-align: left;
     }
@@ -1612,9 +1580,7 @@ p {
 
   }
 
-  /* =========================================
-   NAV HOVER PANEL
-========================================= */
+  /*  NAV HOVER PANEL*/
 
 .nav-hover-panel {
   position: fixed;
@@ -1644,18 +1610,14 @@ p {
     visibility 0.3s ease;
 }
 
-
 /* SHOW PANEL */
-
 .nav-hover-panel.show {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
 
-
 /* PANEL CONTENT */
-
 .nav-panel-content {
   max-width: 1200px;
   margin: auto;
@@ -1670,9 +1632,7 @@ p {
   display: grid;
 }
 
-
 /* LEFT SIDE */
-
 .nav-panel-left h2 {
   margin: 0 0 18px;
   font-family: "Manrope", sans-serif;
@@ -1687,7 +1647,6 @@ p {
   line-height: 1.9;
   color: rgba(255,255,255,0.75);
 }
-
 
 /* BUTTONS */
 
@@ -1760,9 +1719,7 @@ p {
 }
 
 
-/* =========================================
-   CONTACT HOVER
-========================================= */
+/*   CONTACT HOVER*/
 
 .contact-hover-right {
   display: flex;
@@ -1780,7 +1737,6 @@ p {
   color: rgba(255,255,255,0.8);
 }
 
-
 .contact-hover-right a {
   color: #fff;
   text-decoration: none;
@@ -1789,18 +1745,13 @@ p {
   font-weight: 500;
 }
 
-
 .contact-hover-right small {
   margin-top: 5px;
   color: rgba(255,255,255,0.65);
   font-size: 8px;
 }
 
-
-/* =========================================
-   HEADER
-========================================= */
-
+/* HEADER */
 
 .site-header {
   position: fixed;

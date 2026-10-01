@@ -113,7 +113,8 @@ document.querySelector('.quick-contact button').addEventListener('click', e => {
 });
 
 // Current year
-document.querySelector('#year').textContent = new Date().getFullYear();
+const year = document.querySelector('#year');
+if (year) year.textContent = new Date().getFullYear();
 
 // Subtle hero parallax
 const heroMedia = document.querySelector('.hero-media');
@@ -157,74 +158,29 @@ function hideNavPanel() {
 
 }
 
-/* NAV LINKS */
-navLinks.forEach(link => {
-  const text =
-    link.textContent.trim().toLowerCase();
-  if (text === "about us") {
-    link.addEventListener("mouseenter", () => {
-      showNavPanel("about");
-    });
+if (navHoverPanel && aboutPanel && contactPanel) {
+  /* NAV LINKS */
+  navLinks.forEach(link => {
+    const text = link.textContent.trim().toLowerCase();
+    if (text === "about us") {
+      link.addEventListener("mouseenter", () => {
+        showNavPanel("about");
+      });
+    }
 
-  }
+    if (text === "contact us") {
+      link.addEventListener("mouseenter", () => {
+        showNavPanel("contact");
+      });
+    }
 
-  if (text === "contact us") {
-    link.addEventListener("mouseenter", () => {
-      showNavPanel("contact");
-    });
-
-  }
-
-  link.addEventListener("mouseleave", () => {
-    hideNavPanel();
+    link.addEventListener("mouseleave", hideNavPanel);
   });
 
-});
-
-
-/* KEEP OPEN WHEN MOUSE IS ON PANEL */
-navHoverPanel.addEventListener(
-  "mouseenter",
-  () => {
+  /* KEEP OPEN WHEN MOUSE IS ON PANEL */
+  navHoverPanel.addEventListener("mouseenter", () => {
     clearTimeout(hideTimer);
-  }
-);
+  });
 
-navHoverPanel.addEventListener(
-  "mouseleave",
-  () => {
-    hideNavPanel();
-  }
-);
-// LOAD FOOTER
-document.addEventListener("DOMContentLoaded", function () {
-  const footerContainer = document.getElementById("footer");
-  if (!footerContainer) {
-    console.error("Footer container #footer not found in HTML.");
-    return;
-  }
-
-  fetch("./footer.html")
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(
-          `Could not load footer.html. HTTP status: ${response.status}`
-        );
-      }
-      return response.text();
-    })
-    .then(html => {
-      footerContainer.innerHTML = html;
-      console.log("Footer loaded successfully.");
-      // Update footer year if available
-      const footerYear = document.getElementById("footerYear");
-      if (footerYear) {
-        footerYear.textContent = new Date().getFullYear();
-      }
-    })
-    .catch(error => {
-      console.error("Footer loading error:", error);
-      footerContainer.innerHTML =
-        "<p style='padding:20px;text-align:center;'>Footer could not be loaded.</p>";
-    });
-});
+  navHoverPanel.addEventListener("mouseleave", hideNavPanel);
+}

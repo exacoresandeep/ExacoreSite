@@ -30,9 +30,10 @@ a {
 }
 
 .logo img {
-  width: 150px;
-  height: auto;
-  display: block;
+    width: 150px;
+    height: auto;
+    display: block;
+    filter: brightness(0) saturate(100%) invert(17%) sepia(89%) saturate(2250%) hue-rotate(350deg) brightness(88%) contrast(98%);
 }
 button,
 input,

@@ -122,85 +122,58 @@ window.addEventListener('scroll', () => {
     heroMedia.style.transform = `scale(1.05) translateY(${window.scrollY * .08}px)`;
   }
 });
-/* =========================================
-   NAVIGATION HOVER PANELS
-========================================= */
+/* NAVIGATION HOVER PANELS */
 
 const navHoverPanel =
   document.getElementById("navHoverPanel");
-
 const aboutPanel =
   document.getElementById("aboutPanel");
-
 const contactPanel =
-  document.getElementById("contactPanel");
-
+ document.getElementById("contactPanel");
 const navLinks =
   document.querySelectorAll(".desktop-nav a");
-
-
 let hideTimer;
 
-
 /* SHOW PANEL */
-
 function showNavPanel(type) {
 
   clearTimeout(hideTimer);
-
   navHoverPanel.classList.add("show");
-
   aboutPanel.classList.remove("active");
   contactPanel.classList.remove("active");
-
   if (type === "about") {
     aboutPanel.classList.add("active");
   }
-
   if (type === "contact") {
     contactPanel.classList.add("active");
   }
 }
 
-
 /* HIDE PANEL */
-
 function hideNavPanel() {
-
   hideTimer = setTimeout(() => {
-
     navHoverPanel.classList.remove("show");
-
   }, 150);
 
 }
 
-
 /* NAV LINKS */
-
 navLinks.forEach(link => {
-
   const text =
     link.textContent.trim().toLowerCase();
-
-
   if (text === "about us") {
-
     link.addEventListener("mouseenter", () => {
       showNavPanel("about");
     });
 
   }
 
-
   if (text === "contact us") {
-
     link.addEventListener("mouseenter", () => {
       showNavPanel("contact");
     });
 
   }
-
 
   link.addEventListener("mouseleave", () => {
     hideNavPanel();
@@ -210,7 +183,6 @@ navLinks.forEach(link => {
 
 
 /* KEEP OPEN WHEN MOUSE IS ON PANEL */
-
 navHoverPanel.addEventListener(
   "mouseenter",
   () => {
@@ -218,10 +190,41 @@ navHoverPanel.addEventListener(
   }
 );
 
-
 navHoverPanel.addEventListener(
   "mouseleave",
   () => {
     hideNavPanel();
   }
 );
+// LOAD FOOTER
+document.addEventListener("DOMContentLoaded", function () {
+  const footerContainer = document.getElementById("footer");
+  if (!footerContainer) {
+    console.error("Footer container #footer not found in HTML.");
+    return;
+  }
+
+  fetch("./footer.html")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(
+          `Could not load footer.html. HTTP status: ${response.status}`
+        );
+      }
+      return response.text();
+    })
+    .then(html => {
+      footerContainer.innerHTML = html;
+      console.log("Footer loaded successfully.");
+      // Update footer year if available
+      const footerYear = document.getElementById("footerYear");
+      if (footerYear) {
+        footerYear.textContent = new Date().getFullYear();
+      }
+    })
+    .catch(error => {
+      console.error("Footer loading error:", error);
+      footerContainer.innerHTML =
+        "<p style='padding:20px;text-align:center;'>Footer could not be loaded.</p>";
+    });
+});

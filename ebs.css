@@ -216,6 +216,12 @@ a {
     width: 100%;
 }
 
+
+.logo img {
+  width: 150px;
+  height: auto;
+  display: block;
+}
 /* .services-heading {
     display: flex;
     justify-content: space-between;

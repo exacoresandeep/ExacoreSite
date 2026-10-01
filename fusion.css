@@ -1,3 +1,10 @@
+
+.logo img {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
 .fusion-hero {
     background:
         linear-gradient(

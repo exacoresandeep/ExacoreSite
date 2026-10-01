@@ -16,6 +16,13 @@ a {
     color: inherit;
 }
 
+
+
+.logo img {
+  width: 150px;
+  height: auto;
+  display: block;
+}
 /*  HEADER */
 
 .about-header {

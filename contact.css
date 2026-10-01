@@ -29,6 +29,11 @@ a {
     text-decoration: none;
 }
 
+.logo img {
+  width: 150px;
+  height: auto;
+  display: block;
+}
 button,
 input,
 textarea {

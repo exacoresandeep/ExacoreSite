@@ -1,4 +1,9 @@
 
+.logo img {
+  width: 150px;
+  height: auto;
+  display: block;
+}
 .apex-hero {
     background:
         linear-gradient(

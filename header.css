@@ -168,6 +168,10 @@
   opacity: 1;
 }
 
+body.shared-menu-open {
+  overflow: hidden;
+}
+
 .shared-menu-backdrop {
   position: absolute;
   inset: 0;
@@ -179,25 +183,24 @@
 }
 
 .shared-menu-panel {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 70vw;
-  height: 70vh;
-  min-height: 0;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 64px 24px;
+  padding: 80px 24px;
   background:
     radial-gradient(ellipse at 88% 0%, #4a1008 0%, transparent 48%),
     linear-gradient(105deg, #070605 0%, #100806 58%, #190906 100%);
-  transform: translate(-50%, -50%) scale(0.985);
+  transform: scale(0.985);
   transition: transform 0.25s ease;
 }
 
 .shared-menu-overlay.is-open .shared-menu-panel {
-  transform: translate(-50%, -50%) scale(1);
+  transform: scale(1);
 }
 
 .shared-menu-close {
@@ -217,13 +220,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
 }
 
 .shared-menu-links a {
   color: #c8c2c0;
-  font-size: 10px;
-  line-height: 1.5;
+  font: 500 clamp(24px, 4vw, 42px)/1.2 "Manrope", "Inter", Arial, sans-serif;
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -264,7 +266,10 @@
   }
 
   .shared-menu-panel {
-    width: 90vw;
-    height: 70vh;
+    padding: 72px 20px;
+  }
+
+  .shared-menu-links {
+    gap: 16px;
   }
 }

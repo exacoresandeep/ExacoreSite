@@ -1,0 +1,251 @@
+.shared-site-header,
+.shared-site-header *,
+.shared-menu-overlay,
+.shared-menu-overlay * {
+  box-sizing: border-box;
+}
+
+.shared-site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(12, 8, 7, 0.96);
+  border-bottom: 0;
+  backdrop-filter: blur(14px);
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.shared-site-header[data-page="index.html"] {
+  position: absolute;
+  background: transparent;
+  border-bottom-color: rgba(255, 255, 255, 0.18);
+  backdrop-filter: none;
+}
+
+.shared-site-header:is(
+  [data-page="about.html"],
+  [data-page="ebs.html"],
+  [data-page="apex.html"],
+  [data-page="fusion.html"]
+) {
+  position: absolute;
+  background: transparent;
+  border-bottom-color: rgba(255, 255, 255, 0.18);
+  backdrop-filter: none;
+}
+
+.shared-site-header[data-page="contact.html"] {
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom-color: #eeeeee;
+}
+
+.shared-site-header[data-page="careers.html"] {
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom-color: #eeeeee;
+}
+
+.shared-site-header:is([data-page="contact.html"], [data-page="careers.html"]) .shared-desktop-nav a {
+  color: #252525;
+}
+
+.shared-site-header:is([data-page="contact.html"], [data-page="careers.html"]) .shared-desktop-nav a:hover,
+.shared-site-header:is([data-page="contact.html"], [data-page="careers.html"]) .shared-desktop-nav a:focus-visible,
+.shared-site-header:is([data-page="contact.html"], [data-page="careers.html"]) .shared-desktop-nav a[aria-current="page"] {
+  color: #b21e12;
+}
+
+.shared-site-header:is([data-page="contact.html"], [data-page="careers.html"]) .shared-menu-toggle {
+  border: 0;
+}
+
+.shared-site-header:is([data-page="contact.html"], [data-page="careers.html"]) .shared-menu-toggle span {
+  background: #252525;
+}
+
+.shared-header-inner {
+  width: 100%;
+  min-height: 76px;
+  margin: 0 auto;
+  padding: 0 24px 0 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+.shared-logo {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  margin-right: auto;
+  text-decoration: none;
+}
+
+.shared-logo img {
+  display: block;
+  width: 150px;
+  height: auto;
+}
+
+.shared-site-header:is([data-page="contact.html"], [data-page="careers.html"]) .shared-logo img {
+  filter: brightness(0) saturate(100%) invert(17%) sepia(89%) saturate(2250%) hue-rotate(350deg) brightness(88%) contrast(98%);
+}
+
+.shared-desktop-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+  gap: clamp(14px, 2vw, 27px);
+}
+
+.shared-desktop-nav a {
+  padding: 10px 0;
+  color: #f1eeee;
+  font: 500 12px/1.4 "Inter", Arial, sans-serif;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.shared-desktop-nav a:hover,
+.shared-desktop-nav a:focus-visible,
+.shared-desktop-nav a[aria-current="page"] {
+  color: #e24b40;
+}
+
+.shared-menu-toggle {
+  display: block;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  padding: 10px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.shared-menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 5px 0;
+  background: #fff;
+}
+
+.shared-menu-overlay {
+  position: fixed;
+  z-index: 1200;
+  inset: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.shared-menu-overlay.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.shared-menu-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  cursor: default;
+}
+
+.shared-menu-panel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70vw;
+  height: 70vh;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  background:
+    radial-gradient(ellipse at 88% 0%, #4a1008 0%, transparent 48%),
+    linear-gradient(105deg, #070605 0%, #100806 58%, #190906 100%);
+  transform: translate(-50%, -50%) scale(0.985);
+  transition: transform 0.25s ease;
+}
+
+.shared-menu-overlay.is-open .shared-menu-panel {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.shared-menu-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background: transparent;
+  color: #d5cecc;
+  font: 300 23px/1 "Inter", Arial, sans-serif;
+  cursor: pointer;
+}
+
+.shared-menu-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.shared-menu-links a {
+  color: #c8c2c0;
+  font-size: 10px;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.shared-menu-links a:hover,
+.shared-menu-links a:focus-visible {
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .shared-header-inner {
+    min-height: 68px;
+  }
+
+  .shared-desktop-nav {
+    display: none;
+  }
+
+  .shared-menu-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .shared-header-inner {
+    width: 100%;
+    min-height: 62px;
+    padding: 0 18px 0 10px;
+  }
+
+  .shared-logo img {
+    width: 130px;
+  }
+
+  .shared-menu-close {
+    top: 16px;
+    right: 18px;
+  }
+
+  .shared-menu-panel {
+    width: 90vw;
+    height: 70vh;
+  }
+}

@@ -17,7 +17,26 @@
 }
 
 .shared-site-header[data-page="index.html"] {
-  position: absolute;
+  position: fixed;
+  background: transparent;
+  border-bottom-color: rgba(255, 255, 255, 0.18);
+  backdrop-filter: none;
+}
+
+.shared-site-header[data-page="index.html"].is-scrolled {
+  background: rgba(12, 8, 7, 0.92);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.14);
+}
+
+.shared-site-header:is(
+  [data-page="about.html"],
+  [data-page="ebs.html"],
+  [data-page="apex.html"],
+  [data-page="fusion.html"]
+) {
+  position: fixed;
   background: transparent;
   border-bottom-color: rgba(255, 255, 255, 0.18);
   backdrop-filter: none;
@@ -28,11 +47,11 @@
   [data-page="ebs.html"],
   [data-page="apex.html"],
   [data-page="fusion.html"]
-) {
-  position: absolute;
-  background: transparent;
-  border-bottom-color: rgba(255, 255, 255, 0.18);
-  backdrop-filter: none;
+).is-scrolled {
+  background: rgba(12, 8, 7, 0.92);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.14);
 }
 
 .shared-site-header[data-page="contact.html"] {

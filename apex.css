@@ -172,29 +172,91 @@
     line-height: 1.7;
 }
 
-/*  APEX CTA */
-.apex-cta {
-    position: relative;
-
+/* APEX FAQ */
+.apex-faq {
+    padding: 90px 24px;
+    color: #fff;
     background:
-        linear-gradient(
-            90deg,
-            rgba(10, 20, 28, 0.88),
-            rgba(10, 20, 28, 0.55),
-            rgba(10, 20, 28, 0.25)
-        ),
-        url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=2000&q=85")
-        center center / cover no-repeat;
+        radial-gradient(ellipse at 8% 55%, rgba(105, 27, 14, .5), transparent 48%),
+        radial-gradient(ellipse at 92% 0%, rgba(90, 20, 10, .45), transparent 45%),
+        #070605;
 }
-/* APEX CTA CONTENT */
-.apex-cta .ebs-cta-content {
-    position: relative;
-    z-index: 2;
+.apex-faq-container {
+    width: min(100%, 820px);
+    margin: 0 auto;
 }
-.apex-cta .ebs-cta-content h2 em {
+.apex-faq-heading {
+    margin-bottom: 38px;
+}
+.apex-faq-heading .section-label {
     color: #f36b3b;
-    font-style: normal;
 }
+.apex-faq-heading h2 {
+    margin: 12px 0 14px;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(32px, 4vw, 46px);
+    font-weight: 500;
+    line-height: 1.15;
+}
+.apex-faq-heading > p {
+    max-width: 680px;
+    color: #c2bdbc;
+    font-size: 14px;
+    line-height: 1.8;
+}
+.apex-faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, .32);
+}
+.apex-faq-item summary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 22px 34px 22px 0;
+    color: #f4f1f0;
+    font-size: 15px;
+    line-height: 1.6;
+    cursor: pointer;
+    list-style: none;
+}
+.apex-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+.apex-faq-item summary::after {
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    content: "";
+    transform: translateY(-70%) rotate(45deg);
+    transition: transform .2s ease;
+}
+.apex-faq-item[open] summary::after {
+    transform: translateY(-25%) rotate(225deg);
+}
+.apex-faq-item summary:focus-visible {
+    outline: 2px solid #ef5a47;
+    outline-offset: 4px;
+}
+.apex-faq-item > p,
+.apex-faq-item > ul {
+    max-width: 700px;
+    margin: -2px 38px 20px 0;
+    color: #bcb6b4;
+    font-size: 14px;
+    line-height: 1.85;
+}
+.apex-faq-item > ul {
+    padding-left: 22px;
+}
+.apex-faq-item li + li {
+    margin-top: 8px;
+}
+
 /*  NAVIGATION */
 .desktop-nav {
     display: flex;
@@ -264,6 +326,9 @@
     .apex-localization {
         padding: 90px 0;
     }
+    .apex-faq {
+        padding: 75px 24px;
+    }
     .ecosystem-points {
         grid-template-columns: 1fr;
     }
@@ -284,6 +349,9 @@
     }
     .apex-localization {
         padding: 75px 0;
+    }
+    .apex-faq {
+        padding: 65px 20px;
     }
     .ecosystem-content h2 {
         font-size: 42px;
@@ -324,6 +392,9 @@
     }
     .apex-localization {
         padding: 60px 0;
+    }
+    .apex-faq {
+        padding: 55px 18px;
     }
     .ecosystem-content h2,
     .localization-heading h2 {

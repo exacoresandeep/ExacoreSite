@@ -477,7 +477,7 @@ a {
 
 .ebs-faq-item summary::after {
     position: absolute;
-    right: 5px;
+    right: 2px;
     top: 50%;
     width: 9px;
     height: 9px;

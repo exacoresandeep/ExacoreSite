@@ -250,12 +250,15 @@ p {
   overflow: hidden
 }
 
-.hero-media {
+.hero-video {
   position: absolute;
   inset: -5%;
-  background: url("https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2200&q=90") center/cover;
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
   transform: scale(1.05);
-  transition: transform 1.5s ease
+  transition: transform 1.5s ease;
+  filter: saturate(0.8) contrast(1.08);
 }
 
 .hero-overlay {
@@ -540,8 +543,18 @@ p {
 }
 
 .accordion-head b {
-  font-size: 18px;
-  font-weight: 400
+  width: 9px;
+  height: 9px;
+  flex: 0 0 9px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  font-size: 0;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform .2s ease
+}
+
+.accordion-item.active .accordion-head b {
+  transform: translateY(2px) rotate(225deg)
 }
 
 .accordion-body {

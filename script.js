@@ -52,12 +52,10 @@ document.querySelectorAll('.accordion-head').forEach(button => {
 
     document.querySelectorAll('.accordion-item').forEach(i => {
       i.classList.remove('active');
-      i.querySelector('b').textContent = '⌄';
     });
 
     if (!isOpen) {
       item.classList.add('active');
-      item.querySelector('b').textContent = '⌃';
     }
   });
 });

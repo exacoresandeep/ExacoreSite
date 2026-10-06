@@ -158,7 +158,7 @@ a {
 .defines-heading p {
     max-width: 620px;
     color: #aaa;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.8;
 }
 .defines-grid {
@@ -193,7 +193,7 @@ a {
     margin-bottom: 12px;
 }
 .define-content p {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.8;
     color: #aaa;
 }
@@ -287,6 +287,10 @@ a {
     font-size: 11px;
     line-height: 2;
     transition: 0.3s;
+}
+
+.footer-inner p {
+    font-size: 16px;
 }
 
 .footer-inner a:hover {
@@ -406,7 +410,7 @@ a {
     max-width: 900px;
     margin: 8px auto;
     color: #aaa;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.9;
 }
 /* CONTACT SECTION */
@@ -435,7 +439,7 @@ a {
 }
 .about-contact-content>p {
     color: #888;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.8;
     max-width: 440px;
     margin-bottom: 28px;
@@ -568,7 +572,7 @@ a {
         font-size: 22px;
     }
     .pride-container p {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 

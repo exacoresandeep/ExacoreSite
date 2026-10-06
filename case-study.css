@@ -186,7 +186,7 @@ img {
 .case-content > p,
 .solution-section p {
   color: #555;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.9;
 }
 
@@ -244,7 +244,7 @@ img {
 .feature-card p {
   margin: 0;
   color: var(--case-muted);
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.75;
 }
 
@@ -375,7 +375,7 @@ img {
   }
 
   .detail-heading p {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .case-meta {
@@ -388,7 +388,7 @@ img {
 
   .case-content > p,
   .solution-section p {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .feature-grid,

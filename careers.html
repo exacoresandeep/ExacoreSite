@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Careers | EXACORE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -448,8 +447,17 @@
 
         .terms {
             grid-column: 1 / -1;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
             font-size: 11px;
             color: #777;
+        }
+
+        .terms input {
+            width: auto;
+            flex: 0 0 auto;
+            margin: 2px 0 0;
         }
 
         .contact .submit-row .red-btn {
@@ -465,12 +473,10 @@
         /* ================= FOOTER ================= */
 
         footer {
-            background: linear-gradient(
-                135deg,
-                #190402,
-                #3b0904,
-                #0c0201
-            );
+            background: linear-gradient(135deg,
+                    #190402,
+                    #3b0904,
+                    #0c0201);
             color: #fff;
             padding: 55px 50px 20px;
         }
@@ -490,7 +496,13 @@
             margin-bottom: 15px;
         }
 
-        .footer-column p,
+        .footer-column p {
+            display: block;
+            font-size: 16px;
+            color: #bbb;
+            margin-bottom: 9px;
+        }
+
         .footer-column a {
             display: block;
             font-size: 8px;
@@ -506,7 +518,7 @@
             max-width: 1300px;
             margin: 35px auto 0;
             padding-top: 15px;
-            border-top: 1px solid rgba(255,255,255,.15);
+            border-top: 1px solid rgba(255, 255, 255, .15);
             display: flex;
             justify-content: space-between;
             font-size: 8px;
@@ -537,24 +549,31 @@
             .navbar {
                 padding: 0 25px;
             }
+
             .nav-links {
                 display: none;
             }
+
             .office-image {
                 height: 300px;
             }
+
             .gallery {
                 grid-template-columns: repeat(2, 1fr);
             }
+
             .gallery .tall {
                 height: 300px;
             }
+
             .gallery img {
                 height: 220px;
             }
+
             .contact-wrapper {
                 grid-template-columns: 1fr;
             }
+
             .footer-container {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -564,53 +583,67 @@
             .hero {
                 padding: 70px 20px;
             }
+
             .hero h1 {
                 font-size: 34px;
             }
+
             .office-section {
                 padding: 0 15px;
             }
+
             .office-image {
                 height: 220px;
             }
+
             .openings,
             .people,
             .contact {
                 padding-left: 20px;
                 padding-right: 20px;
             }
+
             .job-header {
                 min-height: 70px;
             }
+
             .job-right {
                 gap: 10px;
             }
+
             .job-meta {
                 flex-direction: column;
                 gap: 5px;
             }
+
             .job-item {
                 align-items: flex-start;
                 gap: 20px;
             }
+
             .contact-form {
                 grid-template-columns: 1fr;
             }
+
             .form-group.full,
             .terms,
             .submit-row {
                 grid-column: auto;
             }
+
             .gallery {
                 grid-template-columns: 1fr 1fr;
             }
+
             .gallery img,
             .gallery .tall {
                 height: 180px;
             }
+
             .footer-container {
                 grid-template-columns: 1fr 1fr;
             }
+
             .footer-bottom {
                 flex-direction: column;
                 gap: 15px;
@@ -618,201 +651,194 @@
         }
     </style>
 </head>
+
 <body>
 
-<!-- ================= HEADER ================= -->
-<header>
-    <nav class="navbar">
-         <a href="#home" class="logo" aria-label="Exacore home">
-      <img src="images/logo.png" alt="Exacore">
-    </a>
-        <div class="nav-links">
-            <a href="index.html">About Us</a>
-            <a href="ebs.html">Oracle EBS</a>
-            <a href="apex.html">Oracle APEX</a>
-            <a href="fusion.html">Oracle Fusion</a>
-            <a href="#">Blog</a>
-            <a href="careers.html">Careers</a>
-            <a href="#contact">Contact Us</a>
-        </div>
-        <div class="menu-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
-</header>
+    <!-- ================= HEADER ================= -->
+    <header>
+        <nav class="navbar">
+            <a href="#home" class="logo" aria-label="Exacore home">
+                <img src="images/logo.png" alt="Exacore">
+            </a>
+            <div class="nav-links">
+                <a href="index.html">About Us</a>
+                <a href="ebs.html">Oracle EBS</a>
+                <a href="apex.html">Oracle APEX</a>
+                <a href="fusion.html">Oracle Fusion</a>
+                <a href="#">Blog</a>
+                <a href="careers.html">Careers</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+            <div class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
 
-<!-- ================= HERO ================= -->
-<section class="hero">
-    <div class="hero-content reveal">
-        <h1>
-            Join Us And Build What's Next
-        </h1>
-        <p>
-            Step into a career where technology, talent, and transformation converge.
-            At Exacore, we push boundaries, solve real problems, and build solutions
-            that create lasting impact.
-        </p>
-        <a href="#openings" class="red-btn">
-            Current openings
-            <span class="arrow">→</span>
-        </a>
-    </div>
-</section>
-<!-- ================= OFFICE IMAGE ================= -->
-<section class="office-section reveal">
-    <!-- Replace this image with your actual office image -->
-    <img
-        src="images/office.png"
-        alt="Exacore Office"
-        class="office-image"
-    >
-</section>
-<!-- ================= CURRENT OPENINGS ================= -->
-<section class="openings" id="openings">
-    <div class="reveal">
-        <h2 class="section-title">
-            Current Openings
-        </h2>
-        <p class="section-description">
-            Explore our current opportunities to be part of a high-performing team
-            working on innovative enterprise solutions. At Exacore, we value
-            curiosity, integrity, and a shared vision for driving digital
-            transformation across industries.
-        </p>
-    </div>
-    <div class="jobs">
-        <!-- UI UX -->
-        <div class="job reveal">
-            <div class="job-header">
-                <div>
-                    <span class="job-title">
-                        UI/UX Designer
-                    </span>
-                    <span class="job-count">(2)</span>
-                </div>
-                <div class="job-right">
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+        <div class="hero-content reveal">
+            <h1>
+                Join Us And Build What's Next
+            </h1>
+            <p>
+                Step into a career where technology, talent, and transformation converge.
+                At Exacore, we push boundaries, solve real problems, and build solutions
+                that create lasting impact.
+            </p>
+            <a href="#openings" class="red-btn">
+                Current openings
+                <span class="arrow">→</span>
+            </a>
+        </div>
+    </section>
+    <!-- ================= OFFICE IMAGE ================= -->
+    <section class="office-section reveal">
+        <!-- Replace this image with your actual office image -->
+        <img src="images/office.png" alt="Exacore Office" class="office-image">
+    </section>
+    <!-- ================= CURRENT OPENINGS ================= -->
+    <section class="openings" id="openings">
+        <div class="reveal">
+            <h2 class="section-title">
+                Current Openings
+            </h2>
+            <p class="section-description">
+                Explore our current opportunities to be part of a high-performing team
+                working on innovative enterprise solutions. At Exacore, we value
+                curiosity, integrity, and a shared vision for driving digital
+                transformation across industries.
+            </p>
+        </div>
+        <div class="jobs">
+            <!-- UI UX -->
+            <div class="job reveal">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">
+                            UI/UX Designer
+                        </span>
+                        <span class="job-count">(2)</span>
+                    </div>
+                    <div class="job-right">
 
-                    <span class="job-arrow">
-                        ↓
-                    </span>
+                        <span class="job-arrow">
+                            ↓
+                        </span>
+                    </div>
+                </div>
+                <div class="job-content">
+                    <div class="job-item">
+                        <div>
+                            UI/UX Designer
+                        </div>
+                        <div class="job-meta">
+                            <span>2+ Years of experience</span>
+                        </div>
+                        <a href="apply.html?role=UI%2FUX%20Designer" class="apply-link">
+                            Apply now →
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="job-content">
-                <div class="job-item">
+            <!-- FLUTTER -->
+            <div class="job reveal">
+                <div class="job-header">
                     <div>
-                        UI/UX Designer
+                        <span class="job-title">
+                            Flutter developer
+                        </span>
+                        <span class="job-count">(4)</span>
                     </div>
-                    <div class="job-meta">
-                        <span>2+ Years of experience</span>
+                    <div class="job-right">
+                        <span class="job-arrow">↓</span>
                     </div>
-                    <a href="apply.html?role=UI%2FUX%20Designer"
-                       class="apply-link">
-                        Apply now →
-                    </a>
+                </div>
+                <div class="job-content">
+                    <div class="job-item">
+                        <div>
+                            Flutter Developer
+                        </div>
+                        <div class="job-meta">
+                            <span>3+ Years of experience</span>
+                        </div>
+                        <a href="apply.html?role=Flutter%20Developer" class="apply-link">
+                            Apply now →
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- PHP -->
+            <div class="job reveal">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">
+                            PHP Laravel Developer
+                        </span>
+                    </div>
+                    <div class="job-right">
+                        <span class="job-arrow">↓</span>
+                    </div>
+                </div>
+                <div class="job-content">
+                    <div class="job-item">
+                        <div>
+                            PHP Laravel Developer
+                        </div>
+                        <div class="job-meta">
+                            <span>2+ Years of experience</span>
+                        </div>
+                        <a href="apply.html?role=PHP%20Laravel%20Developer" class="apply-link">
+                            Apply now →
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- SEO -->
+            <div class="job reveal">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">
+                            SEO
+                        </span>
+                        <span class="job-count">(1)</span>
+                    </div>
+                    <div class="job-right">
+                        <span class="job-arrow">↓</span>
+                    </div>
+                </div>
+                <div class="job-content">
+                    <div class="job-item">
+                        <div>
+                            SEO Specialist
+                        </div>
+                        <div class="job-meta">
+                            <span>1+ Years of experience</span>
+                        </div>
+                        <a href="apply.html?role=SEO" class="apply-link">
+                            Apply now →
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- FLUTTER -->
-        <div class="job reveal">
-            <div class="job-header">
-                <div>
-                    <span class="job-title">
-                        Flutter developer
-                    </span>
-                    <span class="job-count">(4)</span>
-                </div>
-                <div class="job-right">
-                    <span class="job-arrow">↓</span>
-                </div>
-            </div>
-            <div class="job-content">
-                <div class="job-item">
-                    <div>
-                        Flutter Developer
-                    </div>
-                    <div class="job-meta">
-                        <span>3+ Years of experience</span>
-                    </div>
-                    <a href="apply.html?role=Flutter%20Developer"
-                       class="apply-link">
-                        Apply now →
-                    </a>
-                </div>
-            </div>
+    </section>
+    <!-- ================= PEOPLE ================= -->
+    <section class="people">
+        <div class="people-heading reveal">
+            <h2>
+                Our People, Our Power
+            </h2>
+            <p>
+                We believe great technology starts with great teams.
+                Meet the people behind our innovation, collaboration and growth.
+            </p>
         </div>
-        <!-- PHP -->
-        <div class="job reveal">
-            <div class="job-header">
-                <div>
-                    <span class="job-title">
-                        PHP Laravel Developer
-                    </span>
-                </div>
-                <div class="job-right">
-                    <span class="job-arrow">↓</span>
-                </div>
-            </div>
-            <div class="job-content">
-                <div class="job-item">
-                    <div>
-                        PHP Laravel Developer
-                    </div>
-                    <div class="job-meta">
-                        <span>2+ Years of experience</span>
-                    </div>
-                    <a href="apply.html?role=PHP%20Laravel%20Developer"
-                       class="apply-link">
-                        Apply now →
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!-- SEO -->
-        <div class="job reveal">
-            <div class="job-header">
-                <div>
-                    <span class="job-title">
-                        SEO
-                    </span>
-                    <span class="job-count">(1)</span>
-                </div>
-                <div class="job-right">
-                    <span class="job-arrow">↓</span>
-                </div>
-            </div>
-            <div class="job-content">
-                <div class="job-item">
-                    <div>
-                        SEO Specialist
-                    </div>
-                    <div class="job-meta">
-                        <span>1+ Years of experience</span>
-                    </div>
-                    <a href="apply.html?role=SEO"
-                       class="apply-link">
-                        Apply now →
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ================= PEOPLE ================= -->
-<section class="people">
-    <div class="people-heading reveal">
-        <h2>
-            Our People, Our Power
-        </h2>
-        <p>
-            We believe great technology starts with great teams.
-            Meet the people behind our innovation, collaboration and growth.
-        </p>
-    </div>
-    <!-- <div class="gallery"> -->
-        <img src="images/teams.png" >
+        <!-- <div class="gallery"> -->
+        <img src="images/teams.png">
         <!-- <img src="images/team2.jpg" alt="Team">
         <img src="images/team3.jpg" alt="Team">
         <img src="images/team4.jpg" alt="Team">
@@ -821,213 +847,202 @@
         <img src="images/team7.jpg" alt="Team">
         <img src="images/team8.jpg" alt="Team">
         <img src="images/team9.jpg" alt="Team"> -->
-    <!-- </div> -->
-</section>
-<!-- ================= CONTACT ================= -->
-<section class="contact" id="contact">
-    <div class="contact-wrapper">
-        <div class="contact-info reveal">
-            <h2>
-                Take The First Step
-                <span>Toward Innovation</span>
-            </h2>
-            <h4>
-                Connect with Our Global Team
-            </h4>
-            <div class="contact-details">
-                <div>
-                    <small>Sales</small>
-                    <p>+91 8590589630</p>
-                </div>
-                <div>
-                    <small>Email</small>
-                    <p>info@exacoreitsolutions.com</p>
-                </div>
-                <div>
-                    <small>HR Enquiry</small>
-                    <p>+91 8590589630</p>
-                </div>
-                <div>
-                    <small>Careers</small>
-                    <p>careers@exacoreitsolutions.com</p>
-                </div>
-            </div>
-        </div>
-        <form class="contact-form reveal"
-              onsubmit="submitContact(event)">
-            <div class="form-group">
-                <label>
-                    First name <span>*</span>
-                </label>
-
-                <input type="text"
-                       placeholder="Enter first name"
-                       required>
-            </div>
-            <div class="form-group">
-                <label>
-                    Last name <span>*</span>
-                </label>
-                <input type="text"
-                       placeholder="Enter last name"
-                       required>
-
-            </div>
-            <div class="form-group">
-                <label>
-                    Primary Email <span>*</span>
-                </label>
-
-                <input type="email"
-                       placeholder="Enter primary email"
-                       required>
-            </div>
-            <div class="form-group">
-                <label>
-                    Phone <span>*</span>
-                </label>
-                <div class="phone-box">
-                    <select>
-                        <option>🇮🇳 +91</option>
-                        <option>🇺🇸 +1</option>
-                        <option>🇬🇧 +44</option>
-                    </select>
-                    <input type="tel"
-                           placeholder="Phone number"
-                           required>
+        <!-- </div> -->
+    </section>
+    <!-- ================= CONTACT ================= -->
+    <section class="contact" id="contact">
+        <div class="contact-wrapper">
+            <div class="contact-info reveal">
+                <h2>
+                    Take The First Step
+                    <span>Toward Innovation</span>
+                </h2>
+                <h4>
+                    Connect with Our Global Team
+                </h4>
+                <div class="contact-details">
+                    <div>
+                        <small>Sales</small>
+                        <p>+91 8590589630</p>
+                    </div>
+                    <div>
+                        <small>Email</small>
+                        <p>info@exacoreitsolutions.com</p>
+                    </div>
+                    <div>
+                        <small>HR Enquiry</small>
+                        <p>+91 8138916160</p>
+                    </div>
+                    <div>
+                        <small>Careers</small>
+                        <p>careers@exacoreitsolutions.com</p>
+                    </div>
                 </div>
             </div>
-            <div class="form-group full">
-                <label>
-                    Tell us more <span>*</span>
+            <form class="contact-form reveal" onsubmit="submitContact(event)">
+                <div class="form-group">
+                    <label>
+                        First name <span>*</span>
+                    </label>
+
+                    <input type="text" placeholder="Enter first name" required>
+                </div>
+                <div class="form-group">
+                    <label>
+                        Last name <span>*</span>
+                    </label>
+                    <input type="text" placeholder="Enter last name" required>
+
+                </div>
+                <div class="form-group">
+                    <label>
+                        Primary Email <span>*</span>
+                    </label>
+
+                    <input type="email" placeholder="Enter primary email" required>
+                </div>
+                <div class="form-group">
+                    <label>
+                        Phone <span>*</span>
+                    </label>
+                    <div class="phone-box">
+                        <select>
+                            <option>🇮🇳 +91</option>
+                            <option>🇺🇸 +1</option>
+                            <option>🇬🇧 +44</option>
+                        </select>
+                        <input type="tel" placeholder="Phone number" required>
+                    </div>
+                </div>
+                <div class="form-group full">
+                    <label>
+                        Tell us more <span>*</span>
+                    </label>
+                    <textarea placeholder="Tell us about your project" required></textarea>
+                </div>
+                <label class="terms">
+                    <input type="checkbox" required>
+                    <span>By clicking this button, you agree to our
+                        Terms &amp; Conditions and acknowledge our
+                        Global Privacy Policy.</span>
                 </label>
-                <textarea
-                    placeholder="Tell us about your project"
-                    required></textarea>
-            </div>
-            <div class="terms">
-                By clicking this button, you agree to our
-                Terms & Conditions and acknowledge our
-                Global Privacy Policy.
-            </div>
-            <div class="submit-row">
-                <button type="submit"
-                        class="red-btn">
-                    Send enquiry
-                    <span>→</span>
-                </button>
-            </div>
-        </form>
-    </div>
-</section>
+                <div class="submit-row">
+                    <button type="submit" class="red-btn">
+                        Send enquiry
+                        <span>→</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
 
-<!-- ================= FOOTER ================= -->
-<footer>
-    <div class="footer-container">
-        <div class="footer-column">
-            <h3>Company</h3>
-            <a href="#">About us</a>
-            <a href="#">Careers</a>
-            <a href="#">Venture</a>
-            <a href="#">Brands and recognition</a>
-            <a href="#">Employee relations</a>
-            <a href="#">Certifications</a>
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <a href="#">About us</a>
+                <a href="#">Careers</a>
+                <a href="#">Venture</a>
+                <a href="#">Brands and recognition</a>
+                <a href="#">Employee relations</a>
+                <a href="#">Certifications</a>
+            </div>
+            <div class="footer-column">
+                <h3>EBS</h3>
+                <a href="#">ERP transformation</a>
+                <a href="#">Procurement services</a>
+                <a href="#">Supply chain management services</a>
+                <a href="#">ERP support</a>
+                <a href="#">CRM services</a>
+                <a href="#">Project portfolio management services</a>
+                <a href="#">Human capital management services</a>
+                <a href="#">Governance, risk and compliance services</a>
+            </div>
+            <div class="footer-column">
+                <h3>Head office</h3>
+                <p>
+                    Infopark, Koratty,
+                    Kerala, India
+                </p>
+                <h3 style="margin-top:20px;">
+                    Connect us
+                </h3>
+                <p>
+                    Sales: +91 9995236160
+                </p>
+                <p>
+                    Careers: +91 8590589630
+                </p>
+                <p>
+                    Email: info@exacoreitsolutions.com
+                </p>
+            </div>
         </div>
-        <div class="footer-column">
-            <h3>EBS</h3>
-            <a href="#">ERP transformation</a>
-            <a href="#">Procurement services</a>
-            <a href="#">Supply chain management services</a>
-            <a href="#">ERP support</a>
-            <a href="#">CRM services</a>
-            <a href="#">Project portfolio management services</a>
-            <a href="#">Human capital management services</a>
-            <a href="#">Governance, risk and compliance services</a>
+        <div class="footer-bottom" <span>
+            © Exacore IT Solutions © 2026. All rights reserved.
+            </span>
+            <span>
+                Privacy Policy | Terms & Conditions
+            </span>
+            <div class="social">
+                <span>in</span>
+                <span>𝕏</span>
+                <span>f</span>
+                <span>◎</span>
+                <span>▶</span>
+            </div>
         </div>
-        <div class="footer-column">
-            <h3>Head office</h3>
-            <p>
-                Infopark, Koratty,
-                Kerala, India
-            </p>
-            <h3 style="margin-top:20px;">
-                Connect us
-            </h3>
-            <p>
-                Sales: +91 8590589630
-            </p>
-            <p>
-                Careers: +91 8590589630
-            </p>
-            <p>
-                Email: info@exacoreitsolutions.com
-            </p>
-        </div>
-    </div>
-    <div class="footer-bottom"
-        <span>
-            © Exacore IT Solutions © 2025. All rights reserved.
-        </span>
-        <span>
-            Privacy Policy | Terms & Conditions
-        </span>
-        <div class="social">
-            <span>in</span>
-            <span>𝕏</span>
-            <span>f</span>
-            <span>◎</span>
-            <span>▶</span>
-        </div>
-    </div>
-</footer>
-<script>
+    </footer>
+    <script>
 
-    /* ================= ACCORDION ================= */
-    const jobs = document.querySelectorAll(".job");
-    jobs.forEach(job => {
-        const header = job.querySelector(".job-header");
-        header.addEventListener("click", () => {
-            jobs.forEach(otherJob => {
+        /* ================= ACCORDION ================= */
+        const jobs = document.querySelectorAll(".job");
+        jobs.forEach(job => {
+            const header = job.querySelector(".job-header");
+            header.addEventListener("click", () => {
+                jobs.forEach(otherJob => {
 
-                if (otherJob !== job) {
-                    otherJob.classList.remove("open");
-                }
+                    if (otherJob !== job) {
+                        otherJob.classList.remove("open");
+                    }
+
+                });
+                job.classList.toggle("open");
 
             });
-           job.classList.toggle("open");
-
         });
-    });
-    /* ================= SCROLL REVEAL ================= */
-    const revealElements =
-        document.querySelectorAll(".reveal");
-    function revealOnScroll() {
-        revealElements.forEach(element => {
-            const windowHeight =
-                window.innerHeight;
-            const elementTop =
-                element.getBoundingClientRect().top;
-            if (elementTop < windowHeight - 80) {
+        /* ================= SCROLL REVEAL ================= */
+        const revealElements =
+            document.querySelectorAll(".reveal");
+        function revealOnScroll() {
+            revealElements.forEach(element => {
+                const windowHeight =
+                    window.innerHeight;
+                const elementTop =
+                    element.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 80) {
 
-                element.classList.add("active");
-            }
-        });
-    }
-    window.addEventListener(
-        "scroll",
-        revealOnScroll
-    );
-    revealOnScroll();
-    /* ================= CONTACT FORM ================= */
-    function submitContact(event) {
-        event.preventDefault();
-        alert(
-            "Thank you! Your enquiry has been submitted."
+                    element.classList.add("active");
+                }
+            });
+        }
+        window.addEventListener(
+            "scroll",
+            revealOnScroll
         );
-        event.target.reset();
-    }
-</script>
-<script src="header.js"></script>
-<script src="footer.js"></script>
+        revealOnScroll();
+        /* ================= CONTACT FORM ================= */
+        function submitContact(event) {
+            event.preventDefault();
+            alert(
+                "Thank you! Your enquiry has been submitted."
+            );
+            event.target.reset();
+        }
+    </script>
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
 </body>
+
 </html>

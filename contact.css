@@ -268,7 +268,7 @@ textarea {
 
     color: #777;
 
-    font-size: 13px;
+    font-size: 16px;
 
     line-height: 1.8;
 }
@@ -293,6 +293,10 @@ textarea {
     flex-direction: column;
 
     gap: 18px;
+}
+
+.contact-details p {
+    font-size: 16px;
 }
 
 .contact-detail {
@@ -358,7 +362,7 @@ textarea {
 
     color: #555;
 
-    font-size: 10px;
+    font-size: 16px;
 
     font-weight: 500;
 }
@@ -381,7 +385,7 @@ textarea {
 
     color: #333;
 
-    font-size: 11px;
+    font-size: 16px;
 
     transition:
         border-color 0.3s ease,
@@ -424,14 +428,21 @@ textarea {
     gap: 20px;
 }
 
-.form-bottom p {
+.form-terms {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
     max-width: 320px;
-
     color: #999;
-
-    font-size: 8px;
-
+    font-size: 16px;
     line-height: 1.5;
+}
+
+.form-terms input {
+    width: auto;
+    flex: 0 0 auto;
+    margin: 5px 0 0;
+    accent-color: #a82015;
 }
 
 
@@ -448,7 +459,7 @@ textarea {
 
     color: white;
 
-    font-size: 10px;
+    font-size: 16px;
 
     cursor: pointer;
 
@@ -530,7 +541,7 @@ textarea {
 
     color: #777;
 
-    font-size: 12px;
+    font-size: 16px;
 
     line-height: 1.8;
 }
@@ -626,7 +637,7 @@ textarea {
 
     color: #777;
 
-    font-size: 12px;
+    font-size: 16px;
 
     line-height: 1.8;
 }
@@ -726,8 +737,7 @@ textarea {
     font-weight: 600;
 }
 
-.footer-column a,
-.footer-column p {
+.footer-column a {
     margin-bottom: 8px;
 
     color: rgba(255, 255, 255, 0.65);
@@ -739,6 +749,13 @@ textarea {
     transition:
         color 0.3s ease,
         transform 0.3s ease;
+}
+
+.footer-column p {
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .footer-column a:hover {

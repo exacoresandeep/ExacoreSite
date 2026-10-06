@@ -64,7 +64,7 @@
 .footer .footer-office p {
   margin: 0;
   color: #d2cecc;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.7;
 }
 
@@ -213,9 +213,12 @@
     font-size: 17px;
   }
 
-  .footer .footer-column a,
-  .footer .footer-office p {
+  .footer .footer-column a {
     font-size: 12px;
+  }
+
+  .footer .footer-office p {
+    font-size: 16px;
   }
 
   .footer .footer-office {

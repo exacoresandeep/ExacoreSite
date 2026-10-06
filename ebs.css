@@ -244,7 +244,7 @@ a {
 .services-heading > p {
     max-width: 620px;
     color: #999;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.9;
 }
 
@@ -305,7 +305,7 @@ a {
 
 .ebs-card p {
     color: #999;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.85;
 }
 
@@ -449,7 +449,7 @@ a {
 .ebs-faq-heading > p {
     max-width: 680px;
     color: #c2bdbc;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.8;
 }
 
@@ -465,7 +465,7 @@ a {
     gap: 24px;
     padding: 22px 34px 22px 0;
     color: #f4f1f0;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.6;
     cursor: pointer;
     list-style: none;
@@ -501,7 +501,7 @@ a {
     max-width: 650px;
     margin: -2px 38px 20px 0;
     color: #bcb6b4;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.85;
 }
 
@@ -539,7 +539,7 @@ a {
     max-width: 470px;
     margin: 20px 0 0;
     color: #707070;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.8;
 }
 
@@ -735,7 +735,7 @@ a {
 
 .ebs-cta-content p {
     color: #bbb;
-    font-size: 11px;
+    font-size: 16px;
     line-height: 1.8;
     max-width: 600px;
     margin: 0 auto 30px;
@@ -789,7 +789,7 @@ a {
 
 .footer-brand p {
     color: #777;
-    font-size: 10px;
+    font-size: 16px;
     line-height: 1.7;
     margin-top: 20px;
     max-width: 180px;
@@ -800,11 +800,18 @@ a {
     margin-bottom: 18px;
 }
 
-.footer-column a,
-.footer-column p {
+.footer-column a {
     display: block;
     color: #888;
     font-size: 9px;
+    line-height: 2;
+    transition: .3s;
+}
+
+.footer-column p {
+    display: block;
+    color: #888;
+    font-size: 16px;
     line-height: 2;
     transition: .3s;
 }

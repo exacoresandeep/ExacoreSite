@@ -78,7 +78,7 @@ img {
   max-width: 580px;
   margin: 24px 0 0;
   color: #e0dddd;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.8;
 }
 
@@ -128,7 +128,7 @@ img {
   max-width: 390px;
   margin: 0 0 4px;
   color: var(--blog-muted);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.8;
 }
 
@@ -202,7 +202,7 @@ img {
 .blog-card-content > p:not(.blog-category) {
   margin: 14px 0 0;
   color: var(--blog-muted);
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.8;
 }
 
@@ -244,7 +244,7 @@ img {
   max-width: 580px;
   margin: 18px auto 0;
   color: #c7c1c0;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.8;
 }
 
@@ -292,7 +292,7 @@ img {
   }
 
   .blog-hero-copy {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .blog-insights {

@@ -97,7 +97,7 @@ h2 em {
 p {
   line-height: 1.75;
   color: var(--muted);
-  font-size: 14px
+  font-size: 16px
 }
 
 .scroll-progress {
@@ -539,7 +539,7 @@ p {
   align-items: center;
   text-align: left;
   padding: 22px 0;
-  font-size: 13px
+  font-size: 16px
 }
 
 .accordion-head b {
@@ -564,7 +564,7 @@ p {
 }
 
 .accordion-body p {
-  font-size: 12px;
+  font-size: 16px;
   color: #bdb4b2;
   max-width: 700px;
   padding: 0 35px 22px 0
@@ -637,7 +637,7 @@ p {
 }
 
 .service-body p {
-  font-size: 12px;
+  font-size: 16px;
   min-height: 62px
 }
 
@@ -703,7 +703,7 @@ p {
 }
 
 .sector-card p {
-  font-size: 12px;
+  font-size: 16px;
   color: #a9a3a1
 }
 
@@ -757,7 +757,7 @@ p {
 }
 
 .stat p {
-  font-size: 11px;
+  font-size: 16px;
   line-height: 1.6;
   margin-top: 13px
 }
@@ -881,7 +881,7 @@ p {
 }
 
 .case-text {
-  font-size: 12px;
+  font-size: 16px;
   max-width: 600px
 }
 
@@ -965,7 +965,7 @@ p {
 
 .contact-details p {
   color: #222;
-  font-size: 12px;
+  font-size: 16px;
   margin-top: 5px
 }
 
@@ -983,7 +983,7 @@ p {
 
 .contact-form label {
   display: block;
-  font-size: 10px;
+  font-size: 16px;
   color: #666;
   margin-bottom: 18px
 }
@@ -996,7 +996,7 @@ p {
   padding: 13px 0;
   outline: 0;
   background: transparent;
-  font-size: 12px;
+  font-size: 16px;
   resize: vertical;
   transition: .3s
 }
@@ -1016,6 +1016,10 @@ p {
 .checkbox input {
   width: auto !important;
   margin-top: 2px
+}
+
+.contact-form .btn {
+  font-size: 16px
 }
 
 .form-message {
@@ -1040,7 +1044,7 @@ p {
 
 .footer-grid>div>p {
   color: #999;
-  font-size: 11px;
+  font-size: 16px;
   max-width: 270px
 }
 
@@ -1250,7 +1254,7 @@ p {
   }
 
   .hero-copy {
-    font-size: 13px
+    font-size: 16px
   }
 
   .hero-actions {
@@ -1441,7 +1445,7 @@ p {
   .footer-column p {
     margin: 0 0 12px;
     font-family: "Inter", sans-serif;
-    font-size: 9.5px;
+    font-size: 16px;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.78);
     text-decoration: none;
@@ -1462,7 +1466,7 @@ p {
 
   .footer-address {
     margin: 0 0 35px;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.8;
   }
 
@@ -1682,7 +1686,7 @@ p {
   .nav-panel-left p {
     max-width: 590px;
     margin: 0;
-    font-size: 10px;
+    font-size: 16px;
     line-height: 1.9;
     color: rgba(255, 255, 255, 0.75);
   }
@@ -1771,7 +1775,7 @@ p {
   .contact-hover-right p {
     max-width: 300px;
     margin: 0 0 25px;
-    font-size: 9px;
+    font-size: 16px;
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.8);
   }
@@ -1872,7 +1876,7 @@ p {
 .footer-office p {
   color: #aaa;
 
-  font-size: 14px;
+  font-size: 16px;
 
   line-height: 1.8;
 
@@ -2104,7 +2108,7 @@ p {
 
 .footer-office p {
   color: #d2cecc;
-  font-size: 10px;
+  font-size: 16px;
   line-height: 1.6;
 }
 
@@ -2225,9 +2229,12 @@ p {
     font-size: 15px;
   }
 
-  .footer-column a,
-  .footer-office p {
+  .footer-column a {
     font-size: 11px;
+  }
+
+  .footer-office p {
+    font-size: 16px;
   }
 
   .footer-office {

@@ -92,7 +92,7 @@
     display: block;
     color: #aeb7c0;
     font-family: "Inter", sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.7;
 }
 
@@ -168,7 +168,7 @@
     margin: 0;
     color: #68717b;
     font-family: "Inter", sans-serif;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.7;
 }
 
@@ -201,7 +201,7 @@
 .apex-faq-heading > p {
     max-width: 680px;
     color: #c2bdbc;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.8;
 }
 .apex-faq-item {
@@ -215,7 +215,7 @@
     gap: 24px;
     padding: 22px 34px 22px 0;
     color: #f4f1f0;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.6;
     cursor: pointer;
     list-style: none;
@@ -247,7 +247,7 @@
     max-width: 700px;
     margin: -2px 38px 20px 0;
     color: #bcb6b4;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.85;
 }
 .apex-faq-item > ul {
@@ -401,7 +401,7 @@
         font-size: 36px;
     }
     .ecosystem-content > p {
-        font-size: 15px;
+        font-size: 16px;
         line-height: 1.7;
     }
     .ecosystem-points > div {

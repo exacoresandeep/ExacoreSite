@@ -632,14 +632,21 @@ a {
 }
 
 .footer-bottom {
-    max-width: 1200px;
-    margin: 60px auto 0;
+    width: 100%;
+    max-width: none;
+    margin: 60px 0 0;
     padding: 18px 0;
     border-top: 1px solid #222;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 16px;
     color: #666;
     font-size: 8px;
+}
+
+.footer-bottom span {
+    white-space: nowrap;
 }
 
 
@@ -686,8 +693,8 @@ a {
         grid-template-columns: 1fr;
     }
     .footer-bottom {
-        flex-direction: column;
-
-        gap: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px 20px;
     }
 }

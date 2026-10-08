@@ -84,15 +84,21 @@ counters.forEach(c => counterObserver.observe(c));
 
 // Video modal
 const modal = document.querySelector('#videoModal');
+const companyVideo = modal.querySelector('.company-video');
 document.querySelector('.play-btn').addEventListener('click', () => {
   modal.classList.add('open');
   modal.setAttribute('aria-hidden','false');
+  companyVideo.play().catch(error => {
+    console.error('Unable to play the Exacore company video:', error);
+  });
 });
 document.querySelector('.modal-close').addEventListener('click', closeModal);
 modal.addEventListener('click', e => { if(e.target === modal) closeModal(); });
 function closeModal(){
   modal.classList.remove('open');
   modal.setAttribute('aria-hidden','true');
+  companyVideo.pause();
+  companyVideo.currentTime = 0;
 }
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
 

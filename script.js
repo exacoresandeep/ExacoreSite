@@ -1,6 +1,36 @@
 const header = document.querySelector('.site-header');
 const progress = document.querySelector('.scroll-progress');
 const cursor = document.querySelector('.cursor-glow');
+const heroVideo = document.querySelector('.hero-video');
+const heroSoundToggle = document.querySelector('.hero-sound-toggle');
+
+if (heroVideo) {
+  heroVideo.volume = 0.6;
+  heroVideo.play().catch(error => {
+    console.warn('Sound-on autoplay was blocked by the browser. Use the video controls to start playback.', error);
+  });
+}
+
+if (heroVideo && heroSoundToggle) {
+  const soundIcon = heroSoundToggle.querySelector('.sound-icon');
+
+  const syncSoundButton = (isMuted) => {
+    heroVideo.muted = isMuted;
+    heroSoundToggle.classList.toggle('is-muted', isMuted);
+    heroSoundToggle.setAttribute('aria-label', isMuted ? 'Turn sound on' : 'Turn sound off');
+    heroSoundToggle.setAttribute('aria-pressed', String(!isMuted));
+    if (soundIcon) {
+      soundIcon.textContent = isMuted ? '🔇' : '🔊';
+    }
+  };
+
+  syncSoundButton(true);
+
+  heroSoundToggle.addEventListener('click', () => {
+    const shouldMute = !heroVideo.muted;
+    syncSoundButton(shouldMute);
+  });
+}
 
 window.addEventListener('scroll', () => {
   const y = window.scrollY;

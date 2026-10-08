@@ -46,11 +46,14 @@
   </div>
   <main>
     <section class="hero" id="home">
-      <video class="hero-video" autoplay loop controls playsinline preload="auto"
+      <video class="hero-video" autoplay loop muted playsinline preload="auto"
         aria-label="Exacore company video">
         <source src="images/exacore-company-video.mp4" type="video/mp4">
         Your browser does not support HTML video.
       </video>
+      <button class="hero-sound-toggle is-muted" type="button" aria-label="Turn sound on" aria-pressed="false" title="Toggle video sound">
+        <span class="sound-icon">🔇</span>
+      </button>
       <div class="hero-overlay"></div>
       <div class="hero-content container">
         <p class="eyebrow reveal">ENTERPRISE TECHNOLOGY PARTNER</p>

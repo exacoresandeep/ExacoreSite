@@ -261,6 +261,38 @@ p {
   filter: saturate(0.8) contrast(1.08);
 }
 
+.hero-sound-toggle {
+  position: absolute;
+  right: 7vw;
+  bottom: 105px;
+  z-index: 3;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  background: rgba(12, 9, 8, 0.55);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  backdrop-filter: blur(8px);
+  transition: .25s ease;
+}
+
+.hero-sound-toggle:hover {
+  transform: translateY(-2px);
+  background: rgba(239, 43, 31, 0.8);
+  border-color: rgba(239, 43, 31, 0.8);
+}
+
+.hero-sound-toggle.is-muted {
+  opacity: 0.88;
+}
+
+.hero-sound-toggle .sound-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -1261,6 +1293,11 @@ p {
   .hero-dots {
     right: 20px;
     bottom: 70px
+  }
+
+  .hero-sound-toggle {
+    right: 20px;
+    bottom: 90px
   }
 
   .about-grid {

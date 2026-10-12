@@ -460,65 +460,6 @@
             justify-content: flex-end;
         }
 
-        /* ================= FOOTER ================= */
-        footer {
-            background: linear-gradient(135deg,
-                    #190402,
-                    #3b0904,
-                    #0c0201);
-            color: #fff;
-            padding: 55px 50px 20px;
-        }
-
-        .footer-container {
-            max-width: 1300px;
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 45px;
-        }
-
-        .footer-column h3 {
-            font-size: 12px;
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-
-        .footer-column p {
-            display: block;
-            font-size: 16px;
-            color: #bbb;
-            margin-bottom: 9px;
-        }
-
-        .footer-column a {
-            display: block;
-            font-size: 8px;
-            color: #bbb;
-            margin-bottom: 9px;
-        }
-
-        .footer-column a:hover {
-            color: #fff;
-        }
-
-        .footer-bottom {
-            max-width: 1300px;
-            margin: 35px auto 0;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, .15);
-            display: flex;
-            justify-content: space-between;
-            font-size: 8px;
-            color: #aaa;
-        }
-
-        .social {
-            display: flex;
-            gap: 15px;
-        }
-
         /* ================= ANIMATION ================= */
         .reveal {
             opacity: 0;
@@ -562,9 +503,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
 
         @media(max-width: 600px) {
@@ -628,14 +566,6 @@
                 height: 180px;
             }
 
-            .footer-container {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 15px;
-            }
         }
     </style>
 </head>
@@ -730,9 +660,9 @@
                 <div class="job-header">
                     <div>
                         <span class="job-title">
-                            Flutter developer
+                             developer
                         </span>
-                        <span class="job-count">(4)</span>
+                        <span class="job-count">(1)</span>
                     </div>
                     <div class="job-right">
                         <span class="job-arrow">↓</span>
@@ -914,63 +844,7 @@
             </form>
         </div>
     </section>
-    <footer>
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>Company</h3>
-                <a href="#">About us</a>
-                <a href="#">Careers</a>
-                <a href="#">Venture</a>
-                <a href="#">Brands and recognition</a>
-                <a href="#">Employee relations</a>
-                <a href="#">Certifications</a>
-            </div>
-            <div class="footer-column">
-                <h3>EBS</h3>
-                <a href="#">ERP transformation</a>
-                <a href="#">Procurement services</a>
-                <a href="#">Supply chain management services</a>
-                <a href="#">ERP support</a>
-                <a href="#">CRM services</a>
-                <a href="#">Project portfolio management services</a>
-                <a href="#">Human capital management services</a>
-                <a href="#">Governance, risk and compliance services</a>
-            </div>
-            <div class="footer-column">
-                <h3>Head office</h3>
-                <p>
-                    Infopark, Koratty,
-                    Kerala, India
-                </p>
-                <h3 style="margin-top:20px;">
-                    Connect us
-                </h3>
-                <p>
-                    Sales: +91 9995236160
-                </p>
-                <p>
-                    Careers: +91 8138916160
-                </p>
-                <p>
-                    Email: info@exacoreitsolutions.com
-                </p>
-            </div>
-        </div>
-        <div class="footer-bottom" <span>
-            © Exacore IT Solutions © 2026. All rights reserved.
-            </span>
-            <span>
-                Privacy Policy | Terms & Conditions
-            </span>
-            <div class="social">
-                <span>in</span>
-                <span>𝕏</span>
-                <span>f</span>
-                <span>◎</span>
-                <span>▶</span>
-            </div>
-        </div>
-    </footer>
+    <div id="footer"></div>
     <script>
         const jobs = document.querySelectorAll(".job");
         jobs.forEach(job => {

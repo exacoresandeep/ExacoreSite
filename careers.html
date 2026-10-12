@@ -14,37 +14,29 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         html {
             scroll-behavior: smooth;
         }
-
         body {
             font-family: "Inter", sans-serif;
             color: #171717;
             background: #fff;
             line-height: 1.5;
         }
-
         a {
             text-decoration: none;
             color: inherit;
         }
-
         button,
         input,
         textarea,
         select {
             font-family: inherit;
         }
-
         img {
             display: block;
             width: 100%;
         }
-
-        /* ================= HEADER ================= */
-
         header {
             width: 100%;
             background: #fff;
@@ -53,7 +45,6 @@
             z-index: 1000;
             border-bottom: 1px solid #eee;
         }
-
         .navbar {
             max-width: 1380px;
             height: 76px;
@@ -64,14 +55,12 @@
             align-items: center;
             justify-content: space-between;
         }
-
         .logo {
             color: #ed302c;
             font-size: 22px;
             font-weight: 700;
             letter-spacing: 1px;
         }
-
         .logo span {
             display: block;
             font-size: 8px;
@@ -80,7 +69,6 @@
             text-align: center;
             margin-top: -3px;
         }
-
         .nav-links {
             display: flex;
             align-items: center;
@@ -88,11 +76,9 @@
             font-size: 11px;
             color: #222;
         }
-
         .nav-links a {
             position: relative;
         }
-
         .nav-links a::after {
             content: "";
             position: absolute;
@@ -103,11 +89,9 @@
             background: #ed302c;
             transition: .3s;
         }
-
         .nav-links a:hover::after {
             width: 100%;
         }
-
         .menu-btn {
             width: 24px;
             height: 18px;
@@ -116,15 +100,11 @@
             justify-content: space-between;
             cursor: pointer;
         }
-
         .menu-btn span {
             height: 1px;
             width: 100%;
             background: #222;
         }
-
-        /* ================= HERO ================= */
-
         .hero {
             min-height: 440px;
             display: flex;
@@ -133,18 +113,15 @@
             text-align: center;
             padding: 100px 20px 80px;
         }
-
         .hero-content {
             max-width: 760px;
         }
-
         .hero h1 {
             font-size: clamp(32px, 4vw, 52px);
             font-weight: 400;
             line-height: 1.1;
             margin-bottom: 20px;
         }
-
         .hero p {
             max-width: 650px;
             margin: auto;
@@ -152,7 +129,6 @@
             font-size: 17px;
             line-height: 1.8;
         }
-
         .red-btn {
             display: inline-flex;
             align-items: center;
@@ -165,45 +141,34 @@
             font-size: 11px;
             transition: .3s;
         }
-
         .red-btn:hover {
             background: #ed302c;
             color: white;
         }
-
         .arrow {
             font-size: 15px;
         }
-
-        /* ================= OFFICE IMAGE ================= */
-
         .office-section {
             max-width: 1180px;
             margin: 0 auto 100px;
             padding: 0 30px;
         }
-
         .office-image {
             height: 390px;
             object-fit: cover;
             filter: brightness(.8);
         }
-
-        /* ================= OPENINGS ================= */
-
         .openings {
             max-width: 1100px;
             margin: auto;
             padding: 0 30px 100px;
         }
-
         .section-title {
             text-align: center;
             font-size: 32px;
             font-weight: 400;
             margin-bottom: 15px;
         }
-
         .section-description {
             max-width: 700px;
             margin: auto;
@@ -212,15 +177,12 @@
             color: #777;
             line-height: 1.8;
         }
-
         .jobs {
             margin-top: 65px;
         }
-
         .job {
             border-bottom: 1px solid #ddd;
         }
-
         .job-header {
             min-height: 65px;
 
@@ -231,42 +193,34 @@
             cursor: pointer;
             padding: 0 5px;
         }
-
         .job-title {
             font-size: 13px;
             font-weight: 500;
         }
-
         .job-count {
             font-size: 12px;
             color: #777;
         }
-
         .job-right {
             display: flex;
             align-items: center;
             gap: 30px;
         }
-
         .job-arrow {
             font-size: 18px;
             transition: .3s;
         }
-
         .job.open .job-arrow {
             transform: rotate(180deg);
         }
-
         .job-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height .5s ease;
         }
-
         .job.open .job-content {
             max-height: 300px;
         }
-
         .job-item {
             display: flex;
             align-items: center;
@@ -277,13 +231,11 @@
 
             font-size: 11px;
         }
-
         .job-meta {
             display: flex;
             gap: 70px;
             color: #777;
         }
-
         .apply-link {
             color: #ed302c;
             display: flex;
@@ -292,52 +244,43 @@
         }
 
         /* ================= PEOPLE ================= */
-
         .people {
             max-width: 1180px;
             margin: auto;
             padding: 0 30px 120px;
         }
-
         .people-heading {
             text-align: center;
             margin-bottom: 40px;
         }
-
         .people-heading h2 {
             font-size: 34px;
             font-weight: 400;
         }
-
         .people-heading p {
             color: #777;
             font-size: 16px;
             max-width: 650px;
             margin: 15px auto 0;
         }
-
         .gallery {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 8px;
         }
-
         .gallery img {
             height: 240px;
             object-fit: cover;
             transition: .5s;
         }
-
         .gallery img:hover {
             transform: scale(1.03);
             filter: brightness(.8);
         }
-
         .gallery .tall {
             grid-row: span 2;
             height: 488px;
         }
-
         /* ================= CONTACT ================= */
 
         .contact {
@@ -345,73 +288,59 @@
             margin: auto;
             padding: 80px 30px;
         }
-
         .contact-wrapper {
             display: grid;
             grid-template-columns: 40% 60%;
             gap: 60px;
         }
-
         .contact-info h2 {
             font-size: 36px;
             font-weight: 400;
             line-height: 1.1;
         }
-
         .contact-info h2 span {
             display: block;
         }
-
         .contact-info h4 {
             color: #ed302c;
             font-size: 17px;
             font-weight: 400;
             margin: 35px 0 25px;
         }
-
         .contact-details {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 25px;
         }
-
         .contact-details small {
             display: block;
             color: #777;
             font-size: 11px;
             margin-bottom: 5px;
         }
-
         .contact-details p {
             font-size: 14px;
         }
-
         /* ================= FORM ================= */
-
         .contact-form {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
-
         .form-group {
             display: flex;
             flex-direction: column;
         }
-
         .form-group.full {
             grid-column: 1 / -1;
         }
-
         .contact .form-group label {
             font-size: 12px;
             margin-bottom: 7px;
         }
-
         .contact .form-group label span {
             color: #ed302c;
         }
-
         .contact input,
         .contact textarea,
         .contact select {
@@ -423,28 +352,23 @@
             font-size: 14px;
             transition: .3s;
         }
-
         .contact input:focus,
         .contact textarea:focus,
         .contact select:focus {
             border-color: #ed302c;
             background: #fff;
         }
-
         .contact textarea {
             min-height: 100px;
             resize: vertical;
         }
-
         .phone-box {
             display: flex;
             gap: 8px;
         }
-
         .phone-box select {
             width: 100px;
         }
-
         .terms {
             grid-column: 1 / -1;
             display: flex;
@@ -453,25 +377,20 @@
             font-size: 11px;
             color: #777;
         }
-
         .terms input {
             width: auto;
             flex: 0 0 auto;
             margin: 2px 0 0;
         }
-
         .contact .submit-row .red-btn {
             font-size: 14px;
         }
-
         .submit-row {
             grid-column: 1 / -1;
             display: flex;
             justify-content: flex-end;
         }
-
         /* ================= FOOTER ================= */
-
         footer {
             background: linear-gradient(135deg,
                     #190402,
@@ -480,7 +399,6 @@
             color: #fff;
             padding: 55px 50px 20px;
         }
-
         .footer-container {
             max-width: 1300px;
             margin: auto;
@@ -489,31 +407,26 @@
             grid-template-columns: 1fr 1fr 1fr 1fr;
             gap: 45px;
         }
-
         .footer-column h3 {
             font-size: 12px;
             font-weight: 500;
             margin-bottom: 15px;
         }
-
         .footer-column p {
             display: block;
             font-size: 16px;
             color: #bbb;
             margin-bottom: 9px;
         }
-
         .footer-column a {
             display: block;
             font-size: 8px;
             color: #bbb;
             margin-bottom: 9px;
         }
-
         .footer-column a:hover {
             color: #fff;
         }
-
         .footer-bottom {
             max-width: 1300px;
             margin: 35px auto 0;
@@ -524,20 +437,17 @@
             font-size: 8px;
             color: #aaa;
         }
-
         .social {
             display: flex;
             gap: 15px;
         }
 
         /* ================= ANIMATION ================= */
-
         .reveal {
             opacity: 0;
             transform: translateY(35px);
             transition: 1s ease;
         }
-
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
@@ -549,31 +459,24 @@
             .navbar {
                 padding: 0 25px;
             }
-
             .nav-links {
                 display: none;
             }
-
             .office-image {
                 height: 300px;
             }
-
             .gallery {
                 grid-template-columns: repeat(2, 1fr);
             }
-
             .gallery .tall {
                 height: 300px;
             }
-
             .gallery img {
                 height: 220px;
             }
-
             .contact-wrapper {
                 grid-template-columns: 1fr;
             }
-
             .footer-container {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -583,67 +486,53 @@
             .hero {
                 padding: 70px 20px;
             }
-
             .hero h1 {
                 font-size: 34px;
             }
-
             .office-section {
                 padding: 0 15px;
             }
-
             .office-image {
                 height: 220px;
             }
-
             .openings,
             .people,
             .contact {
                 padding-left: 20px;
                 padding-right: 20px;
             }
-
             .job-header {
                 min-height: 70px;
             }
-
             .job-right {
                 gap: 10px;
             }
-
             .job-meta {
                 flex-direction: column;
                 gap: 5px;
             }
-
             .job-item {
                 align-items: flex-start;
                 gap: 20px;
             }
-
             .contact-form {
                 grid-template-columns: 1fr;
             }
-
             .form-group.full,
             .terms,
             .submit-row {
                 grid-column: auto;
             }
-
             .gallery {
                 grid-template-columns: 1fr 1fr;
             }
-
             .gallery img,
             .gallery .tall {
                 height: 180px;
             }
-
             .footer-container {
                 grid-template-columns: 1fr 1fr;
             }
-
             .footer-bottom {
                 flex-direction: column;
                 gap: 15px;
@@ -653,7 +542,6 @@
 </head>
 
 <body>
-
     <!-- ================= HEADER ================= -->
     <header>
         <nav class="navbar">
@@ -676,9 +564,6 @@
             </div>
         </nav>
     </header>
-
-
-    <!-- ================= HERO ================= -->
     <section class="hero">
         <div class="hero-content reveal">
             <h1>
@@ -695,12 +580,9 @@
             </a>
         </div>
     </section>
-    <!-- ================= OFFICE IMAGE ================= -->
     <section class="office-section reveal">
-        <!-- Replace this image with your actual office image -->
         <img src="images/office.png" alt="Exacore Office" class="office-image">
     </section>
-    <!-- ================= CURRENT OPENINGS ================= -->
     <section class="openings" id="openings">
         <div class="reveal">
             <h2 class="section-title">
@@ -826,7 +708,6 @@
             </div>
         </div>
     </section>
-    <!-- ================= PEOPLE ================= -->
     <section class="people">
         <div class="people-heading reveal">
             <h2>
@@ -849,7 +730,6 @@
         <img src="images/team9.jpg" alt="Team"> -->
         <!-- </div> -->
     </section>
-    <!-- ================= CONTACT ================= -->
     <section class="contact" id="contact">
         <div class="contact-wrapper">
             <div class="contact-info reveal">
@@ -863,7 +743,7 @@
                 <div class="contact-details">
                     <div>
                         <small>Sales</small>
-                        <p>+91 8590589630</p>
+                        <p>+91 9995236160</p>
                     </div>
                     <div>
                         <small>Email</small>
@@ -935,8 +815,6 @@
             </form>
         </div>
     </section>
-
-    <!-- ================= FOOTER ================= -->
     <footer>
         <div class="footer-container">
             <div class="footer-column">
@@ -972,7 +850,7 @@
                     Sales: +91 9995236160
                 </p>
                 <p>
-                    Careers: +91 8590589630
+                    Careers: +91 8138916160
                 </p>
                 <p>
                     Email: info@exacoreitsolutions.com
@@ -995,8 +873,6 @@
         </div>
     </footer>
     <script>
-
-        /* ================= ACCORDION ================= */
         const jobs = document.querySelectorAll(".job");
         jobs.forEach(job => {
             const header = job.querySelector(".job-header");
@@ -1012,7 +888,6 @@
 
             });
         });
-        /* ================= SCROLL REVEAL ================= */
         const revealElements =
             document.querySelectorAll(".reveal");
         function revealOnScroll() {
@@ -1032,7 +907,6 @@
             revealOnScroll
         );
         revealOnScroll();
-        /* ================= CONTACT FORM ================= */
         function submitContact(event) {
             event.preventDefault();
             alert(
@@ -1044,5 +918,4 @@
     <script src="header.js"></script>
     <script src="footer.js"></script>
 </body>
-
 </html>

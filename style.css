@@ -1760,14 +1760,11 @@ p {
 
 
   /* RIGHT SIDE */
-
   .nav-panel-right {
     display: flex;
 
     flex-direction: column;
   }
-
-
   .nav-panel-right a {
     height: 36px;
     display: flex;

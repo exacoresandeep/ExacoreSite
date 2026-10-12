@@ -335,11 +335,8 @@
     .localization-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
 }
-
 /* MOBILE  */
-
 @media (max-width: 768px) {
     .desktop-nav {
         display: none;
@@ -385,7 +382,6 @@
         min-height: auto;
     }
 }
-
 @media (max-width: 480px) {
     .apex-ecosystem {
         padding: 60px 0;
@@ -410,5 +406,4 @@
     .localization-grid > div {
         padding: 25px 20px;
     }
-
 }

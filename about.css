@@ -15,9 +15,6 @@ a {
     text-decoration: none;
     color: inherit;
 }
-
-
-
 .logo img {
   width: 150px;
   height: auto;
@@ -532,10 +529,7 @@ a {
 .about-contact-form .terms span {
     font-size: 9px;
 }
-
-
 /* BUTTON */
-
 .about-contact-form button {
     display: block;
     margin-left: auto;
@@ -575,8 +569,6 @@ a {
         font-size: 16px;
     }
 }
-
-
 @media (max-width: 500px) {
     .form-two-column {
         grid-template-columns: 1fr;

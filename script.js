@@ -109,7 +109,7 @@ const counterObserver = new IntersectionObserver(entries => {
     requestAnimationFrame(tick);
     counterObserver.unobserve(el);
   });
-}, {threshold:.5});
+}, { threshold: .5 });
 counters.forEach(c => counterObserver.observe(c));
 
 // Video modal
@@ -117,20 +117,20 @@ const modal = document.querySelector('#videoModal');
 const companyVideo = modal.querySelector('.company-video');
 document.querySelector('.play-btn').addEventListener('click', () => {
   modal.classList.add('open');
-  modal.setAttribute('aria-hidden','false');
+  modal.setAttribute('aria-hidden', 'false');
   companyVideo.play().catch(error => {
     console.error('Unable to play the Exacore company video:', error);
   });
 });
 document.querySelector('.modal-close').addEventListener('click', closeModal);
-modal.addEventListener('click', e => { if(e.target === modal) closeModal(); });
-function closeModal(){
+modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+function closeModal() {
   modal.classList.remove('open');
-  modal.setAttribute('aria-hidden','true');
+  modal.setAttribute('aria-hidden', 'true');
   companyVideo.pause();
   companyVideo.currentTime = 0;
 }
-document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
 // Contact form demo
 document.querySelector('#contactForm').addEventListener('submit', e => {
@@ -164,7 +164,7 @@ const navHoverPanel =
 const aboutPanel =
   document.getElementById("aboutPanel");
 const contactPanel =
- document.getElementById("contactPanel");
+  document.getElementById("contactPanel");
 const navLinks =
   document.querySelectorAll(".desktop-nav a");
 let hideTimer;

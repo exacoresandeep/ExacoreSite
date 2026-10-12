@@ -1,20 +1,16 @@
-
 .logo img {
-  width: 150px;
-  height: auto;
-  display: block;
+    width: 150px;
+    height: auto;
+    display: block;
 }
 
 .fusion-hero {
     background:
-        linear-gradient(
-            90deg,
+        linear-gradient(90deg,
             rgba(8, 18, 28, 0.88),
             rgba(8, 18, 28, 0.55),
-            rgba(8, 18, 28, 0.25)
-        ),
-        url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=2000&q=85")
-        center center / cover no-repeat;
+            rgba(8, 18, 28, 0.25)),
+        url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=2000&q=85") center center / cover no-repeat;
 }
 
 
@@ -23,9 +19,11 @@
 .fusion-modules {
     background: #f5f6f7;
 }
+
 .fusion-modules .industry-heading {
     max-width: 800px;
 }
+
 .fusion-modules .industry-grid {
     margin-top: 60px;
 }
@@ -38,12 +36,15 @@
     background: #101820;
     color: #ffffff;
 }
+
 .fusion-global-content {
     max-width: 950px;
 }
+
 .fusion-global-content .section-label {
     color: #f36b3b;
 }
+
 .fusion-global-content h2 {
     font-family: "Manrope", sans-serif;
     font-size: clamp(42px, 5vw, 70px);
@@ -51,12 +52,14 @@
     margin: 20px 0 30px;
     font-weight: 700;
 }
+
 .fusion-global-content h2 em {
     color: #f36b3b;
 
     font-style: normal;
 }
-.fusion-global-content > p {
+
+.fusion-global-content>p {
     max-width: 800px;
     color: #b8c0c8;
     font-family: "Inter", sans-serif;
@@ -73,7 +76,8 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 22px;
 }
-.global-points > div {
+
+.global-points>div {
     min-height: 180px;
     padding: 28px;
     border: 1px solid rgba(255, 255, 255, 0.14);
@@ -83,11 +87,13 @@
         background 0.35s ease,
         border-color 0.35s ease;
 }
-.global-points > div:hover {
+
+.global-points>div:hover {
     transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.06);
     border-color: rgba(243, 107, 59, 0.55);
 }
+
 .global-points strong {
     display: block;
     margin-bottom: 14px;
@@ -96,6 +102,7 @@
     font-size: 19px;
     font-weight: 700;
 }
+
 .global-points span {
     display: block;
     color: #aeb7c0;
@@ -111,10 +118,12 @@
     padding: 120px 0;
     background: #ffffff;
 }
+
 .fusion-localization .localization-heading {
     max-width: 760px;
     margin-bottom: 60px;
 }
+
 .fusion-localization .localization-heading h2 {
     font-family: "Manrope", sans-serif;
     font-size: clamp(42px, 5vw, 70px);
@@ -122,10 +131,12 @@
     margin: 20px 0 25px;
     font-weight: 700;
 }
+
 .fusion-localization .localization-heading h2 em {
     color: #f36b3b;
     font-style: normal;
 }
+
 .fusion-localization .localization-heading p {
     max-width: 700px;
     color: #68717b;
@@ -134,6 +145,7 @@
     line-height: 1.75;
     margin: 0;
 }
+
 /* LOCALIZATION CARDS*/
 
 .fusion-localization .localization-grid {
@@ -141,7 +153,8 @@
     grid-template-columns: repeat(5, 1fr);
     gap: 16px;
 }
-.fusion-localization .localization-grid > div {
+
+.fusion-localization .localization-grid>div {
     min-height: 230px;
     padding: 30px 22px;
     background: #f5f6f7;
@@ -151,22 +164,26 @@
         background 0.35s ease,
         box-shadow 0.35s ease;
 }
-.fusion-localization .localization-grid > div:hover {
+
+.fusion-localization .localization-grid>div:hover {
     transform: translateY(-8px);
     background: #ffffff;
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.09);
 }
+
 .fusion-localization .localization-grid span {
     color: #f36b3b;
     font-size: 13px;
     font-weight: 700;
 }
+
 .fusion-localization .localization-grid h3 {
     margin: 18px 0 12px;
     color: #101820;
     font-family: "Manrope", sans-serif;
     font-size: 21px;
 }
+
 .fusion-localization .localization-grid p {
     margin: 0;
     color: #68717b;
@@ -183,16 +200,20 @@
         radial-gradient(ellipse at 92% 0%, rgba(90, 20, 10, .45), transparent 45%),
         #070605;
 }
+
 .fusion-faq-container {
     width: min(100%, 820px);
     margin: 0 auto;
 }
+
 .fusion-faq-heading {
     margin-bottom: 38px;
 }
+
 .fusion-faq-heading .section-label {
     color: #f36b3b;
 }
+
 .fusion-faq-heading h2 {
     margin: 12px 0 14px;
     font-family: "Manrope", sans-serif;
@@ -200,15 +221,18 @@
     font-weight: 500;
     line-height: 1.15;
 }
-.fusion-faq-heading > p {
+
+.fusion-faq-heading>p {
     max-width: 680px;
     color: #c2bdbc;
     font-size: 16px;
     line-height: 1.8;
 }
+
 .fusion-faq-item {
     border-bottom: 1px solid rgba(255, 255, 255, .32);
 }
+
 .fusion-faq-item summary {
     position: relative;
     display: flex;
@@ -222,9 +246,11 @@
     cursor: pointer;
     list-style: none;
 }
+
 .fusion-faq-item summary::-webkit-details-marker {
     display: none;
 }
+
 .fusion-faq-item summary::after {
     position: absolute;
     right: 2px;
@@ -237,14 +263,17 @@
     transform: translateY(-70%) rotate(45deg);
     transition: transform .2s ease;
 }
+
 .fusion-faq-item[open] summary::after {
     transform: translateY(-25%) rotate(225deg);
 }
+
 .fusion-faq-item summary:focus-visible {
     outline: 2px solid #ef5a47;
     outline-offset: 4px;
 }
-.fusion-faq-item > p {
+
+.fusion-faq-item>p {
     max-width: 700px;
     margin: -2px 38px 20px 0;
     color: #bcb6b4;
@@ -280,7 +309,7 @@
     line-height: 1.12;
 }
 
-.fusion-contact-intro > p {
+.fusion-contact-intro>p {
     max-width: 470px;
     margin: 20px 0 0;
     color: #707070;
@@ -301,7 +330,7 @@
     gap: 30px 24px;
 }
 
-.fusion-contact-details > div {
+.fusion-contact-details>div {
     display: flex;
     flex-direction: column;
     gap: 9px;
@@ -339,8 +368,8 @@
     font-size: 12px;
 }
 
-.fusion-contact-form-row label > span,
-.fusion-contact-message > span {
+.fusion-contact-form-row label>span,
+.fusion-contact-message>span {
     color: #c83222;
 }
 
@@ -500,12 +529,15 @@
     .desktop-nav {
         gap: 20px;
     }
+
     .desktop-nav a {
         font-size: 13px;
     }
+
     .global-points {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .fusion-localization .localization-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -518,19 +550,24 @@
     .desktop-nav {
         gap: 15px;
     }
+
     .desktop-nav a {
         font-size: 12px;
     }
+
     .fusion-global,
     .fusion-localization {
         padding: 90px 0;
     }
+
     .fusion-faq {
         padding: 75px 24px;
     }
+
     .global-points {
         grid-template-columns: 1fr;
     }
+
     .fusion-localization .localization-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -544,19 +581,24 @@
     .desktop-nav {
         display: none;
     }
+
     .fusion-global,
     .fusion-localization {
         padding: 75px 0;
     }
+
     .fusion-faq {
         padding: 65px 20px;
     }
+
     .fusion-global-content h2 {
         font-size: 42px;
     }
-    .fusion-global-content > p {
+
+    .fusion-global-content>p {
         font-size: 16px;
     }
+
     .global-points {
         margin-top: 40px;
 
@@ -564,22 +606,28 @@
 
         gap: 15px;
     }
-    .global-points > div {
+
+    .global-points>div {
         min-height: auto;
     }
+
     .fusion-localization .localization-heading {
         margin-bottom: 40px;
     }
+
     .fusion-localization .localization-heading h2 {
         font-size: 42px;
     }
+
     .fusion-localization .localization-heading p {
         font-size: 16px;
     }
+
     .fusion-localization .localization-grid {
         grid-template-columns: 1fr;
     }
-    .fusion-localization .localization-grid > div {
+
+    .fusion-localization .localization-grid>div {
         min-height: auto;
     }
 }
@@ -588,26 +636,32 @@
 /* SMALL MOBILE */
 
 @media (max-width: 480px) {
+
     .fusion-global,
     .fusion-localization {
         padding: 60px 0;
     }
+
     .fusion-faq {
         padding: 55px 18px;
     }
+
     .fusion-global-content h2,
     .fusion-localization .localization-heading h2 {
         font-size: 36px;
     }
-    .fusion-global-content > p {
+
+    .fusion-global-content>p {
         font-size: 16px;
 
         line-height: 1.7;
     }
-    .global-points > div {
+
+    .global-points>div {
         padding: 22px;
     }
-    .fusion-localization .localization-grid > div {
+
+    .fusion-localization .localization-grid>div {
         padding: 25px 20px;
     }
 

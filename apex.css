@@ -1,43 +1,48 @@
-
 .logo img {
-  width: 150px;
-  height: auto;
-  display: block;
+    width: 150px;
+    height: auto;
+    display: block;
 }
+
 .apex-hero {
     background:
-        linear-gradient(
-            90deg,
+        linear-gradient(90deg,
             rgba(8, 18, 28, 0.88),
             rgba(8, 18, 28, 0.55),
-            rgba(8, 18, 28, 0.25)
-        ),
-        url("https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2000&q=85")
-        center center / cover no-repeat;
+            rgba(8, 18, 28, 0.25)),
+        url("https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2000&q=85") center center / cover no-repeat;
 }
+
 .apex-solutions {
     background: #f5f6f7;
 }
+
 .apex-solutions .industry-heading {
     max-width: 800px;
 }
+
 .apex-solutions .industry-heading h2 {
     margin-top: 20px;
 }
+
 .apex-solutions .industry-grid {
     margin-top: 60px;
 }
+
 .apex-ecosystem {
     padding: 120px 0;
     background: #101820;
     color: #ffffff;
 }
+
 .ecosystem-content {
     max-width: 950px;
 }
+
 .ecosystem-content .section-label {
     color: #f36b3b;
 }
+
 .ecosystem-content h2 {
     font-family: "Manrope", sans-serif;
     font-size: clamp(42px, 5vw, 70px);
@@ -45,11 +50,13 @@
     margin: 20px 0 30px;
     font-weight: 700;
 }
+
 .ecosystem-content h2 em {
     color: #f36b3b;
     font-style: normal;
 }
-.ecosystem-content > p {
+
+.ecosystem-content>p {
     max-width: 800px;
     color: #b8c0c8;
     font-family: "Inter", sans-serif;
@@ -65,7 +72,8 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 22px;
 }
-.ecosystem-points > div {
+
+.ecosystem-points>div {
     min-height: 180px;
     padding: 28px;
     border: 1px solid rgba(255, 255, 255, 0.14);
@@ -75,11 +83,13 @@
         background 0.35s ease,
         border-color 0.35s ease;
 }
-.ecosystem-points > div:hover {
+
+.ecosystem-points>div:hover {
     transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.06);
     border-color: rgba(243, 107, 59, 0.55);
 }
+
 .ecosystem-points strong {
     display: block;
     margin-bottom: 14px;
@@ -88,6 +98,7 @@
     font-size: 19px;
     font-weight: 700;
 }
+
 .ecosystem-points span {
     display: block;
     color: #aeb7c0;
@@ -102,10 +113,12 @@
     padding: 120px 0;
     background: #ffffff;
 }
+
 .localization-heading {
     max-width: 760px;
     margin-bottom: 60px;
 }
+
 .localization-heading h2 {
     font-family: "Manrope", sans-serif;
     font-size: clamp(42px, 5vw, 70px);
@@ -113,10 +126,12 @@
     margin: 20px 0 25px;
     font-weight: 700;
 }
+
 .localization-heading h2 em {
     color: #f36b3b;
     font-style: normal;
 }
+
 .localization-heading p {
     max-width: 700px;
     color: #68717b;
@@ -133,7 +148,8 @@
     grid-template-columns: repeat(5, 1fr);
     gap: 16px;
 }
-.localization-grid > div {
+
+.localization-grid>div {
     position: relative;
     min-height: 230px;
     padding: 30px 22px;
@@ -144,11 +160,13 @@
         background 0.35s ease,
         box-shadow 0.35s ease;
 }
-.localization-grid > div:hover {
+
+.localization-grid>div:hover {
     transform: translateY(-8px);
     background: #ffffff;
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.09);
 }
+
 .localization-grid span {
     display: inline-block;
     color: #f36b3b;
@@ -157,6 +175,7 @@
     font-weight: 700;
     letter-spacing: 0.08em;
 }
+
 .localization-grid h3 {
     margin: 18px 0 12px;
     color: #101820;
@@ -164,6 +183,7 @@
     font-size: 21px;
     line-height: 1.25;
 }
+
 .localization-grid p {
     margin: 0;
     color: #68717b;
@@ -181,16 +201,20 @@
         radial-gradient(ellipse at 92% 0%, rgba(90, 20, 10, .45), transparent 45%),
         #070605;
 }
+
 .apex-faq-container {
     width: min(100%, 820px);
     margin: 0 auto;
 }
+
 .apex-faq-heading {
     margin-bottom: 38px;
 }
+
 .apex-faq-heading .section-label {
     color: #f36b3b;
 }
+
 .apex-faq-heading h2 {
     margin: 12px 0 14px;
     font-family: "Manrope", sans-serif;
@@ -198,15 +222,18 @@
     font-weight: 500;
     line-height: 1.15;
 }
-.apex-faq-heading > p {
+
+.apex-faq-heading>p {
     max-width: 680px;
     color: #c2bdbc;
     font-size: 16px;
     line-height: 1.8;
 }
+
 .apex-faq-item {
     border-bottom: 1px solid rgba(255, 255, 255, .32);
 }
+
 .apex-faq-item summary {
     position: relative;
     display: flex;
@@ -220,9 +247,11 @@
     cursor: pointer;
     list-style: none;
 }
+
 .apex-faq-item summary::-webkit-details-marker {
     display: none;
 }
+
 .apex-faq-item summary::after {
     position: absolute;
     right: 2px;
@@ -235,25 +264,30 @@
     transform: translateY(-70%) rotate(45deg);
     transition: transform .2s ease;
 }
+
 .apex-faq-item[open] summary::after {
     transform: translateY(-25%) rotate(225deg);
 }
+
 .apex-faq-item summary:focus-visible {
     outline: 2px solid #ef5a47;
     outline-offset: 4px;
 }
-.apex-faq-item > p,
-.apex-faq-item > ul {
+
+.apex-faq-item>p,
+.apex-faq-item>ul {
     max-width: 700px;
     margin: -2px 38px 20px 0;
     color: #bcb6b4;
     font-size: 16px;
     line-height: 1.85;
 }
-.apex-faq-item > ul {
+
+.apex-faq-item>ul {
     padding-left: 22px;
 }
-.apex-faq-item li + li {
+
+.apex-faq-item li+li {
     margin-top: 8px;
 }
 
@@ -263,6 +297,7 @@
     align-items: center;
     gap: 30px;
 }
+
 .desktop-nav a {
     position: relative;
     color: #ffffff;
@@ -272,6 +307,7 @@
     font-weight: 500;
     transition: color 0.3s ease;
 }
+
 .desktop-nav a::after {
     content: "";
     position: absolute;
@@ -282,13 +318,16 @@
     background: #f36b3b;
     transition: width 0.3s ease;
 }
+
 .desktop-nav a:hover {
     color: #f36b3b;
 }
+
 .desktop-nav a:hover::after,
 .desktop-nav a.active::after {
     width: 100%;
 }
+
 .desktop-nav a.active {
     color: #f36b3b;
 }
@@ -299,12 +338,15 @@
     .desktop-nav {
         gap: 20px;
     }
+
     .desktop-nav a {
         font-size: 13px;
     }
+
     .ecosystem-points {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .localization-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -317,45 +359,58 @@
     .desktop-nav {
         gap: 15px;
     }
+
     .desktop-nav a {
         font-size: 12px;
     }
+
     .apex-ecosystem {
         padding: 90px 0;
     }
+
     .apex-localization {
         padding: 90px 0;
     }
+
     .apex-faq {
         padding: 75px 24px;
     }
+
     .ecosystem-points {
         grid-template-columns: 1fr;
     }
+
     .localization-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 /* MOBILE  */
 @media (max-width: 768px) {
     .desktop-nav {
         display: none;
     }
+
     .apex-ecosystem {
         padding: 75px 0;
     }
+
     .apex-localization {
         padding: 75px 0;
     }
+
     .apex-faq {
         padding: 65px 20px;
     }
+
     .ecosystem-content h2 {
         font-size: 42px;
     }
-    .ecosystem-content > p {
-      font-size: 16px;
+
+    .ecosystem-content>p {
+        font-size: 16px;
     }
+
     .ecosystem-points {
         margin-top: 40px;
 
@@ -363,47 +418,60 @@
 
         gap: 15px;
     }
-    .ecosystem-points > div {
+
+    .ecosystem-points>div {
         min-height: auto;
     }
+
     .localization-heading {
         margin-bottom: 40px;
     }
+
     .localization-heading h2 {
         font-size: 42px;
     }
+
     .localization-heading p {
         font-size: 16px;
     }
+
     .localization-grid {
         grid-template-columns: 1fr;
     }
-    .localization-grid > div {
+
+    .localization-grid>div {
         min-height: auto;
     }
 }
+
 @media (max-width: 480px) {
     .apex-ecosystem {
         padding: 60px 0;
     }
+
     .apex-localization {
         padding: 60px 0;
     }
+
     .apex-faq {
         padding: 55px 18px;
     }
+
     .ecosystem-content h2,
     .localization-heading h2 {
         font-size: 36px;
     }
-    .ecosystem-content > p {
+
+    .ecosystem-content>p {
         font-size: 16px;
         line-height: 1.7;
     }
-    .ecosystem-points > div {
+
+    .ecosystem-points>div {
         padding: 22px;
     }
-    .localization-grid > div {
+
+    .localization-grid>div {
         padding: 25px 20px;
     }
 }

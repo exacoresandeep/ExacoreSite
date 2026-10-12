@@ -3,23 +3,28 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 html {
     scroll-behavior: smooth;
 }
+
 body {
     font-family: "Inter", sans-serif;
     color: #222;
     background: #fff;
 }
+
 a {
     text-decoration: none;
     color: inherit;
 }
+
 .logo img {
-  width: 150px;
-  height: auto;
-  display: block;
+    width: 150px;
+    height: auto;
+    display: block;
 }
+
 /*  HEADER */
 
 .about-header {
@@ -35,31 +40,37 @@ a {
     z-index: 20;
     color: white;
 }
+
 .about-logo {
     display: flex;
     flex-direction: column;
 }
+
 .about-logo span {
     font-family: "Manrope", sans-serif;
     font-size: 18px;
     font-weight: 800;
     letter-spacing: 1px;
 }
+
 .about-logo small {
     font-size: 6px;
     letter-spacing: 1.5px;
     margin-top: 3px;
 }
+
 .about-header nav {
     display: flex;
     align-items: center;
     gap: 25px;
 }
+
 .about-header nav a {
     font-size: 10px;
     color: rgba(255, 255, 255, 0.9);
     transition: 0.3s ease;
 }
+
 .about-header nav a:hover {
     color: #fff;
     transform: translateY(-2px);
@@ -78,6 +89,7 @@ a {
     background-size: cover;
     background-position: center;
 }
+
 .about-hero-overlay {
     position: absolute;
     inset: 0;
@@ -89,6 +101,7 @@ a {
             rgba(0, 0, 0, 0.65),
             transparent 70%);
 }
+
 .about-hero-content {
     position: relative;
     z-index: 2;
@@ -97,10 +110,12 @@ a {
     padding-bottom: 55px;
     color: white;
 }
+
 .about-hero-content p {
     font-size: 16px;
     margin-bottom: 12px;
 }
+
 .about-hero-content h1 {
     font-size: clamp(25px, 4vw, 48px);
     font-weight: 500;
@@ -113,6 +128,7 @@ a {
     background: white;
     padding: 100px clamp(32px, 8vw, 120px);
 }
+
 .about-intro-content {
     max-width: 1100px;
     margin: auto;
@@ -120,6 +136,7 @@ a {
     font-size: 18px;
     line-height: 1.9;
 }
+
 .about-intro-content p {
     margin-bottom: 16px;
 }
@@ -139,40 +156,48 @@ a {
             transparent 40%),
         #070707;
 }
+
 .defines-container {
     max-width: 1200px;
     margin: auto;
 }
+
 .defines-heading {
     margin-bottom: 42px;
 }
+
 .defines-heading h2 {
     font-family: "Manrope", sans-serif;
     font-size: 40px;
     font-weight: 500;
     margin-bottom: 16px;
 }
+
 .defines-heading p {
     max-width: 620px;
     color: #aaa;
     font-size: 16px;
     line-height: 1.8;
 }
+
 .defines-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
+
 .define-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     overflow: hidden;
     transition: 0.4s ease;
 }
+
 .define-card:hover {
     transform: translateY(-8px);
     border-color: rgba(255, 255, 255, 0.2);
 }
+
 .define-card img {
     width: 100%;
     height: 210px;
@@ -180,6 +205,7 @@ a {
     object-fit: cover;
     filter: brightness(0.8);
 }
+
 .define-content {
     padding: 26px;
 }
@@ -189,6 +215,7 @@ a {
     font-weight: 600;
     margin-bottom: 12px;
 }
+
 .define-content p {
     font-size: 16px;
     line-height: 1.8;
@@ -201,6 +228,7 @@ a {
     background: #fff;
     padding: 90px clamp(24px, 5vw, 72px);
 }
+
 .founder-container {
     max-width: 1000px;
     margin: auto;
@@ -223,6 +251,7 @@ a {
     line-height: 1.85;
     margin-bottom: 16px;
 }
+
 .founder-name {
     margin-top: 26px;
     color: #e22d1c;
@@ -250,7 +279,6 @@ a {
     object-fit: cover;
     filter: grayscale(20%);
 }
-
 
 /*   FOOTER */
 
@@ -302,12 +330,14 @@ a {
     color: #666;
     font-size: 10px;
 }
+
 /* RESPONSIVE */
 
 @media (max-width: 800px) {
     .about-header {
         padding: 0 20px;
     }
+
     .about-header nav {
         display: none;
     }
@@ -315,6 +345,7 @@ a {
     .about-hero {
         height: 300px;
     }
+
     .about-hero-content {
         padding-bottom: 35px;
     }
@@ -322,22 +353,27 @@ a {
     .about-intro {
         padding: 55px clamp(20px, 5vw, 32px);
     }
+
     .defines-grid {
         grid-template-columns: 1fr;
     }
+
     .define-card img {
         height: 240px;
     }
+
     .founder-container {
         grid-template-columns: 1fr;
 
         gap: 40px;
     }
+
     .founder-image {
         max-width: 400px;
 
         margin: auto;
     }
+
     .footer-inner {
         grid-template-columns: 1fr 1fr;
     }
@@ -348,18 +384,23 @@ a {
     .about-hero-content h1 {
         font-size: 27px;
     }
+
     .about-intro-content {
         font-size: 16px;
     }
+
     .founder-section {
         padding: 60px clamp(20px, 5vw, 32px);
     }
+
     .founder-content h2 {
         font-size: 36px;
     }
+
     .founder-content p {
         font-size: 14px;
     }
+
     .footer-inner {
         grid-template-columns: 1fr;
     }
@@ -387,6 +428,7 @@ a {
     max-width: 850px;
     margin: auto;
 }
+
 .pride-container h2 {
     font-family: "Manrope", sans-serif;
 
@@ -396,6 +438,7 @@ a {
 
     margin-bottom: 20px;
 }
+
 .pride-container h3 {
     font-family: "Manrope", sans-serif;
     font-size: 28px;
@@ -403,6 +446,7 @@ a {
     line-height: 1.4;
     margin-bottom: 25px;
 }
+
 .pride-container p {
     max-width: 900px;
     margin: 8px auto;
@@ -410,6 +454,7 @@ a {
     font-size: 16px;
     line-height: 1.9;
 }
+
 /* CONTACT SECTION */
 
 .about-contact {
@@ -417,6 +462,7 @@ a {
 
     padding: 90px clamp(24px, 5vw, 72px);
 }
+
 .about-contact-container {
     max-width: 1160px;
     margin: auto;
@@ -425,6 +471,7 @@ a {
     gap: 80px;
     align-items: start;
 }
+
 /* LEFT CONTENT */
 
 .about-contact-content h2 {
@@ -434,6 +481,7 @@ a {
     line-height: 1.12;
     margin-bottom: 24px;
 }
+
 .about-contact-content>p {
     color: #888;
     font-size: 16px;
@@ -441,12 +489,14 @@ a {
     max-width: 440px;
     margin-bottom: 28px;
 }
+
 .global-team-link {
     display: inline-block;
     color: #e33120;
     font-size: 13px;
     margin-bottom: 34px;
 }
+
 /* CONTACT DETAILS */
 
 .contact-info-grid {
@@ -468,6 +518,7 @@ a {
 
     color: #333;
 }
+
 /* CONTACT FORM */
 
 .about-contact-form {
@@ -476,17 +527,20 @@ a {
     background: #fff;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.07);
 }
+
 .form-two-column {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
     margin-bottom: 18px;
 }
+
 .about-contact-form label {
     display: block;
     font-size: 11px;
     color: #333;
 }
+
 .about-contact-form input,
 .about-contact-form textarea {
     width: 100%;
@@ -501,10 +555,12 @@ a {
     background: #fff;
     transition: 0.25s;
 }
+
 .about-contact-form input:focus,
 .about-contact-form textarea:focus {
     border-color: #e33120;
 }
+
 .about-contact-form textarea {
     resize: vertical;
 
@@ -520,15 +576,18 @@ a {
     color: #777;
     line-height: 1.5;
 }
+
 .about-contact-form .terms input {
     width: 14px;
     height: 14px;
     margin: 0;
     flex-shrink: 0;
 }
+
 .about-contact-form .terms span {
     font-size: 9px;
 }
+
 /* BUTTON */
 .about-contact-form button {
     display: block;
@@ -542,46 +601,58 @@ a {
     cursor: pointer;
     transition: 0.3s;
 }
+
 .about-contact-form button span {
     margin-left: 8px;
 }
+
 .about-contact-form button:hover {
     background: #e33120;
 
     color: white;
 }
+
 @media (max-width: 800px) {
     .about-contact-container {
         grid-template-columns: 1fr;
 
         gap: 42px;
     }
+
     .about-contact-form {
         padding: 32px;
     }
+
     .pride-container h2 {
         font-size: 30px;
     }
+
     .pride-container h3 {
         font-size: 22px;
     }
+
     .pride-container p {
         font-size: 16px;
     }
 }
+
 @media (max-width: 500px) {
     .form-two-column {
         grid-template-columns: 1fr;
     }
+
     .contact-info-grid {
         grid-template-columns: 1fr;
     }
+
     .about-contact-content h2 {
         font-size: 34px;
     }
+
     .about-contact {
         padding: 65px 20px;
     }
+
     .about-contact-form {
         padding: 24px;
     }

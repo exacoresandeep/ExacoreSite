@@ -190,6 +190,23 @@ img {
   line-height: 1.9;
 }
 
+.case-content .case-facts {
+  padding: 22px 26px;
+  border-left: 3px solid var(--case-red);
+  background: var(--case-soft);
+}
+
+.case-content ul {
+  padding-left: 22px;
+  color: #555;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.case-content li+li {
+  margin-top: 7px;
+}
+
 .highlight {
   color: var(--case-red);
   font-weight: 600;
@@ -291,6 +308,59 @@ img {
 
 .results-grid span {
   color: #ded8d6;
+  font-size: 13px;
+}
+
+.results-section>p {
+  margin: 30px 0 0;
+  color: #ded8d6;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.faq-section details {
+  padding: 18px 0;
+  border-bottom: 1px solid #e8e6e3;
+}
+
+.faq-section summary {
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.faq-section details p {
+  margin: 12px 0 0;
+  color: var(--case-muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.close-cta {
+  margin-top: 56px;
+  padding: 34px;
+  border: 1px solid #e8e6e3;
+  text-align: center;
+}
+
+.close-cta h2 {
+  margin-top: 0;
+}
+
+.close-cta p {
+  max-width: 650px;
+  margin: 0 auto 22px;
+  color: var(--case-muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.close-cta a {
+  display: inline-flex;
+  padding: 13px 18px;
+  background: var(--case-red);
+  color: #fff;
   font-size: 13px;
 }
 
@@ -401,7 +471,8 @@ img {
   }
 
   .solution-section,
-  .results-section {
+  .results-section,
+  .close-cta {
     padding: 24px;
   }
 

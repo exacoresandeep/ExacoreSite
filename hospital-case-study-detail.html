@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="How Oracle EBS can help healthcare teams simplify hospital operations and improve reporting.">
-  <title>Hospital Operations with Oracle EBS | Exacore Case Study</title>
+    content="How an Oracle EBS health check helped a multi-specialty hospital group reduce month-end close from 12 working days to 6.">
+  <title>Oracle EBS Month-End Close Optimization for Hospitals | Case Study | Exacore IT Solutions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -20,89 +20,124 @@
     <section class="case-detail">
       <div class="detail-container">
         <div class="detail-heading">
-          <h1>Optimizing Hospital Operations with Oracle EBS for Greater Efficiency</h1>
-          <p>Helping healthcare teams simplify operations, improve reporting and make informed decisions.</p>
+          <h1>How a Hospital Group Cut Its Oracle EBS Month-End Close from 12 Days to 6</h1>
+          <p>A slow close is usually a system problem, not a people problem. An Oracle EBS health check uncovered the bottlenecks behind one hospital group's month-end close and the fixes that cut the cycle in half.</p>
         </div>
 
         <div class="case-meta">
           <div class="oracle-partner">
             <span class="oracle-logo">ORACLE</span>
             <span class="partner-line"></span>
-            <span class="partner-text">E-Business Suite</span>
+            <span class="partner-text">E-Business Suite R12.2</span>
           </div>
-          <div class="case-date">Healthcare</div>
+          <div class="case-date">Healthcare | Performance tuning</div>
         </div>
 
         <div class="case-main-image">
-          <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1400&q=90"
-            alt="Healthcare professional reviewing hospital information">
+          <img src="images/hospital.png" alt="Hospital care team reviewing patient information together">
         </div>
 
         <div class="case-content">
-          <p>
-            Healthcare organizations coordinate a wide range of operational and administrative activities.
-            When information and processes are spread across disconnected systems, teams can spend more time
-            reconciling data and less time acting on it. Oracle E-Business Suite (EBS) can provide a connected
-            foundation for managing essential business operations and supporting more consistent reporting.
-          </p>
+          <p class="case-facts"><strong>Client:</strong> Anonymized multi-specialty hospital group with several branches<br>
+            <strong>Platform:</strong> Oracle E-Business Suite R12.2<br>
+            <strong>Modules:</strong> GL, AP, AR, Fixed Assets, Inventory and Purchasing<br>
+            <strong>Integration:</strong> Hospital Information System (HIS) to Oracle EBS<br>
+            <strong>Service:</strong> Oracle EBS health check and performance tuning</p>
 
-          <h2>The <span>operational challenge</span></h2>
-          <p>
-            Hospital teams need dependable access to operational and financial information to coordinate work,
-            monitor resources and respond to changing needs. Fragmented workflows can make it difficult to
-            maintain a clear view of activity across departments and to produce timely reports for decision-makers.
-          </p>
+          <h2>The <span>challenge</span></h2>
+          <p>Every day, the group's branches sent thousands of outpatient and inpatient billing entries, pharmacy sales and diagnostics from the HIS into Oracle EBS. Insurer claims, supplier invoices and equipment additions arrived at the same time, with much of the activity landing in the last week of the month.</p>
+          <p>Leadership considered adding finance headcount, while the finance team suspected a system bottleneck. Their day-to-day symptoms included:</p>
+          <ul>
+            <li>HIS billing loads and accounting programs sitting in Pending status for long stretches.</li>
+            <li>Custom revenue and insurer-ageing reports taking hours and often being resubmitted.</li>
+            <li>HIS-to-AR and pharmacy stock-to-GL differences surfacing only in the final days.</li>
+            <li>No clear view of which delays were driving the close.</li>
+          </ul>
 
-          <h2 class="section-title">Areas of focus</h2>
-          <div class="feature-grid">
-            <div class="feature-card">
-              <div class="feature-number">01</div>
-              <h3>Connected processes</h3>
-              <p>Bring key administrative workflows into a more consistent enterprise system.</p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-number">02</div>
-              <h3>Resource visibility</h3>
-              <p>Support better visibility into operational and supply information used by teams.</p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-number">03</div>
-              <h3>Clearer reporting</h3>
-              <p>Make it easier for teams to access organized information for operational reporting.</p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-number">04</div>
-              <h3>Informed decisions</h3>
-              <p>Help decision-makers use more consistent information to guide day-to-day operations.</p>
-            </div>
-          </div>
+          <h2>Our approach: an <span>Oracle EBS health check</span></h2>
+          <p>We reviewed concurrent request history, database performance data and reconciliation patterns across several closing cycles, focusing on three areas commonly behind a slow Oracle EBS close.</p>
 
           <section class="solution-section">
-            <h2>How Oracle EBS helps</h2>
-            <p>
-              Oracle EBS can connect enterprise workflows and reporting across finance, procurement and other
-              administrative functions. With processes configured to suit the organization's requirements,
-              healthcare teams can reduce avoidable manual handoffs, improve access to operational information
-              and support more coordinated decision-making.
-            </p>
+            <h2>1. Concurrent program tuning</h2>
+            <p><strong>What we found:</strong> Interface loads, Auto Invoice, Create Accounting and Transfer to GL shared the Standard Manager with reports and maintenance jobs. Statistics gathering and purge programs ran during close. New HIS service codes and departments lacked matching EBS setup, causing repeated Auto Invoice failures and manual resubmissions.</p>
+            <p><strong>What we fixed:</strong></p>
+            <ul>
+              <li>Created dedicated concurrent manager queues and work shifts for close-critical programs.</li>
+              <li>Moved maintenance jobs outside the close window.</li>
+              <li>Validated HIS service-code and department mapping before each load.</li>
+              <li>Added failure alerts so issues became visible in minutes, not hours.</li>
+            </ul>
+          </section>
+
+          <section class="solution-section">
+            <h2>2. Custom report performance</h2>
+            <p><strong>What we found:</strong> The departmental revenue and insurer-ageing report took about four hours. It processed records row by row in PL/SQL, joined accounting tables without selective filters and ran against stale optimizer statistics. The pharmacy stock valuation report scanned every branch in one run.</p>
+            <p><strong>What we fixed:</strong></p>
+            <ul>
+              <li>Rewrote the logic as set-based SQL and added a supporting index.</li>
+              <li>Refreshed statistics on the affected tables.</li>
+              <li>Split reports by branch so they could run in parallel and off-peak.</li>
+            </ul>
+            <p>The longest report dropped from about four hours to about 25 minutes.</p>
+          </section>
+
+          <section class="solution-section">
+            <h2>3. Subledger-to-GL reconciliation</h2>
+            <p><strong>What we found:</strong> Differences were discovered at the end of close, when there was least time to investigate. Common causes included:</p>
+            <ul>
+              <li>Cancelled bills, refunds and credit notes posted late from the HIS.</li>
+              <li>Insurer claim adjustments and write-offs recorded in the final days.</li>
+              <li>Pharmacy and consumables inventory valuation not matching the GL.</li>
+              <li>Medical equipment placed in service but not capitalized on time.</li>
+            </ul>
+            <p><strong>What we fixed:</strong></p>
+            <ul>
+              <li>Introduced a daily HIS-to-AR control-total check.</li>
+              <li>Set up weekly subledger-to-GL reconciliation with exception reports for unaccounted and errored transactions.</li>
+              <li>Added an asset capitalization checkpoint to the close calendar.</li>
+              <li>Assigned a named owner for each module and branch.</li>
+            </ul>
           </section>
 
           <section class="results-section">
-            <h2>Business outcomes</h2>
+            <h2>Results after two closing cycles</h2>
             <div class="results-grid">
               <div>
-                <strong>Clearer</strong>
-                <span>Operational reporting</span>
+                <strong>6 days</strong>
+                <span>Month-end close, down from 12 working days</span>
               </div>
               <div>
-                <strong>Simpler</strong>
-                <span>Administrative workflows</span>
+                <strong>25 min</strong>
+                <span>Longest custom report, down from about 4 hours</span>
               </div>
               <div>
-                <strong>Better</strong>
-                <span>Informed decisions</span>
+                <strong>Daily</strong>
+                <span>HIS-to-AR reconciliation, replacing a last-minute scramble</span>
               </div>
             </div>
+            <p>Reconciliation differences were found earlier in the cycle. Close overtime dropped, management reports reached leadership sooner and the headcount plan was shelved.</p>
+          </section>
+
+          <section class="faq-section">
+            <h2>Frequently asked <span>questions</span></h2>
+            <details>
+              <summary>Why is month-end close slow in Oracle EBS?</summary>
+              <p>Common causes include queued or failing concurrent programs, custom reports that run for hours and subledger differences found late in the close.</p>
+            </details>
+            <details>
+              <summary>What does an Oracle EBS health check include?</summary>
+              <p>It reviews concurrent processing, custom report performance and subledger-to-GL reconciliation, then produces a prioritized list of fixes.</p>
+            </details>
+            <details>
+              <summary>Does the review cover our Hospital Information System interface?</summary>
+              <p>Yes. Mapping and timing issues between the HIS and Oracle EBS often delay close, so the interface is part of the review.</p>
+            </details>
+          </section>
+
+          <section class="close-cta">
+            <h2>Is your month-end close taking too long?</h2>
+            <p>Tell us about your close cycle. We will review concurrent programs, custom reports and subledger reconciliation, then send you a clear list of what to fix first.</p>
+            <a href="index.html#contact">Talk to our Oracle EBS team</a>
           </section>
 
           <div class="back-button">

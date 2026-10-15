@@ -318,6 +318,37 @@ img {
   line-height: 1.8;
 }
 
+.comparison-table-wrap {
+  overflow-x: auto;
+  margin-top: 28px;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #ded8d6;
+  font-size: 14px;
+  text-align: left;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 15px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.comparison-table thead th {
+  color: #ff5a4d;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.comparison-table tbody th {
+  color: #fff;
+  font-weight: 600;
+}
+
 .faq-section details {
   padding: 18px 0;
   border-bottom: 1px solid #e8e6e3;

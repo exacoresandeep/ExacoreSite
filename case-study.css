@@ -255,7 +255,7 @@ img {
 .feature-card h3 {
   margin: 18px 0 8px;
   font-family: Manrope, Inter, sans-serif;
-  font-size: 19px;
+  font-size: 16px;
 }
 
 .feature-card p {
@@ -308,13 +308,13 @@ img {
 
 .results-grid span {
   color: #ded8d6;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .results-section>p {
   margin: 30px 0 0;
   color: #ded8d6;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.8;
 }
 
@@ -356,7 +356,7 @@ img {
 
 .faq-section summary {
   font-family: Manrope, Inter, sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
   cursor: pointer;
 }
@@ -364,7 +364,7 @@ img {
 .faq-section details p {
   margin: 12px 0 0;
   color: var(--case-muted);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.8;
 }
 
@@ -383,7 +383,7 @@ img {
   max-width: 650px;
   margin: 0 auto 22px;
   color: var(--case-muted);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.8;
 }
 
@@ -392,7 +392,7 @@ img {
   padding: 13px 18px;
   background: var(--case-red);
   color: #fff;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .back-button {
@@ -407,7 +407,7 @@ img {
   padding: 13px 18px;
   border: 1px solid var(--case-red);
   color: var(--case-red);
-  font-size: 13px;
+  font-size: 14px;
   transition: background 0.2s ease, color 0.2s ease;
 }
 

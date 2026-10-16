@@ -54,7 +54,7 @@ a {
 }
 
 .about-logo small {
-    font-size: 6px;
+    font-size: 16px;
     letter-spacing: 1.5px;
     margin-top: 3px;
 }
@@ -66,7 +66,7 @@ a {
 }
 
 .about-header nav a {
-    font-size: 10px;
+    font-size: 16px;
     color: rgba(255, 255, 255, 0.9);
     transition: 0.3s ease;
 }
@@ -261,7 +261,7 @@ a {
 
 .founder-content span {
     color: #777;
-    font-size: 13px;
+    font-size: 16px;
 }
 
 .founder-image {
@@ -301,7 +301,7 @@ a {
 }
 
 .footer-inner h4 {
-    font-size: 13px;
+    font-size: 16px;
     margin-bottom: 15px;
 }
 
@@ -309,7 +309,7 @@ a {
 .footer-inner a {
     display: block;
     color: #999;
-    font-size: 11px;
+    font-size: 16px;
     line-height: 2;
     transition: 0.3s;
 }
@@ -328,7 +328,7 @@ a {
     border-top: 1px solid #222;
     text-align: center;
     color: #666;
-    font-size: 10px;
+    font-size: 16px;
 }
 
 /* RESPONSIVE */
@@ -398,7 +398,7 @@ a {
     }
 
     .founder-content p {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .footer-inner {
@@ -493,7 +493,7 @@ a {
 .global-team-link {
     display: inline-block;
     color: #e33120;
-    font-size: 13px;
+    font-size: 16px;
     margin-bottom: 34px;
 }
 
@@ -508,14 +508,13 @@ a {
 .contact-info-grid span {
     display: block;
     color: #777;
-    font-size: 9px;
+    font-size: 16px;
     letter-spacing: 1px;
     margin-bottom: 6px;
 }
 
 .contact-info-grid p {
-    font-size: 12px;
-
+    font-size: 16px;
     color: #333;
 }
 
@@ -537,7 +536,7 @@ a {
 
 .about-contact-form label {
     display: block;
-    font-size: 11px;
+    font-size: 16px;
     color: #333;
 }
 
@@ -550,7 +549,7 @@ a {
     border: 1px solid #ddd;
     outline: none;
     font-family: "Inter", sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     color: #333;
     background: #fff;
     transition: 0.25s;
@@ -585,7 +584,7 @@ a {
 }
 
 .about-contact-form .terms span {
-    font-size: 9px;
+    font-size: 16px;
 }
 
 /* BUTTON */
@@ -597,7 +596,7 @@ a {
     border: 1px solid #e33120;
     background: transparent;
     color: #e33120;
-    font-size: 11px;
+    font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
 }

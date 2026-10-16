@@ -171,7 +171,7 @@
     display: inline-block;
     color: #f36b3b;
     font-family: "Inter", sans-serif;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.08em;
 }
@@ -340,7 +340,7 @@
     }
 
     .desktop-nav a {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .ecosystem-points {

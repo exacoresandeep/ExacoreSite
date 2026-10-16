@@ -173,7 +173,7 @@
 
 .fusion-localization .localization-grid span {
     color: #f36b3b;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
 }
 
@@ -339,13 +339,13 @@
 
 .fusion-contact-details span {
     color: #777;
-    font-size: 10px;
+    font-size: 16px;
     letter-spacing: .08em;
 }
 
 .fusion-contact-details a {
     color: #222;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     overflow-wrap: anywhere;
 }
@@ -418,7 +418,7 @@
     align-items: flex-start;
     gap: 9px;
     color: #555;
-    font-size: 11px;
+    font-size: 16px;
     line-height: 1.6;
 }
 
@@ -446,7 +446,7 @@
     background: #fff;
     color: #b32116;
     font: inherit;
-    font-size: 13px;
+    font-size: 14px;
     cursor: pointer;
     transition: background .2s ease, color .2s ease;
 }
@@ -531,7 +531,7 @@
     }
 
     .desktop-nav a {
-        font-size: 13px;
+        font-size: 16px;
     }
 
     .global-points {

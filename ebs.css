@@ -47,7 +47,7 @@ a {
 }
 
 .ebs-logo small {
-    font-size: 6px;
+    font-size: 12px;
     letter-spacing: 1.5px;
     margin-top: 3px;
 }
@@ -59,7 +59,7 @@ a {
 }
 
 .ebs-header nav a {
-    font-size: 10px;
+    font-size: 12px;
     color: rgba(255, 255, 255, .85);
     transition: .3s;
 }
@@ -103,7 +103,7 @@ a {
 }
 
 .ebs-hero-content p {
-    font-size: 15px;
+    font-size: 16px;
     margin-bottom: 15px;
 }
 
@@ -130,7 +130,7 @@ a {
 
 .section-label {
     display: inline-block;
-    font-size: 9px;
+    font-size: 16px;
     letter-spacing: 2px;
     color: #d63220;
     font-weight: 600;
@@ -162,7 +162,7 @@ a {
 .intro-text {
     max-width: 950px;
     color: #777;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.9;
 }
 
@@ -249,7 +249,7 @@ a {
 
 .card-number {
     color: #e13b28;
-    font-size: 13px;
+    font-size: 14px;
     letter-spacing: 1px;
 }
 
@@ -377,13 +377,13 @@ a {
 }
 
 .industry-card span {
-    font-size: 9px;
+    font-size: 14px;
     color: #ff786e;
 }
 
 .industry-card h3 {
     font-family: "Manrope", sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
 }
 
@@ -532,13 +532,13 @@ a {
 
 .ebs-contact-details span {
     color: #777;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: .08em;
 }
 
 .ebs-contact-details a {
     color: #222;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     overflow-wrap: anywhere;
 }
@@ -611,7 +611,7 @@ a {
     align-items: flex-start;
     gap: 9px;
     color: #555;
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.6;
 }
 
@@ -639,7 +639,7 @@ a {
     background: #fff;
     color: #b32116;
     font: inherit;
-    font-size: 13px;
+    font-size: 14px;
     cursor: pointer;
     transition: background .2s ease, color .2s ease;
 }
@@ -711,7 +711,7 @@ a {
     padding: 13px 20px;
     border: 1px solid #e13b28;
     color: white;
-    font-size: 10px;
+    font-size: 12px;
     transition: .3s;
 }
 
@@ -745,7 +745,7 @@ a {
 }
 
 .footer-brand small {
-    font-size: 6px;
+    font-size: 16px;
     letter-spacing: 1px;
 }
 
@@ -765,7 +765,7 @@ a {
 .footer-column a {
     display: block;
     color: #888;
-    font-size: 9px;
+    font-size: 16px;
     line-height: 2;
     transition: .3s;
 }
@@ -793,7 +793,7 @@ a {
     align-items: center;
     gap: 16px;
     color: #666;
-    font-size: 8px;
+    font-size: 16px;
 }
 
 .footer-bottom span {

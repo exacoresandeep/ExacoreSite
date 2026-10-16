@@ -51,7 +51,7 @@ img {
 .blog-eyebrow {
   margin: 0 0 18px;
   color: var(--blog-red);
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.2em;
 }
@@ -182,7 +182,7 @@ img {
 .blog-category {
   margin: 0 0 14px;
   color: var(--blog-red);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.15em;
 }
@@ -213,7 +213,7 @@ img {
   width: fit-content;
   margin-top: 22px;
   color: var(--blog-ink);
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 600;
 }
 

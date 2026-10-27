@@ -21,7 +21,8 @@
       <div class="detail-container">
         <div class="detail-heading">
           <h1>How a Hospital Group Cut Its Oracle EBS Month-End Close from 12 Days to 6</h1>
-          <p>A slow close is usually a system problem, not a people problem. An Oracle EBS health check uncovered the bottlenecks behind one hospital group's month-end close and the fixes that cut the cycle in half.</p>
+          <p>A slow close is usually a system problem, not a people problem. An Oracle EBS health check uncovered the
+            bottlenecks behind one hospital group's month-end close and the fixes that cut the cycle in half.</p>
         </div>
 
         <div class="case-meta">
@@ -38,15 +39,20 @@
         </div>
 
         <div class="case-content">
-          <p class="case-facts"><strong>Client:</strong> Anonymized multi-specialty hospital group with several branches<br>
+          <p class="case-facts"><strong>Client:</strong> Anonymized multi-specialty hospital group with several
+            branches<br>
             <strong>Platform:</strong> Oracle E-Business Suite R12.2<br>
             <strong>Modules:</strong> GL, AP, AR, Fixed Assets, Inventory and Purchasing<br>
             <strong>Integration:</strong> Hospital Information System (HIS) to Oracle EBS<br>
-            <strong>Service:</strong> Oracle EBS health check and performance tuning</p>
+            <strong>Service:</strong> Oracle EBS health check and performance tuning
+          </p>
 
           <h2>The <span>challenge</span></h2>
-          <p>Every day, the group's branches sent thousands of outpatient and inpatient billing entries, pharmacy sales and diagnostics from the HIS into Oracle EBS. Insurer claims, supplier invoices and equipment additions arrived at the same time, with much of the activity landing in the last week of the month.</p>
-          <p>Leadership considered adding finance headcount, while the finance team suspected a system bottleneck. Their day-to-day symptoms included:</p>
+          <p>Every day, the group's branches sent thousands of outpatient and inpatient billing entries, pharmacy sales
+            and diagnostics from the HIS into Oracle EBS. Insurer claims, supplier invoices and equipment additions
+            arrived at the same time, with much of the activity landing in the last week of the month.</p>
+          <p>Leadership considered adding finance headcount, while the finance team suspected a system bottleneck. Their
+            day-to-day symptoms included:</p>
           <ul>
             <li>HIS billing loads and accounting programs sitting in Pending status for long stretches.</li>
             <li>Custom revenue and insurer-ageing reports taking hours and often being resubmitted.</li>
@@ -55,11 +61,15 @@
           </ul>
 
           <h2>Our approach: an <span>Oracle EBS health check</span></h2>
-          <p>We reviewed concurrent request history, database performance data and reconciliation patterns across several closing cycles, focusing on three areas commonly behind a slow Oracle EBS close.</p>
+          <p>We reviewed concurrent request history, database performance data and reconciliation patterns across
+            several closing cycles, focusing on three areas commonly behind a slow Oracle EBS close.</p>
 
           <section class="solution-section">
             <h2>1. Concurrent program tuning</h2>
-            <p><strong>What we found:</strong> Interface loads, Auto Invoice, Create Accounting and Transfer to GL shared the Standard Manager with reports and maintenance jobs. Statistics gathering and purge programs ran during close. New HIS service codes and departments lacked matching EBS setup, causing repeated Auto Invoice failures and manual resubmissions.</p>
+            <p><strong>What we found:</strong> Interface loads, Auto Invoice, Create Accounting and Transfer to GL
+              shared the Standard Manager with reports and maintenance jobs. Statistics gathering and purge programs ran
+              during close. New HIS service codes and departments lacked matching EBS setup, causing repeated Auto
+              Invoice failures and manual resubmissions.</p>
             <p><strong>What we fixed:</strong></p>
             <ul>
               <li>Created dedicated concurrent manager queues and work shifts for close-critical programs.</li>
@@ -68,10 +78,12 @@
               <li>Added failure alerts so issues became visible in minutes, not hours.</li>
             </ul>
           </section>
-
           <section class="solution-section">
             <h2>2. Custom report performance</h2>
-            <p><strong>What we found:</strong> The departmental revenue and insurer-ageing report took about four hours. It processed records row by row in PL/SQL, joined accounting tables without selective filters and ran against stale optimizer statistics. The pharmacy stock valuation report scanned every branch in one run.</p>
+            <p><strong>What we found:</strong> The departmental revenue and insurer-ageing report took about four hours.
+              It processed records row by row in PL/SQL, joined accounting tables without selective filters and ran
+              against stale optimizer statistics. The pharmacy stock valuation report scanned every branch in one run.
+            </p>
             <p><strong>What we fixed:</strong></p>
             <ul>
               <li>Rewrote the logic as set-based SQL and added a supporting index.</li>
@@ -80,10 +92,10 @@
             </ul>
             <p>The longest report dropped from about four hours to about 25 minutes.</p>
           </section>
-
           <section class="solution-section">
             <h2>3. Subledger-to-GL reconciliation</h2>
-            <p><strong>What we found:</strong> Differences were discovered at the end of close, when there was least time to investigate. Common causes included:</p>
+            <p><strong>What we found:</strong> Differences were discovered at the end of close, when there was least
+              time to investigate. Common causes included:</p>
             <ul>
               <li>Cancelled bills, refunds and credit notes posted late from the HIS.</li>
               <li>Insurer claim adjustments and write-offs recorded in the final days.</li>
@@ -93,12 +105,12 @@
             <p><strong>What we fixed:</strong></p>
             <ul>
               <li>Introduced a daily HIS-to-AR control-total check.</li>
-              <li>Set up weekly subledger-to-GL reconciliation with exception reports for unaccounted and errored transactions.</li>
+              <li>Set up weekly subledger-to-GL reconciliation with exception reports for unaccounted and errored
+                transactions.</li>
               <li>Added an asset capitalization checkpoint to the close calendar.</li>
               <li>Assigned a named owner for each module and branch.</li>
             </ul>
           </section>
-
           <section class="results-section">
             <h2>Results after two closing cycles</h2>
             <div class="results-grid">
@@ -115,28 +127,31 @@
                 <span>HIS-to-AR reconciliation, replacing a last-minute scramble</span>
               </div>
             </div>
-            <p>Reconciliation differences were found earlier in the cycle. Close overtime dropped, management reports reached leadership sooner and the headcount plan was shelved.</p>
+            <p>Reconciliation differences were found earlier in the cycle. Close overtime dropped, management reports
+              reached leadership sooner and the headcount plan was shelved.</p>
           </section>
-
           <section class="faq-section">
             <h2>Frequently asked <span>questions</span></h2>
             <details>
               <summary>Why is month-end close slow in Oracle EBS?</summary>
-              <p>Common causes include queued or failing concurrent programs, custom reports that run for hours and subledger differences found late in the close.</p>
+              <p>Common causes include queued or failing concurrent programs, custom reports that run for hours and
+                subledger differences found late in the close.</p>
             </details>
             <details>
               <summary>What does an Oracle EBS health check include?</summary>
-              <p>It reviews concurrent processing, custom report performance and subledger-to-GL reconciliation, then produces a prioritized list of fixes.</p>
+              <p>It reviews concurrent processing, custom report performance and subledger-to-GL reconciliation, then
+                produces a prioritized list of fixes.</p>
             </details>
             <details>
               <summary>Does the review cover our Hospital Information System interface?</summary>
-              <p>Yes. Mapping and timing issues between the HIS and Oracle EBS often delay close, so the interface is part of the review.</p>
+              <p>Yes. Mapping and timing issues between the HIS and Oracle EBS often delay close, so the interface is
+                part of the review.</p>
             </details>
           </section>
-
           <section class="close-cta">
             <h2>Is your month-end close taking too long?</h2>
-            <p>Tell us about your close cycle. We will review concurrent programs, custom reports and subledger reconciliation, then send you a clear list of what to fix first.</p>
+            <p>Tell us about your close cycle. We will review concurrent programs, custom reports and subledger
+              reconciliation, then send you a clear list of what to fix first.</p>
             <a href="index.html#contact">Talk to our Oracle EBS team</a>
           </section>
 

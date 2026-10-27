@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Find the causes of Oracle ERP inventory cost and General Ledger mismatches, follow a practical reconciliation process, and prevent recurring differences.">
+  <title>Oracle ERP Item Cost and Ledger Not Matching? | Exacore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+8  <main class="blog-detail-page">
+    <a class="blog-detail-back" href="blog.html#latest-insights"><span aria-hidden="true">←</span> All insights</a>
+    <article class="blog-article">
+      <div class="blog-article-header">
+        <p class="blog-category">ORACLE COST MANAGEMENT</p>
+        <h1>Oracle ERP Item Cost and Ledger Not Matching? How to Find the Cause and Fix It for Good</h1>
+        <button class="blog-download-button" type="button" data-download-blog>Download Blog <span
+            aria-hidden="true">↓</span></button>
+        <p>Costing is one of the most common pain points for Oracle ERP users. When inventory value and GL balances do
+          not agree, finance teams can spend days looking for the cause. Most of the time, it traces back to costing
+          setup, receipt accruals or WIP variances that were never reviewed.</p>
+        <p>Whether your business runs Oracle E-Business Suite (EBS R12) or Oracle Fusion Cloud, the symptoms look the
+          same: the Inventory Value Report shows one number, the General Ledger shows another, and nobody can say which
+          one is right. This guide explains why the gap appears, where to look first, and how a structured approach,
+          backed by the right Oracle ERP consulting and support, can stop it from coming back.</p>
+        <div class="blog-article-meta"><span>Oracle ERP Insights</span><span>By Exacore Team</span></div>
+      </div>
+      <div class="blog-detail-layout">
+        <div class="blog-detail-content"> u
+          <img class="blog-detail-image"
+            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=85"
+            alt="Financial reports and a calculator on a desk">
+          <section class="blog-article-section">
+            <h2>Why Inventory and the General Ledger Drift Apart</h2>
+            <p>In Oracle Inventory and Oracle Cost Management, every material transaction creates a costed transaction
+              and accounting entries in the subledger. Those entries then flow to Oracle General Ledger through
+              Subledger Accounting. A mismatch means that somewhere along that chain, a transaction was costed
+              differently, accounted differently, or not transferred at all. The usual suspects fall into a few groups:
+            </p>
+            <ul>
+              <li><strong>Costing setup issues.</strong> The wrong costing method on an organization, missing or
+                incorrect item cost, unfrozen standard costs, cost updates run mid-period, or inconsistent cost element
+                and subelement mapping can all create value differences that grow quietly over time.</li>
+              <li><strong>Receipt accruals.</strong> Goods received but not yet invoiced sit in the Accrued Receipts
+                account. If the Accrual Reconciliation Report and Uninvoiced Receipts Report are not reviewed, old
+                receipts, price differences and exchange rate variances can pile up and distort the ledger.</li>
+              <li><strong>WIP variances.</strong> In Oracle Manufacturing and Oracle Process Manufacturing (OPM), jobs
+                that are complete but not closed carry unresolved material, resource and overhead variances. If they are
+                never reviewed and closed, the WIP accounts and inventory value stop agreeing.</li>
+              <li><strong>Unprocessed transactions.</strong> Pending, errored or uncosted transactions, and accounting
+                entries that were created but never transferred to GL, are among the most common reasons a period will
+                not reconcile.</li>
+              <li><strong>Manual journals.</strong> Direct entries to inventory control accounts bypass the subledger,
+                so the GL moves while the inventory value does not.</li>
+            </ul>
+          </section>
+          <section class="blog-article-section">
+            <h2>A Practical Reconciliation Approach</h2>
+            <p>Instead of searching randomly, work through the process in a fixed order. This is the same sequence used
+              in many Oracle ERP health check engagements.</p>
+            <ol>
+              <li><strong>Clear pending transactions.</strong> Before looking at balances, resolve all pending, errored
+                and uncosted transactions in the period. Run the cost processor and confirm nothing is left behind.</li>
+              <li><strong>Confirm accounting is complete.</strong> Make sure Create Accounting has run for every
+                subledger source and that all entries have been transferred to the General Ledger. Unaccounted
+                transactions are a frequent and easily fixed cause.</li>
+              <li><strong>Compare reports by account.</strong> Compare the inventory valuation and receiving value
+                reports against the GL balance for each inventory, accrual and WIP account, and isolate the account that
+                carries the difference.</li>
+              <li><strong>Review accruals and WIP.</strong> Work through the accrual reconciliation and WIP variance
+                reports, clear aged items, and close completed jobs so variances are posted to the right accounts.</li>
+              <li><strong>Validate setup.</strong> Check costing method, cost group, item cost and account derivation
+                rules. Setup errors are the root cause behind repeated differences, so fix the source rather than the
+                symptom.</li>
+            </ol>
+          </section>
+          <section class="blog-article-section">
+            <h2>Prevention Is Cheaper Than Month-End Firefighting</h2>
+            <p>A reconciliation that works only because someone spends three days on it every month is not a process; it
+              is a risk. Finance teams that close cleanly share a few habits: they review accruals and WIP variances
+              every period instead of at year end, restrict manual journals to inventory control accounts, freeze cost
+              changes before period close, and schedule exception reports so problems surface early.</p>
+            <p>Upgrades and migrations deserve extra attention. When a company moves from Oracle EBS to Fusion, or
+              upgrades within Oracle EBS R12, costing setup and opening balances need to be validated before go-live.
+              Differences carried across during an Oracle ERP migration or Oracle EBS to Fusion migration tend to
+              resurface months later, when they are far harder to trace.</p>
+          </section>
+          <section class="blog-article-section">
+            <h2>When to Bring in Oracle Experts</h2>
+            <p>Costing sits where supply chain, manufacturing and finance meet, which is why it is so often owned by
+              nobody. If your team keeps hitting the same variances, an Oracle ERP health check can trace the gap to its
+              root cause, whether that is setup, customization, integration or process. For ongoing stability, Oracle
+              ERP managed services and Oracle application support provide regular reconciliation reviews, period-close
+              monitoring and fast resolution of costing issues, so your internal team can focus on analysis instead of
+              investigation.</p>
+            <p>Exacore helps organizations across India, the GCC and the USA with Oracle EBS and Oracle Fusion Cloud
+              implementation, upgrade, migration, support and managed services. Our functional and technical consultants
+              understand Oracle Financials, Oracle Inventory, Oracle Procurement, Oracle Manufacturing and Oracle
+              General Ledger as one connected process, which is exactly what costing reconciliation requires.</p>
+          </section>
+          <section class="blog-article-section blog-article-takeaways">
+            <h2>Key Takeaways</h2>
+            <ul>
+              <li>Item cost and ledger mismatches almost always trace back to costing setup, receipt accruals or WIP
+                variances that went unreviewed.</li>
+              <li>Reconcile in order: pending transactions, accounting and transfer to GL, account-level comparison,
+                accruals and WIP, then setup.</li>
+              <li>Review accruals and variances every period, and validate costing carefully during any upgrade or
+                migration.</li>
+              <li>Regular health checks and managed support turn reconciliation from a recurring crisis into a routine
+                task.</li>
+            </ul>
+          </section>
+          <aside class="blog-article-cta">
+            <h2>Struggling with Oracle costing or ledger mismatches?</h2>
+            <p>Talk to Exacore about an Oracle ERP health check and get a clear view of where the differences start.</p>
+            <a class="blog-read-link" href="contact.html">Talk to Exacore <span aria-hidden="true">↗</span></a>
+          </aside>
+        </div>
+        <aside class="blog-related">
+          <h2>You might also like</h2>
+          <a class="blog-related-card" href="oracle-fusion-connected-enterprise.html">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+              alt="">
+            <span class="blog-related-category">ORACLE FUSION</span>
+            <h3>Building a More Connected Enterprise with Oracle Fusion Cloud</h3>
+            <span class="blog-related-read">Know more <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="blog-related-card" href="oracle-apex-business-applications.html">
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80"
+              alt="">
+            <span class="blog-related-category">ORACLE APEX</span>
+            <h3>Turning Business Needs into Applications with Oracle APEX</h3>
+            <span class="blog-related-read">Know more <span aria-hidden="true">→</span></span>
+          </a>
+        </aside>
+      </div>
+    </article>
+    <section class="blog-contact-cta">
+      <div>
+        <p class="blog-category">LET'S TALK</p>
+        <h2>Take the first step toward a cleaner close.</h2>
+        <p>Connect with our team to explore an Oracle ERP health check, costing support or your next transformation
+          initiative.</p>
+      </div>
+      <a href="contact.html">Connect with our team <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+  <script src="header.js"></script>
+  <script src="footer.js"></script>
+  <script src="blog-detail.js"></script>
+</body>
+</html>

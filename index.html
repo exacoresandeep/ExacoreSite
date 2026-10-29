@@ -46,8 +46,8 @@
   </div>
   <main>
     <section class="hero" id="home">
-      <video class="hero-video" autoplay loop muted playsinline preload="auto" aria-label="Exacore company video">
-        <source src="images/exacore-company-video.mp4" type="video/mp4">
+      <video class="hero-video" autoplay muted playsinline preload="auto" aria-label="Exacore homepage video">
+        <source src="images/Vedio-1.mp4" type="video/mp4">
         Your browser does not support HTML video.
       </video>
       <button class="hero-sound-toggle is-muted" type="button" aria-label="Turn sound on" aria-pressed="false"
@@ -67,7 +67,12 @@
           <a href="#services" class="text-link">Explore services <span>↓</span></a>
         </div>
       </div>
-      <div class="hero-dots"><span class="active"></span><span></span><span></span></div>
+      <div class="hero-dots" aria-label="Homepage video slides">
+        <button class="active" type="button" aria-label="Play video 1" aria-current="true"></button>
+        <button type="button" aria-label="Play video 2"></button>
+        <button type="button" aria-label="Play video 3"></button>
+        <button type="button" aria-label="Play video 4"></button>
+      </div>
       <div class="hero-scroll">SCROLL TO EXPLORE <span></span></div>
     </section>
     <section class="about section" id="about">

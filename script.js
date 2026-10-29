@@ -3,11 +3,49 @@ const progress = document.querySelector('.scroll-progress');
 const cursor = document.querySelector('.cursor-glow');
 const heroVideo = document.querySelector('.hero-video');
 const heroSoundToggle = document.querySelector('.hero-sound-toggle');
+const heroVideoSource = heroVideo?.querySelector('source');
+const heroVideoSlides = document.querySelectorAll('.hero-dots button');
+const heroVideoSources = [
+  'images/Vedio-1.mp4',
+  'images/Vedio-2.mp4',
+  'images/Vedio-3.mp4',
+  'images/Vedio-4.mp4'
+];
 
-if (heroVideo) {
+if (heroVideo && heroVideoSource && heroVideoSlides.length === heroVideoSources.length) {
+  let activeHeroVideo = 0;
+
+  const playHeroVideo = (index) => {
+    activeHeroVideo = index;
+    heroVideoSource.src = heroVideoSources[index];
+    heroVideo.load();
+    heroVideoSlides.forEach((slide, slideIndex) => {
+      const isActive = slideIndex === index;
+      slide.classList.toggle('active', isActive);
+      if (isActive) {
+        slide.setAttribute('aria-current', 'true');
+      } else {
+        slide.removeAttribute('aria-current');
+      }
+    });
+    heroVideo.play().catch(error => {
+      console.warn('Unable to play the homepage video:', error);
+    });
+  };
+
+  heroVideo.addEventListener('ended', () => {
+    playHeroVideo((activeHeroVideo + 1) % heroVideoSources.length);
+  });
+  heroVideoSlides.forEach((slide, index) => {
+    slide.addEventListener('click', () => playHeroVideo(index));
+  });
+  heroVideo.addEventListener('error', () => {
+    console.error('Unable to load the homepage video:', heroVideoSources[activeHeroVideo]);
+  });
+
   heroVideo.volume = 0.6;
   heroVideo.play().catch(error => {
-    console.warn('Sound-on autoplay was blocked by the browser. Use the video controls to start playback.', error);
+    console.warn('Unable to play the homepage video:', error);
   });
 }
 

@@ -386,11 +386,14 @@ p {
   gap: 4px
 }
 
-.hero-dots span {
+.hero-dots button {
   height: 2px;
   width: 34px;
+  padding: 0;
+  border: 0;
   background: #fff;
-  opacity: .4
+  opacity: .4;
+  cursor: pointer
 }
 
 .hero-dots .active {

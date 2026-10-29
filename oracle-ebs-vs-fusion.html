@@ -21,8 +21,8 @@
       <div class="blog-article-header">
         <p class="blog-category">ORACLE ERP STRATEGY</p>
         <h1>Stay on Oracle EBS or Move to Fusion? A Practical Guide for Finance and IT Leaders</h1>
-        <button class="blog-download-button" type="button" data-download-blog>Download Blog <span
-            aria-hidden="true">↓</span></button>
+        <!-- <button class="blog-download-button" type="button" data-download-blog>Download Blog <span
+            aria-hidden="true">↓</span></button> -->
         <p>Oracle E-Business Suite (EBS) R12 supports finance, supply chain, manufacturing and HR operations worldwide.
           Meanwhile, Oracle Fusion Cloud offers modern ERP capabilities, embedded analytics, AI features and regular
           updates.</p>
@@ -168,13 +168,63 @@
         </aside>
       </div>
     </article>
-    <section class="blog-contact-cta">
-      <div>
-        <p class="blog-category">LET'S TALK</p>
-        <h2>Find the right path for your Oracle ERP environment.</h2>
-        <p>Connect with our team to explore EBS support, modernization and Fusion migration options.</p>
+    <section class="blog-contact-section" aria-labelledby="blog-contact-title">
+      <div class="blog-contact-intro">
+        <h2 id="blog-contact-title">Take The First Step<br>Toward Innovation</h2>
+        <p>Connect with us to explore how our tailored solutions can drive growth, efficiency, and digital
+          transformation for your business.</p>
+        <h3>Connect with Our Global Team</h3>
+        <div class="blog-contact-details">
+          <div>
+            <span>Sales</span>
+            <a href="tel:+919995236160">+91 9995236160</a>
+          </div>
+          <div>
+            <span>Email</span>
+            <a href="mailto:info@exacoreitsolutions.com">info@exacoreitsolutions.com</a>
+          </div>
+          <div>
+            <span>HR Enquiry</span>
+            <a href="tel:+918138916160">+91 8138916160</a>
+          </div>
+          <div>
+            <span>Career</span>
+            <a href="mailto:career@exacoreitsolutions.com">career@exacoreitsolutions.com</a>
+          </div>
+        </div>
       </div>
-      <a href="contact.html">Connect with our team <span aria-hidden="true">↗</span></a>
+      <form class="blog-contact-form" action="mailto:info@exacoreitsolutions.com" method="post"
+        enctype="text/plain">
+        <div class="blog-contact-form-row">
+          <label for="blog-first-name">First name <span>*</span>
+            <input id="blog-first-name" type="text" name="First name" placeholder="Enter first name" required>
+          </label>
+          <label for="blog-last-name">Last name <span>*</span>
+            <input id="blog-last-name" type="text" name="Last name" placeholder="Enter last name" required>
+          </label>
+        </div>
+        <div class="blog-contact-form-row">
+          <label for="blog-primary-email">Primary Email <span>*</span>
+            <input id="blog-primary-email" type="email" name="Email" placeholder="Enter primary email ID" required>
+          </label>
+          <label for="blog-phone">Phone <span>*</span>
+            <span class="blog-contact-phone">
+              <select name="Country code" aria-label="Country calling code">
+                <option value="+91" selected>🇮🇳</option>
+                <option value="+1">🇺🇸</option>
+                <option value="+44">🇬🇧</option>
+              </select>
+              <input id="blog-phone" type="tel" name="Phone" placeholder="+91" required>
+            </span>
+          </label>
+        </div>
+        <label class="blog-contact-message" for="blog-message">Tell us more <span>*</span>
+          <textarea id="blog-message" name="Message" rows="5" placeholder="Brief about your project" required></textarea>
+        </label>
+        <p class="blog-contact-terms">By clicking the button below, you agree to our <a href="contact.html">Terms &amp;
+            Conditions</a> and acknowledge our <a href="contact.html">Privacy Policy</a>.</p>
+        <button type="submit">Send enquiry <span aria-hidden="true">→</span></button>
+      </form>
     </section>
   </main>
   <script src="header.js"></script>

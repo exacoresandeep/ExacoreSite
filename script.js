@@ -189,10 +189,9 @@ const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
 
 // Subtle hero parallax
-const heroMedia = document.querySelector('.hero-media');
 window.addEventListener('scroll', () => {
-  if (window.scrollY < window.innerHeight) {
-    heroMedia.style.transform = `scale(1.05) translateY(${window.scrollY * .08}px)`;
+  if (heroVideo && window.scrollY < window.innerHeight) {
+    heroVideo.style.transform = `scale(1.05) translateY(${window.scrollY * .08}px)`;
   }
 });
 /* NAVIGATION HOVER PANELS */

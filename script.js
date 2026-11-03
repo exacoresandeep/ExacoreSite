@@ -86,18 +86,27 @@ window.addEventListener('pointermove', e => {
 const menuBtn = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
 
-menuBtn.addEventListener('click', () => {
-  const open = mobileMenu.classList.toggle('open');
+const setMenuOpen = open => {
+  mobileMenu.classList.toggle('open', open);
+  mobileMenu.setAttribute('aria-hidden', String(!open));
   document.body.classList.toggle('menu-open', open);
-  menuBtn.setAttribute('aria-expanded', open);
+  menuBtn.setAttribute('aria-expanded', String(open));
+  menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+};
+
+menuBtn.addEventListener('click', () => {
+  setMenuOpen(menuBtn.getAttribute('aria-expanded') !== 'true');
 });
 
 document.querySelectorAll('.mobile-menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-    document.body.classList.remove('menu-open');
-    menuBtn.setAttribute('aria-expanded', 'false');
-  });
+  link.addEventListener('click', () => setMenuOpen(false));
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') {
+    setMenuOpen(false);
+    menuBtn.focus();
+  }
 });
 
 // Reveal on scroll

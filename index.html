@@ -30,12 +30,15 @@
       <a href="blog.html">Blog</a>
       <a href="careers.html">Careers</a>
       <a href="contact.html">Contact Us</a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
     </nav>
-    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span>
     </button>
   </header>
-  <div class="mobile-menu">
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <a href="about.html">About Us</a>
     <a href="ebs.html">Oracle EBS</a>
     <a href="fusion.html">Oracle Fusion</a>

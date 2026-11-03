@@ -131,7 +131,7 @@
 }
 
 .shared-menu-toggle {
-  display: none;
+  display: block;
   flex: 0 0 42px;
   width: 42px;
   height: 42px;

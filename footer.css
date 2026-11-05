@@ -20,7 +20,7 @@
   width: calc(100% - 140px);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.1fr 1.3fr 1.2fr 1.4fr 1.4fr 1.8fr;
+  grid-template-columns: 1.1fr 1.3fr 1.2fr 1.5fr 1.3fr;
   align-items: start;
   gap: 30px 36px;
   padding: 0 0 24px;
@@ -50,7 +50,9 @@
 }
 
 .footer .footer-column a,
-.footer .footer-column p {
+.footer .footer-column p,
+.footer .footer-address-stack h4,
+.footer .footer-address-stack p {
   width: fit-content;
   margin: 0;
   color: rgba(255, 255, 255, 0.78);
@@ -60,30 +62,32 @@
   transition: color 0.2s ease;
 }
 
-.footer .footer-column h4,
-.footer .footer-column a,
-.footer .footer-column p,
-.footer .footer-connect .footer-contact-row span,
-.footer .footer-connect .footer-contact-row a,
-.footer .copyright,
-.footer .footer-policy a,
-.footer .footer-policy span,
-.footer .footer-social a {
-  font-size: 14px;
-}
-
 .footer .footer-column a:hover,
 .footer .footer-column a:focus-visible {
   color: #fff;
 }
 
+.footer .footer-office {
+  gap: 10px;
+}
+
+.footer .footer-address-stack {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer .footer-address-stack h4 {
+  color: #f5f3f2;
+  font-weight: 500;
+}
+
 .footer .footer-office p,
-.footer .footer-registered-address p {
+.footer .footer-address-stack p {
   width: 100%;
   max-width: 290px;
   color: rgba(255, 255, 255, 0.76);
-  font-size: 14px;
-  line-height: 1.7;
 }
 
 .footer .footer-connect h4 {
@@ -92,23 +96,23 @@
 
 .footer .footer-connect .footer-contact-row {
   display: grid;
-  grid-template-columns: 60px minmax(0, 1fr);
+  grid-template-columns: 62px minmax(0, 1fr);
   align-items: baseline;
-  gap: 8px;
+  column-gap: 12px;
   width: 100%;
   margin: 0;
 }
 
 .footer .footer-connect .footer-contact-row span {
   color: rgba(255, 255, 255, 0.88);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
 }
 
 .footer .footer-connect .footer-contact-row a {
   overflow-wrap: anywhere;
   color: rgba(255, 255, 255, 0.78);
-  font-size: 12px;
+  font-size: 14px;
   text-decoration: none;
 }
 
@@ -257,7 +261,7 @@
     grid-column: 1 / -1;
   }
 
-  .footer .footer-registered-address {
+  .footer .footer-address-stack {
     grid-column: 1 / -1;
   }
 

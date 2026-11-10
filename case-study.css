@@ -399,6 +399,80 @@ img {
   font-size: 14px;
 }
 
+.case-study-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 700px;
+  margin: 28px auto 0;
+  text-align: left;
+}
+
+.case-study-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: var(--case-ink);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.case-study-form input {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #d6d2cf;
+  border-radius: 0;
+  background: #fff;
+  color: var(--case-ink);
+  font: inherit;
+}
+
+.case-study-form input:focus-visible {
+  outline: 2px solid var(--case-red);
+  outline-offset: 2px;
+}
+
+.case-study-form .case-study-form-note {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--case-muted);
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.case-study-form .case-study-form-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--case-muted);
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.case-study-form button {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 18px;
+  border: 0;
+  background: var(--case-red);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.case-study-form button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.case-study-form button:hover {
+  background: #cc2118;
+}
+
 .back-button {
   margin-top: 44px;
   text-align: center;
@@ -497,7 +571,8 @@ img {
   }
 
   .feature-grid,
-  .results-grid {
+  .results-grid,
+  .case-study-form {
     grid-template-columns: 1fr;
   }
 

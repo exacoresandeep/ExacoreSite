@@ -191,21 +191,27 @@
   line-height: 1;
 }
 
+.footer .footer-social a img {
+  display: block;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
 .footer .footer-social a[aria-label="LinkedIn"]::before {
-  content: "in";
+  content: none;
 }
 
 .footer .footer-social a[aria-label="X"]::before {
-  content: "X";
+  content: none;
 }
 
 .footer .footer-social a[aria-label="Facebook"]::before {
-  content: "f";
+  content: none;
 }
 
 .footer .footer-social a[aria-label="Instagram"]::before {
-  content: "◎";
-  font-size: 18px;
+  content: none;
 }
 
 .footer .footer-social a[aria-label="YouTube"]::before {

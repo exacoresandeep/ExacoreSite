@@ -91,12 +91,12 @@ function allowSubmission(): bool
 function createCaseStudyPdf(string $htmlPath, string $projectRoot): string
 {
     if (!is_file($htmlPath) || !is_readable($htmlPath)) {
-        throw new RuntimeException('The hospital case study page could not be read.');
+        throw new RuntimeException('The case study document could not be read.');
     }
 
     $source = file_get_contents($htmlPath);
     if ($source === false) {
-        throw new RuntimeException('The hospital case study page could not be read.');
+        throw new RuntimeException('The case study document could not be read.');
     }
 
     $document = new DOMDocument('1.0', 'UTF-8');
@@ -105,7 +105,7 @@ function createCaseStudyPdf(string $htmlPath, string $projectRoot): string
     libxml_clear_errors();
     libxml_use_internal_errors($previousLibxmlSetting);
     if (!$loaded) {
-        throw new RuntimeException('The hospital case study page could not be parsed.');
+        throw new RuntimeException('The case study document could not be parsed.');
     }
 
     $xpath = new DOMXPath($document);
@@ -116,7 +116,7 @@ function createCaseStudyPdf(string $htmlPath, string $projectRoot): string
         . ' or contains(concat(" ", normalize-space(@class), " "), " case-content ")]'
     );
     if ($contentNodes === false || $contentNodes->length === 0) {
-        throw new RuntimeException('The hospital case study content was not found.');
+        throw new RuntimeException('The case study document content was not found.');
     }
 
     $content = '';
@@ -163,9 +163,11 @@ function createCaseStudyPdf(string $htmlPath, string $projectRoot): string
         '<!doctype html><html lang="en"><head><meta charset="UTF-8"><style>'
         . '@page{margin:18mm 16mm}body{color:#171717;font:10pt "DejaVu Sans",sans-serif;line-height:1.55}'
         . 'h1,h2,h3{color:#171717;line-height:1.2}h1{font-size:23pt}h2{font-size:16pt;margin-top:22pt}'
-        . 'p,li{orphans:3;widows:3}.case-meta{border-bottom:1px solid #ddd;padding:8px 0;margin:12px 0}'
+        . 'p,li{orphans:3;widows:3}li{margin-bottom:5px}.case-meta{border-bottom:1px solid #ddd;padding:8px 0;margin:12px 0}'
         . '.oracle-logo{color:#c74634;font-weight:bold}.case-main-image img{width:100%;height:auto}'
         . '.solution-section,.results-section{page-break-inside:avoid}.results-section{background:#120a08;color:#fff;padding:16px}'
+        . 'table{width:100%;border-collapse:collapse;font-size:9pt}th,td{border:1px solid #bbb;padding:7px;text-align:left;vertical-align:top}'
+        . 'thead{background:#f1f1f1;color:#171717}'
         . 'img{max-width:100%}strong{font-weight:bold}</style></head><body>'
         . $content
         . '</body></html>',
@@ -182,12 +184,10 @@ function createSmtpMailer(): PHPMailer
     if (!in_array($encryption, ['tls', 'ssl'], true)) {
         throw new RuntimeException('SMTP_ENCRYPTION must be either tls or ssl.');
     }
-
     $port = filter_var(requiredEnvironmentValue('SMTP_PORT'), FILTER_VALIDATE_INT);
     if ($port === false || $port < 1 || $port > 65535) {
         throw new RuntimeException('SMTP_PORT must be a valid TCP port.');
     }
-
     $mailer = new PHPMailer(true);
     $mailer->isSMTP();
     $mailer->Host = requiredEnvironmentValue('SMTP_HOST');
@@ -203,7 +203,6 @@ function createSmtpMailer(): PHPMailer
         requiredEnvironmentValue('SMTP_FROM_EMAIL'),
         getenv('SMTP_FROM_NAME') ?: 'Exacore IT Solutions'
     );
-
     return $mailer;
 }
 
@@ -213,6 +212,9 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
 }
 
 try {
+    require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor'
+        . DIRECTORY_SEPARATOR . 'autoload.php';
+
     $firstName = cleanFormValue('first_name', 100);
     $lastName = cleanFormValue('last_name', 100);
     $companyName = cleanFormValue('company_name', 150);
@@ -222,13 +224,37 @@ try {
     if (filter_var($workEmail, FILTER_VALIDATE_EMAIL) === false) {
         respond(422, ['ok' => false, 'message' => 'Please enter a valid work email address.']);
     }
+    $caseStudyId = $_POST['case_study'] ?? 'hospital';
+    if (!is_string($caseStudyId)) {
+        respond(422, ['ok' => false, 'message' => 'Please select a valid case study.']);
+    }
+    $caseStudies = [
+        'hospital' => [
+            'document' => 'hospital-case-study-detail.html',
+            'label' => 'hospital Oracle EBS month-end close',
+            'leadSubject' => 'Hospital Oracle EBS case study enquiry',
+            'visitorSubject' => 'Your Oracle EBS Month-End Close Case Study',
+            'filename' => 'oracle-ebs-hospital-month-end-close-case-study.pdf',
+        ],
+        'automotive' => [
+            'document' => 'automotive-case-study-pdf.html',
+            'label' => 'automotive Oracle EBS implementation',
+            'leadSubject' => 'Automotive Oracle EBS case study enquiry',
+            'visitorSubject' => 'Your Oracle EBS Manufacturing Case Study',
+            'filename' => 'oracle-ebs-automotive-manufacturing-case-study.pdf',
+        ],
+    ];
+    if (!isset($caseStudies[$caseStudyId])) {
+        respond(422, ['ok' => false, 'message' => 'Please select a valid case study.']);
+    }
+    $caseStudy = $caseStudies[$caseStudyId];
     if (!allowSubmission()) {
         respond(429, ['ok' => false, 'message' => 'Too many submissions. Please try again later.']);
     }
 
     $projectRoot = dirname(__DIR__);
     $pdfContents = createCaseStudyPdf(
-        $projectRoot . DIRECTORY_SEPARATOR . 'hospital-case-study-detail.html',
+        $projectRoot . DIRECTORY_SEPARATOR . $caseStudy['document'],
         $projectRoot
     );
     $fullName = $firstName . ' ' . $lastName;
@@ -236,8 +262,8 @@ try {
     $leadMailer = createSmtpMailer();
     $leadMailer->addAddress(COMPANY_EMAIL);
     $leadMailer->addReplyTo($workEmail, $fullName);
-    $leadMailer->Subject = 'Hospital Oracle EBS case study enquiry';
-    $leadMailer->Body = "A visitor requested the Oracle EBS hospital case study PDF.\n\n"
+    $leadMailer->Subject = $caseStudy['leadSubject'];
+    $leadMailer->Body = "A visitor requested the {$caseStudy['label']} case study PDF.\n\n"
         . "Name: {$fullName}\n"
         . "Company: {$companyName}\n"
         . "Work email: {$workEmail}\n"
@@ -247,13 +273,13 @@ try {
 
     $visitorMailer = createSmtpMailer();
     $visitorMailer->addAddress($workEmail, $fullName);
-    $visitorMailer->Subject = 'Your Oracle EBS Month-End Close Case Study';
+    $visitorMailer->Subject = $caseStudy['visitorSubject'];
     $visitorMailer->Body = "Hello {$firstName},\n\n"
-        . "Thank you for your interest. The Oracle EBS hospital month-end close case study is attached.\n\n"
+        . "Thank you for your interest. The {$caseStudy['label']} case study is attached.\n\n"
         . "Exacore IT Solutions";
     $visitorMailer->addStringAttachment(
         $pdfContents,
-        'oracle-ebs-hospital-month-end-close-case-study.pdf',
+        $caseStudy['filename'],
         PHPMailer::ENCODING_BASE64,
         'application/pdf'
     );
@@ -264,7 +290,7 @@ try {
         'message' => 'The case study PDF has been emailed to your work email. Our team has also received your enquiry.'
     ]);
 } catch (Throwable $error) {
-    error_log('Hospital case study email failed: ' . $error->getMessage());
+    error_log('Case study email failed: ' . $error->getMessage());
     respond(500, [
         'ok' => false,
         'message' => 'We could not send the case study email right now. Please try again later or contact info@exacoreitsolutions.com.'

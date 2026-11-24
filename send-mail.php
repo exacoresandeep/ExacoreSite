@@ -21,8 +21,23 @@ try {
     $phone     = trim($_POST['phone'] ?? '');
     $message   = trim($_POST['message'] ?? '');
 
-    if (!$firstName || !$lastName || !$email || !$message) {
-        throw new Exception('Please fill all required fields.');
+    if (empty($_POST)) {
+        throw new Exception('No POST data received by PHP.');
+    }
+
+    if ($firstName === '' || $lastName === '' || $email === '' || $message === '') {
+
+        throw new Exception(
+            'Missing fields: ' .
+            json_encode([
+                'firstName' => $firstName,
+                'lastName' => $lastName,
+                'email' => $email,
+                'phone' => $phone,
+                'message' => $message,
+                'received_fields' => array_keys($_POST)
+            ])
+        );
     }
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {

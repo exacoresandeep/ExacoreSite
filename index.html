@@ -510,40 +510,47 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     const submitBtn = document.getElementById('submitBtn');
     const formMessage = document.getElementById('formMessage');
 
-    const formData = new FormData(form);
-
     submitBtn.disabled = true;
     submitBtn.innerHTML = 'Sending...';
 
-    formMessage.innerHTML = '';
-    formMessage.className = 'form-message';
+    formMessage.style.display = 'none';
 
     fetch('send-mail.php', {
         method: 'POST',
-        body: formData
+        body: new FormData(form)
     })
-    .then(response => response.json())
-    .then(data => {
+    .then(async response => {
 
-        if (data.status === 'success') {
+        const responseText = await response.text();
 
-            formMessage.textContent = data.message;
-            formMessage.classList.add('success');
+        console.log('Server response:', responseText);
 
-            form.reset();
+        let data;
 
-        } else {
-
-            formMessage.textContent = data.message;
-            formMessage.classList.add('error');
-
+        try {
+            data = JSON.parse(responseText);
+        } catch (error) {
+            throw new Error('Invalid server response: ' + responseText.substring(0, 500));
         }
+
+        if (!response.ok || data.status !== 'success') {
+            throw new Error(data.message || 'Email sending failed.');
+        }
+
+        formMessage.textContent = data.message;
+        formMessage.className = 'form-message success';
+        formMessage.style.display = 'block';
+
+        form.reset();
 
     })
     .catch(error => {
 
-        formMessage.textContent = 'Unable to send email. Please try again.';
-        formMessage.classList.add('error');
+        console.error('Email Error:', error);
+
+        formMessage.textContent = error.message;
+        formMessage.className = 'form-message error';
+        formMessage.style.display = 'block';
 
     })
     .finally(() => {
@@ -554,6 +561,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     });
 
 });
+
 
   </script>
 

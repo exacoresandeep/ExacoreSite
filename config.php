@@ -1,5 +1,6 @@
 
 <?php
+
 // config.php
 define('SMTP_HOST', 'exacoreitsolutions.com');
 define('SMTP_USERNAME', 'admin@exacoreitsolutions.com');

@@ -46,11 +46,11 @@ try {
         throw new Exception('Please accept Terms & Conditions.');
     }
 
-    $pdfPath = __DIR__ . '/pdf/company-profile.pdf';
+    // $pdfPath = __DIR__ . '/pdf/company-profile.pdf';
 
-    if (!file_exists($pdfPath)) {
-        throw new Exception('PDF attachment not found.');
-    }
+    // if (!file_exists($pdfPath)) {
+    //     throw new Exception('PDF attachment not found.');
+    // }
 
     $mail = new PHPMailer(true);
 
@@ -78,7 +78,7 @@ try {
 
     $mail->AltBody = "Hello $firstName,\n\nThank you for contacting us.";
 
-    $mail->addAttachment($pdfPath, 'Company-Profile.pdf');
+    //$mail->addAttachment($pdfPath, 'Company-Profile.pdf');
 
     $mail->send();
 

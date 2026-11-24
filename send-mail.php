@@ -85,12 +85,16 @@ try {
         'message' => 'Mail sent successfully. Please check your email for PDF.'
     ]);
 
-} catch (Exception $e) {
 
-    http_response_code(400);
+} catch (\Throwable $e) {
+
+    error_log('SMTP MAIL ERROR: ' . $e->getMessage());
+
+    http_response_code(500);
 
     echo json_encode([
         'status' => 'error',
         'message' => $e->getMessage()
     ]);
 }
+

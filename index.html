@@ -13,6 +13,29 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <style>
+.form-message {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    display: none;
+}
+
+.form-message.success {
+    display: block;
+    color: #198754;
+}
+
+.form-message.error {
+    display: block;
+    color: #dc3545;
+}
+
+#submitBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+</style>
 </head>
 
 <body>
@@ -410,24 +433,52 @@
             </div>
           </div>
         </div>
-        <form class="contact-form reveal delay-1" id="contactForm">
+        
+      <form class="contact-form reveal delay-1" id="contactForm">
+
           <div class="form-row">
-            <label>First name *<input required name="firstName" placeholder="Your first name"></label>
-            <label>Last name *<input required name="lastName" placeholder="Your last name"></label>
+              <label>First name *
+                  <input required name="firstName" placeholder="Your first name">
+              </label>
+
+              <label>Last name *
+                  <input required name="lastName" placeholder="Your last name">
+              </label>
           </div>
+
           <div class="form-row">
-            <label>Primary Email *<input required type="email" name="email" placeholder="name@company.com"></label>
-            <label>Phone<input name="phone" placeholder="+91"></label>
+              <label>Primary Email *
+                  <input required type="email" name="email" placeholder="name@company.com">
+              </label>
+
+              <label>Phone
+                  <input name="phone" placeholder="+91">
+              </label>
           </div>
-          <label>Tell us more<textarea required name="message" rows="5"
-              placeholder="Tell us about your project"></textarea></label>
-          <label class="checkbox"><input required type="checkbox">
-            <span>By clicking the button below, you agree to our <a href="contact.html">Terms &amp; Conditions</a> and
-              acknowledge our <a href="contact.html">Privacy Policy</a>.</span>
+
+          <label>Tell us more
+              <textarea required name="message" rows="5"
+                  placeholder="Tell us about your project"></textarea>
           </label>
-          <button class="btn btn-primary" type="submit">Send enquiry <span>→</span></button>
-          <div class="form-message" aria-live="polite"></div>
-        </form>
+
+          <label class="checkbox">
+              <input required type="checkbox" name="terms" value="1">
+              <span>
+                  By clicking the button below, you agree to our
+                  <a href="contact.html">Terms &amp; Conditions</a>
+                  and acknowledge our
+                  <a href="contact.html">Privacy Policy</a>.
+              </span>
+          </label>
+
+          <button class="btn btn-primary" type="submit" id="submitBtn">
+              Send enquiry <span>→</span>
+          </button>
+
+          <div class="form-message" id="formMessage" aria-live="polite"></div>
+
+      </form>
+
       </div>
     </section>
   </main>
@@ -449,6 +500,63 @@
   <script src="header.js"></script>
   <script src="footer.js"></script>
   <script src="script.js"></script>
+  <script>
+
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+
+    e.preventDefault();
+
+    const form = this;
+    const submitBtn = document.getElementById('submitBtn');
+    const formMessage = document.getElementById('formMessage');
+
+    const formData = new FormData(form);
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Sending...';
+
+    formMessage.innerHTML = '';
+    formMessage.className = 'form-message';
+
+    fetch('send-mail.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+
+        if (data.status === 'success') {
+
+            formMessage.textContent = data.message;
+            formMessage.classList.add('success');
+
+            form.reset();
+
+        } else {
+
+            formMessage.textContent = data.message;
+            formMessage.classList.add('error');
+
+        }
+
+    })
+    .catch(error => {
+
+        formMessage.textContent = 'Unable to send email. Please try again.';
+        formMessage.classList.add('error');
+
+    })
+    .finally(() => {
+
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Send enquiry <span>→</span>';
+
+    });
+
+});
+
+  </script>
+
 </body>
 
 </html>

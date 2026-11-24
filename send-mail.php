@@ -1,19 +1,19 @@
-
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
 header('Content-Type: application/json');
 
-require 'vendor/autoload.php';
-require 'config.php';
-
 try {
 
+    require_once __DIR__ . '/vendor/autoload.php';
+    require_once __DIR__ . '/config.php';
+
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-        throw new Exception('Invalid request.');
+        throw new Exception('Invalid request method.');
     }
+
+    error_log('CONTACT POST DATA: ' . print_r($_POST, true));
 
     $firstName = trim($_POST['firstName'] ?? '');
     $lastName  = trim($_POST['lastName'] ?? '');
@@ -21,34 +21,31 @@ try {
     $phone     = trim($_POST['phone'] ?? '');
     $message   = trim($_POST['message'] ?? '');
 
-    if (empty($_POST)) {
-        throw new Exception('No POST data received by PHP.');
+    $missing = [];
+
+    foreach ([
+        'firstName' => $firstName,
+        'lastName' => $lastName,
+        'email' => $email,
+        'message' => $message
+    ] as $field => $value) {
+        if ($value === '') {
+            $missing[] = $field;
+        }
     }
 
-    if ($firstName === '' || $lastName === '' || $email === '' || $message === '') {
-
-        throw new Exception(
-            'Missing fields: ' .
-            json_encode([
-                'firstName' => $firstName,
-                'lastName' => $lastName,
-                'email' => $email,
-                'phone' => $phone,
-                'message' => $message,
-                'received_fields' => array_keys($_POST)
-            ])
-        );
+    if (!empty($missing)) {
+        throw new Exception('Missing fields: ' . implode(', ', $missing));
     }
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        throw new Exception('Please enter a valid email address.');
+        throw new Exception('Invalid email address.');
     }
 
     if (empty($_POST['terms'])) {
-        throw new Exception('Please accept the Terms & Conditions.');
+        throw new Exception('Please accept Terms & Conditions.');
     }
 
-    // PDF attachment
     $pdfPath = __DIR__ . '/pdf/company-profile.pdf';
 
     if (!file_exists($pdfPath)) {
@@ -57,49 +54,38 @@ try {
 
     $mail = new PHPMailer(true);
 
-    // SMTP Configuration
     $mail->isSMTP();
     $mail->Host       = SMTP_HOST;
     $mail->SMTPAuth   = true;
     $mail->Username   = SMTP_USERNAME;
     $mail->Password   = SMTP_PASSWORD;
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port       = SMTP_PORT;
 
-    // Sender and recipient
     $mail->setFrom(FROM_EMAIL, FROM_NAME);
     $mail->addAddress($email, $firstName . ' ' . $lastName);
 
-    // Email content
     $mail->isHTML(true);
     $mail->Subject = 'Thank you for contacting ' . FROM_NAME;
 
-    $mail->Body = "
-        <h3>Hello " . htmlspecialchars($firstName) . ",</h3>
-
+    $mail->Body = '
+        <h3>Hello ' . htmlspecialchars($firstName, ENT_QUOTES, 'UTF-8') . ',</h3>
         <p>Thank you for contacting us.</p>
-
-        <p>Please find our company profile attached to this email.</p>
-
+        <p>Please find our company profile attached.</p>
         <p>We appreciate your interest and will get back to you soon.</p>
+        <p>Regards,<br>' . htmlspecialchars(FROM_NAME, ENT_QUOTES, 'UTF-8') . '</p>
+    ';
 
-        <br>
-        <p>Regards,<br>" . htmlspecialchars(FROM_NAME) . "</p>
-    ";
+    $mail->AltBody = "Hello $firstName,\n\nThank you for contacting us.";
 
-    $mail->AltBody = "Hello $firstName,\n\nThank you for contacting us. Please find our company profile attached.";
-
-    // Attach PDF
     $mail->addAttachment($pdfPath, 'Company-Profile.pdf');
 
-    // Send email
     $mail->send();
 
     echo json_encode([
         'status' => 'success',
         'message' => 'Mail sent successfully. Please check your email for PDF.'
     ]);
-
 
 } catch (\Throwable $e) {
 
@@ -112,4 +98,3 @@ try {
         'message' => $e->getMessage()
     ]);
 }
-

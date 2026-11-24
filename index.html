@@ -527,7 +527,18 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
         body: formData
     })
     .then(async response => {
-        const data = await response.json();
+        const responseText = await response.text();
+
+        console.log('HTTP Status:', response.status);
+        console.log('PHP Response:', responseText);
+
+        let data;
+
+        try {
+            data = JSON.parse(responseText);
+        } catch (error) {
+            throw new Error('PHP returned an empty or invalid response. Check PHP error logs.');
+        }
 
         if (!response.ok || data.status !== 'success') {
             throw new Error(data.message || 'Email sending failed.');

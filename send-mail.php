@@ -14,10 +14,10 @@ try {
     }
 
     error_log('REQUEST METHOD: ' . $_SERVER['REQUEST_METHOD']);
-error_log('CONTENT TYPE: ' . ($_SERVER['CONTENT_TYPE'] ?? ''));
-error_log('CONTENT LENGTH: ' . ($_SERVER['CONTENT_LENGTH'] ?? ''));
-error_log('POST DATA: ' . print_r($_POST, true));
-error_log('RAW INPUT: ' . file_get_contents('php://input'));
+    error_log('CONTENT TYPE: ' . ($_SERVER['CONTENT_TYPE'] ?? ''));
+    error_log('CONTENT LENGTH: ' . ($_SERVER['CONTENT_LENGTH'] ?? ''));
+    error_log('POST DATA: ' . print_r($_POST, true));
+    error_log('RAW INPUT: ' . file_get_contents('php://input'));
 
     $firstName = trim($_POST['firstName'] ?? '');
     $lastName  = trim($_POST['lastName'] ?? '');

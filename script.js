@@ -180,12 +180,12 @@ function closeModal() {
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
 // Contact form demo
-document.querySelector('#contactForm').addEventListener('submit', e => {
-  e.preventDefault();
-  const message = e.currentTarget.querySelector('.form-message');
-  message.textContent = 'Thank you. Your enquiry has been captured — connect this form to your backend/email API.';
-  e.currentTarget.reset();
-});
+// document.querySelector('#contactForm').addEventListener('submit', e => {
+//   e.preventDefault();
+//   const message = e.currentTarget.querySelector('.form-message');
+//   message.textContent = 'Thank you. Your enquiry has been captured — connect this form to your backend/email API.';
+//   e.currentTarget.reset();
+// });
 
 // Quick contact close
 document.querySelector('.quick-contact button').addEventListener('click', e => {

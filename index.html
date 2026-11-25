@@ -438,27 +438,27 @@
 
           <div class="form-row">
               <label>First name *
-                  <input required name="firstName" placeholder="Your first name">
+                  <input required name="firstName" value="" placeholder="Your first name">
               </label>
 
               <label>Last name *
-                  <input required name="lastName" placeholder="Your last name">
+                  <input required name="lastName" value=""  placeholder="Your last name">
               </label>
           </div>
 
           <div class="form-row">
               <label>Primary Email *
-                  <input required type="email" name="email" placeholder="name@company.com">
+                  <input required type="email" name="email" value=""  placeholder="name@company.com">
               </label>
 
               <label>Phone
-                  <input name="phone" placeholder="+91">
+                  <input name="phone" placeholder="+91" value="" >
               </label>
           </div>
 
           <label>Tell us more
               <textarea required name="message" rows="5"
-                  placeholder="Tell us about your project"></textarea>
+                  placeholder="Tell us about your project"  value="" ></textarea>
           </label>
 
           <label class="checkbox">
@@ -502,6 +502,7 @@
   <script src="script.js"></script>
   <script>
 
+
 document.getElementById('contactForm').addEventListener('submit', function (e) {
 
     e.preventDefault();
@@ -510,23 +511,25 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     const submitBtn = document.getElementById('submitBtn');
     const formMessage = document.getElementById('formMessage');
 
+    // Get form data
+    const formData = new FormData(form);
+
+    // Debug
+    console.log('Form Data:', [...formData.entries()]);
+
+    // Disable button
     submitBtn.disabled = true;
     submitBtn.innerHTML = 'Sending...';
 
     formMessage.style.display = 'none';
 
-    const formData = new FormData(form);
-
-    // Debug: check values before sending
-    for (let [key, value] of formData.entries()) {
-        console.log(key + ':', value);
-    }
-
+    // Send AJAX request
     fetch('send-mail.php', {
         method: 'POST',
         body: formData
     })
     .then(async response => {
+
         const responseText = await response.text();
 
         console.log('HTTP Status:', response.status);
@@ -537,31 +540,39 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
         try {
             data = JSON.parse(responseText);
         } catch (error) {
-            throw new Error('PHP returned an empty or invalid response. Check PHP error logs.');
+            throw new Error('Invalid server response. Please check PHP error logs.');
         }
 
         if (!response.ok || data.status !== 'success') {
-            throw new Error(data.message || 'Email sending failed.');
+            throw new Error(data.message || 'Unable to send enquiry.');
         }
 
+        // Success
         formMessage.textContent = data.message;
         formMessage.className = 'form-message success';
         formMessage.style.display = 'block';
+
+        // Reset form only after successful submission
         form.reset();
+
     })
     .catch(error => {
+
         console.error('Email Error:', error);
+
         formMessage.textContent = error.message;
         formMessage.className = 'form-message error';
         formMessage.style.display = 'block';
+
     })
     .finally(() => {
+
         submitBtn.disabled = false;
         submitBtn.innerHTML = 'Send enquiry <span>→</span>';
+
     });
 
 });
-
 
   </script>
 

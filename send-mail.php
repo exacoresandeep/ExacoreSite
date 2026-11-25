@@ -1,7 +1,11 @@
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
+require __DIR__ . '/libraries/PHPMailer/Exception.php';
+require __DIR__ . '/libraries/PHPMailer/PHPMailer.php';
+require __DIR__ . '/libraries/PHPMailer/SMTP.php';
 header('Content-Type: application/json');
 
 try {
@@ -13,11 +17,6 @@ try {
         throw new Exception('Invalid request method.');
     }
 
-    error_log('REQUEST METHOD: ' . $_SERVER['REQUEST_METHOD']);
-    error_log('CONTENT TYPE: ' . ($_SERVER['CONTENT_TYPE'] ?? ''));
-    error_log('CONTENT LENGTH: ' . ($_SERVER['CONTENT_LENGTH'] ?? ''));
-    error_log('POST DATA: ' . print_r($_POST, true));
-    error_log('RAW INPUT: ' . file_get_contents('php://input'));
 
     $firstName = trim($_POST['firstName'] ?? '');
     $lastName  = trim($_POST['lastName'] ?? '');

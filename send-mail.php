@@ -42,7 +42,7 @@ try {
     $mail->SMTPAuth = true;
 
     $mail->Username = 'admin@exacoreitsolutions.com';
-    $mail->Password = 'YOUR_EMAIL_PASSWORD';
+    $mail->Password = 'ikKexV);wc)D$FIa';
 
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
@@ -50,7 +50,7 @@ try {
     $mail->From = 'admin@exacoreitsolutions.com';
     $mail->FromName = 'Exacore Website';
 
-    $mail->AddAddress('YOUR_RECEIVING_EMAIL');
+    $mail->AddAddress('sandeep.ps@exacoreitsolutions.com');
 
     $mail->AddReplyTo($email, $firstName . ' ' . $lastName);
 

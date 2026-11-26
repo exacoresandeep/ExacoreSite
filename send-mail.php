@@ -71,7 +71,13 @@ try {
         <p><b>Phone:</b> ' . htmlspecialchars($phone, ENT_QUOTES, 'UTF-8') . '</p>
         <p><b>Message:</b><br>' . nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8')) . '</p>
     ';
-
+    $mail->SMTPOptions = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        )
+    );
     $mail->Send();
 
     echo json_encode(array(

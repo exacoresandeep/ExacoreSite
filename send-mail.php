@@ -14,12 +14,11 @@ try {
     }
 
 
-    $firstName = trim($_POST['firstName'] ?? '');
-    $lastName  = trim($_POST['lastName'] ?? '');
-    $email     = trim($_POST['email'] ?? '');
-    $phone     = trim($_POST['phone'] ?? '');
-    $message   = trim($_POST['message'] ?? '');
-
+    $firstName = isset($_POST['firstName']) ? $_POST['firstName'] : '';
+    $lastName = isset($_POST['lastName']) ? $_POST['lastName'] : '';
+    $email = isset($_POST['email']) ? $_POST['email'] : '';
+    $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
+    $message = isset($_POST['message']) ? $_POST['message'] : '';
     $missing = [];
 
     foreach ([

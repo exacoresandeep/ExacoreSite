@@ -36,8 +36,11 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 $mail = new PHPMailer(true);
 
 try {
-
     $mail->IsSMTP();
+
+    $mail->SMTPDebug = 3;
+    $mail->Debugoutput = 'error_log';
+
     $mail->Host = 'mail.exacoreitsolutions.com';
     $mail->SMTPAuth = true;
 
@@ -47,6 +50,10 @@ try {
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
 
+    $mail->Timeout = 30;
+
+
+    
     $mail->From = 'admin@exacoreitsolutions.com';
     $mail->FromName = 'Exacore Website';
 

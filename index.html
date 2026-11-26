@@ -552,8 +552,13 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
         formMessage.className = 'form-message success';
         formMessage.style.display = 'block';
 
-        // Reset form only after successful submission
+        // Reset form fields
         form.reset();
+
+        // Hide success message after 3 seconds
+        setTimeout(function () {
+            formMessage.style.display = 'none';
+        }, 3000);
 
     })
     .catch(error => {

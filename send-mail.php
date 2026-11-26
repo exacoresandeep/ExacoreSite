@@ -37,33 +37,22 @@ $mail = new PHPMailer(true);
 
 try {
     $mail->IsSMTP();
-
     $mail->SMTPDebug = 3;
     $mail->Debugoutput = 'error_log';
-
     $mail->Host = 'mail.exacoreitsolutions.com';
     $mail->SMTPAuth = true;
-
     $mail->Username = 'admin@exacoreitsolutions.com';
     $mail->Password = 'ikKexV);wc)D$FIa';
-
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
-
     $mail->Timeout = 30;
-
-
-    
+   
     $mail->From = 'admin@exacoreitsolutions.com';
     $mail->FromName = 'Exacore Website';
-
-    $mail->AddAddress('sandeep.ps@exacoreitsolutions.com');
-
+    $mail->AddAddress('sales@exacoreitsolutions.com');
     $mail->AddReplyTo($email, $firstName . ' ' . $lastName);
-
     $mail->IsHTML(true);
     $mail->Subject = 'New Contact Form Submission';
-
     $mail->Body = '
         <h3>New Contact Form Submission</h3>
         <p><b>Name:</b> ' . htmlspecialchars($firstName . ' ' . $lastName, ENT_QUOTES, 'UTF-8') . '</p>
@@ -82,7 +71,7 @@ try {
 
     echo json_encode(array(
         'success' => true,
-        'message' => 'Email sent successfully.'
+        'message' => 'Your enquiry has been sent successfully! Our team will contact you shortly.'
     ));
 
 } catch (Exception $e) {

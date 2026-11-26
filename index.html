@@ -503,6 +503,7 @@
   <script>
 
 
+
 document.getElementById('contactForm').addEventListener('submit', function (e) {
 
     e.preventDefault();
@@ -511,19 +512,15 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     const submitBtn = document.getElementById('submitBtn');
     const formMessage = document.getElementById('formMessage');
 
-    // Get form data
     const formData = new FormData(form);
 
-    // Debug
     console.log('Form Data:', [...formData.entries()]);
 
-    // Disable button
     submitBtn.disabled = true;
     submitBtn.innerHTML = 'Sending...';
 
     formMessage.style.display = 'none';
 
-    // Send AJAX request
     fetch('send-mail.php', {
         method: 'POST',
         body: formData
@@ -543,7 +540,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
             throw new Error('Invalid server response. Please check PHP error logs.');
         }
 
-        if (!response.ok || data.status !== 'success') {
+        if (!response.ok || data.success !== true) {
             throw new Error(data.message || 'Unable to send enquiry.');
         }
 
@@ -552,10 +549,10 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
         formMessage.className = 'form-message success';
         formMessage.style.display = 'block';
 
-        // Reset form fields
+        // Reset form
         form.reset();
 
-        // Hide success message after 3 seconds
+        // Hide message after 3 seconds
         setTimeout(function () {
             formMessage.style.display = 'none';
         }, 3000);
@@ -578,8 +575,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     });
 
 });
-
-  </script>
+ </script>
 
 </body>
 

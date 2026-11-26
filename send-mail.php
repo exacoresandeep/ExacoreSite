@@ -1,98 +1,85 @@
 <?php
 
-use PHPMailer\PHPMailer\PHPMailer;
+error_reporting(E_ALL);
+ini_set('log_errors', 1);
+ini_set('display_errors', 0);
 
 header('Content-Type: application/json');
 
+require_once __DIR__ . '/phpmailer/class.phpmailer.php';
+require_once __DIR__ . '/phpmailer/class.smtp.php';
+
+$firstName = isset($_POST['firstName']) ? $_POST['firstName'] : '';
+$lastName  = isset($_POST['lastName']) ? $_POST['lastName'] : '';
+$email     = isset($_POST['email']) ? $_POST['email'] : '';
+$phone     = isset($_POST['phone']) ? $_POST['phone'] : '';
+$message   = isset($_POST['message']) ? $_POST['message'] : '';
+
+if (!$firstName || !$lastName || !$email || !$phone || !$message) {
+    http_response_code(400);
+    echo json_encode(array(
+        'success' => false,
+        'message' => 'All fields are required.'
+    ));
+    exit;
+}
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    http_response_code(400);
+    echo json_encode(array(
+        'success' => false,
+        'message' => 'Invalid email address.'
+    ));
+    exit;
+}
+
+$mail = new PHPMailer(true);
+
 try {
 
-    require_once __DIR__ . '/vendor/autoload.php';
-    require_once __DIR__ . '/config.php';
+    $mail->IsSMTP();
+    $mail->Host = 'mail.exacoreitsolutions.com';
+    $mail->SMTPAuth = true;
 
-    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-        throw new Exception('Invalid request method.');
-    }
+    $mail->Username = 'admin@exacoreitsolutions.com';
+    $mail->Password = 'YOUR_EMAIL_PASSWORD';
 
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port = 465;
 
-    $firstName = isset($_POST['firstName']) ? $_POST['firstName'] : '';
-    $lastName = isset($_POST['lastName']) ? $_POST['lastName'] : '';
-    $email = isset($_POST['email']) ? $_POST['email'] : '';
-    $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
-    $message = isset($_POST['message']) ? $_POST['message'] : '';
-    $missing = [];
+    $mail->From = 'admin@exacoreitsolutions.com';
+    $mail->FromName = 'Exacore Website';
 
-    foreach ([
-        'firstName' => $firstName,
-        'lastName' => $lastName,
-        'email' => $email,
-        'message' => $message
-    ] as $field => $value) {
-        if ($value === '') {
-            $missing[] = $field;
-        }
-    }
+    $mail->AddAddress('YOUR_RECEIVING_EMAIL');
 
-    if (!empty($missing)) {
-        throw new Exception('Missing fields: ' . implode(', ', $missing));
-    }
+    $mail->AddReplyTo($email, $firstName . ' ' . $lastName);
 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        throw new Exception('Invalid email address.');
-    }
-
-    if (empty($_POST['terms'])) {
-        throw new Exception('Please accept Terms & Conditions.');
-    }
-
-    // $pdfPath = __DIR__ . '/pdf/company-profile.pdf';
-
-    // if (!file_exists($pdfPath)) {
-    //     throw new Exception('PDF attachment not found.');
-    // }
-
-    $mail = new PHPMailer(true);
-
-    $mail->isSMTP();
-    $mail->Host       = SMTP_HOST;
-    $mail->SMTPAuth   = true;
-    $mail->Username   = SMTP_USERNAME;
-    $mail->Password   = SMTP_PASSWORD;
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $mail->Port       = SMTP_PORT;
-
-    $mail->setFrom(FROM_EMAIL, FROM_NAME);
-    $mail->addAddress($email, $firstName . ' ' . $lastName);
-
-    $mail->isHTML(true);
-    $mail->Subject = 'Thank you for contacting ' . FROM_NAME;
+    $mail->IsHTML(true);
+    $mail->Subject = 'New Contact Form Submission';
 
     $mail->Body = '
-        <h3>Hello ' . htmlspecialchars($firstName, ENT_QUOTES, 'UTF-8') . ',</h3>
-        <p>Thank you for contacting us.</p>
-        <p>Please find our company profile attached.</p>
-        <p>We appreciate your interest and will get back to you soon.</p>
-        <p>Regards,<br>' . htmlspecialchars(FROM_NAME, ENT_QUOTES, 'UTF-8') . '</p>
+        <h3>New Contact Form Submission</h3>
+        <p><b>Name:</b> ' . htmlspecialchars($firstName . ' ' . $lastName, ENT_QUOTES, 'UTF-8') . '</p>
+        <p><b>Email:</b> ' . htmlspecialchars($email, ENT_QUOTES, 'UTF-8') . '</p>
+        <p><b>Phone:</b> ' . htmlspecialchars($phone, ENT_QUOTES, 'UTF-8') . '</p>
+        <p><b>Message:</b><br>' . nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8')) . '</p>
     ';
 
-    $mail->AltBody = "Hello $firstName,\n\nThank you for contacting us.";
+    $mail->Send();
 
-    //$mail->addAttachment($pdfPath, 'Company-Profile.pdf');
+    echo json_encode(array(
+        'success' => true,
+        'message' => 'Email sent successfully.'
+    ));
 
-    $mail->send();
+} catch (Exception $e) {
 
-    echo json_encode([
-        'status' => 'success',
-        'message' => 'Mail sent successfully. Please check your email for PDF.'
-    ]);
-
-} catch (\Throwable $e) {
-
-    error_log('SMTP MAIL ERROR: ' . $e->getMessage());
+    error_log('PHPMailer Error: ' . $e->getMessage());
 
     http_response_code(500);
 
-    echo json_encode([
-        'status' => 'error',
-        'message' => $e->getMessage()
-    ]);
+    echo json_encode(array(
+        'success' => false,
+        'message' => 'Unable to send email.'
+    ));
 }

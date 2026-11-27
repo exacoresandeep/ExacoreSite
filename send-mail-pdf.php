@@ -55,9 +55,9 @@ if (!filter_var($workEmail, FILTER_VALIDATE_EMAIL)) {
 
 // PDF mapping
 $pdfFiles = array(
-    'hospital' => 'EXC_CaseStudy_SlowMonthEndClose_1.pdf',
-    'healthcare' => 'healthcare-case-study.pdf',
-    'manufacturing' => 'manufacturing-case-study.pdf'
+    'hospital' => 'EXC_CaseStudy_SlowMonthEndClose_1.docx',
+    'healthcare' => 'EXC_CaseStudy_EBSImplementation_2.docx',
+    'manufacturing' => 'manufacturing-case-study.docx'
 );
 
 // Validate PDF selection

@@ -127,6 +127,7 @@
   <script src="footer.js"></script>
   <script src="case-study-form.js"></script>
   <script>
+  
 document.querySelectorAll('.case-study-form').forEach(form => {
 
     form.addEventListener('submit', async function(e) {
@@ -138,18 +139,14 @@ document.querySelectorAll('.case-study-form').forEach(form => {
 
         const originalText = submitBtn.innerHTML;
 
-        // Validate
         if (!form.checkValidity()) {
             form.reportValidity();
             return;
         }
 
         const formData = new FormData(form);
-
-        // Add PDF key
         formData.append('pdf_key', form.dataset.pdfKey);
 
-        // Disable button
         submitBtn.disabled = true;
         submitBtn.innerHTML = 'Sending...';
 
@@ -173,9 +170,11 @@ document.querySelectorAll('.case-study-form').forEach(form => {
             try {
                 result = JSON.parse(responseText);
             } catch (error) {
-                throw new Error(
-                    'Server returned invalid response. Check browser console.'
-                );
+
+                // Technical error only in browser console
+                console.error('Invalid JSON response:', responseText);
+
+                throw new Error('Unable to process your request right now. Please try again later.');
             }
 
             if (!response.ok || !result.success) {
@@ -191,7 +190,10 @@ document.querySelectorAll('.case-study-form').forEach(form => {
 
             console.error('Form submission error:', error);
 
-            status.textContent = error.message || 'Something went wrong. Please try again.';
+            // User-friendly error message
+            status.textContent =
+                'Something went wrong. Please try again later.';
+
             status.style.color = 'red';
 
         } finally {
@@ -204,6 +206,7 @@ document.querySelectorAll('.case-study-form').forEach(form => {
     });
 
 });
+
 </script>
 </body>
 </html>

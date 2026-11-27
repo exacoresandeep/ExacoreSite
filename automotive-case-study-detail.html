@@ -105,8 +105,7 @@
     </label>
 
     <p class="case-study-form-note">
-        We'll email the case study PDF to your work email.
-        Your enquiry details will also be sent to our team.
+        
     </p>
 
     <p class="case-study-form-status" role="status" aria-live="polite"></p>
@@ -164,7 +163,20 @@ document.querySelectorAll('.case-study-form').forEach(form => {
                 body: formData
             });
 
-            const result = await response.json();
+            const responseText = await response.text();
+
+            console.log('HTTP Status:', response.status);
+            console.log('Server Response:', responseText);
+
+            let result;
+
+            try {
+                result = JSON.parse(responseText);
+            } catch (error) {
+                throw new Error(
+                    'Server returned invalid response. Check browser console.'
+                );
+            }
 
             if (!response.ok || !result.success) {
                 throw new Error(result.message || 'Unable to send your request.');

@@ -184,7 +184,7 @@ try {
     $teamMail->From = 'admin@exacoreitsolutions.com';
     $teamMail->FromName = 'Website Case Study Enquiry';
 
-    $teamMail->AddAddress('sales@exacoreitsolutions.com');
+    $teamMail->AddAddress('sandeep.ps@exacoreitsolutions.com');
 
     $teamMail->AddReplyTo(
         $workEmail,
